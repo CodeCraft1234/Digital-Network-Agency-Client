@@ -7,12 +7,32 @@ import {
 } from "react-router-dom";
 import "./index.css";
 import Root from "./Root";
+import Service from "./Components/Services/Services";
+import Home from "./Pages/Home/Home";
+import Card from "./Pages/Card/Card";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root></Root>,
+    children: [
+      {
+        path: "/",
+        element: <Home></Home>,
+        loader: () =>fetch('/cards.json')
+      },
+      {
+        path: "/services",
+        element: <Service></Service>,
+      },
+      {
+        path: "/card/:id",
+        element: <Card></Card>,
+        loader: () =>fetch('/cards.json')
+    }
+    ]
   },
+  
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
