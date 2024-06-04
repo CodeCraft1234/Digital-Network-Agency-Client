@@ -1,5 +1,6 @@
 import {  useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { FcAbout, FcContacts, FcServiceMark } from "react-icons/fc";
 const NavBar = () => {
   const [theme, setTheme] = useState(
     localStorage.getItem("theme") ? localStorage.getItem("theme") : "light"
@@ -17,7 +18,7 @@ const NavBar = () => {
     }
   };
   return (
-    <div className="navbar  bg-indigo-700 text-white bg-opacity-50 backdrop-blur-lg p-5 rounded-md shadow-lg  lg:px-28 md:px-10 px-5  fixed z-50 top-0 border-b">
+    <div className="navbar bg-white text-black bg-opacity-50 backdrop-blur-lg p-1 rounded-md shadow-lg lg:px-28 md:px-10 px-5 fixed z-50 top-0 border-b">
       <div className="navbar-start">    
         <div className="dropdown">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -40,23 +41,23 @@ const NavBar = () => {
           <ul
             tabIndex={0}
 
-            className="menu menu-sm dropdown-content  bg-violet-950 mt-3 z-[1] p-2 shadow  rounded-box w-52 "
+            className="menu menu-sm dropdown-content  bg-white mt-3 z-[1] p-2 shadow  rounded-box w-52 "
           >
           <li>
 
     <NavLink to={"/"}> <img className="h-8 w-8" src="https://i.ibb.co/hL4n8S1/10473299.png" alt="" />Home </NavLink>
   </li>
   <li>
-    <NavLink to={"/features"}><img className="h-8 w-8" src="https://i.ibb.co/wKjbW5s/feature-3d-render-icon-illustration-png.png" alt="" />Features </NavLink>
+    <NavLink to={"/services"}><FcServiceMark className="h-8 w-8" />Services </NavLink>
   </li>
-
-
-
   <li>
     <NavLink to={"/blog"}> <img className="h-8 w-8" src="https://i.ibb.co/1sSTpBy/4729296.webp" alt="" />Blogs</NavLink>
   </li>
   <li>
-    <NavLink to={"/profile"}><img className="h-10 w-10" src="https://i.ibb.co/kBSCBxv/4652486.webp" alt="" />Profile  </NavLink>
+    <NavLink to={"/about"}><FcAbout className="h-8 w-8" />About US </NavLink>
+  </li>
+  <li>
+  <NavLink to={"/contact"}><FcContacts className="h-8 w-8" />Contact US</NavLink>
   </li>
 
           </ul>
@@ -66,7 +67,12 @@ const NavBar = () => {
           <Link to={"/"}>
          
              
-           <h1>Canteen Management</h1>
+          <img
+                className="h-24 rounded w-24"
+                src="https://i.ibb.co/Cnvg0RS/Digital-Network-Logo.png"
+                alt=""
+              />
+              
           </Link>
         </div>
       </div>
@@ -74,16 +80,19 @@ const NavBar = () => {
 
         <ul className="menu menu-horizontal items-center px-1 flex gap-4">
         <li>
-            <NavLink to={"/"}> <img className="h-6 w-6" src="https://i.ibb.co/hL4n8S1/10473299.png" alt="" />Home </NavLink>
+            <NavLink to={"/"}> <img className="h-6 w-6" src="https://i.ibb.co/hL4n8S1/10473299.png" alt="" />Home</NavLink>
           </li>
           <li>
-            <NavLink to={"/features"}><img className="h-6 w-6" src="https://i.ibb.co/wKjbW5s/feature-3d-render-icon-illustration-png.png" alt="" />Features </NavLink>
+            <NavLink to={"/services"}><FcServiceMark className="h-8 w-8" />Services </NavLink>
           </li>
           <li>
-            <NavLink to={"/blog"}> <img className="h-6 w-6" src="https://i.ibb.co/1sSTpBy/4729296.webp" alt="" />Blogs</NavLink>
+            <NavLink to={"/blog"}> <img className="h-8 w-8" src="https://i.ibb.co/1sSTpBy/4729296.webp" alt="" />Blogs</NavLink>
           </li>
           <li>
-            <NavLink to={"/profile"}><img className="h-8 w-8" src="https://i.ibb.co/kBSCBxv/4652486.webp" alt="" />Profile  </NavLink>
+          <NavLink to={"/about"}><FcAbout className="h-8 w-8" />About US </NavLink>
+          </li>
+          <li>
+            <NavLink to={"/contact"}><FcContacts className="h-8 w-8" />Contact US</NavLink>
           </li>
         </ul>
       </div>
