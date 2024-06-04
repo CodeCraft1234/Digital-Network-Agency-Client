@@ -35,7 +35,7 @@ const Payment = () => {
               className="flex flex-col items-center justify-center text-center p-6 bg-white shadow-md rounded-lg hover:shadow-lg transition-shadow text-black"
             >
               <img
-                className="w-44 h-36 mb-4"
+                className="w-48 h-36 mb-4"
                 src={merchant.icon}
                 alt={merchant.name}
               />
