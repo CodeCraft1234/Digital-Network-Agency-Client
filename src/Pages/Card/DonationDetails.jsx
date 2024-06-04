@@ -26,7 +26,7 @@ const DonationDetails = ({ card }) => {
   };
 
   return (
-    <div className="flex justify-center items-center mt-5">
+    <div className="flex justify-center items-center mt-28">
       <div className="relative flex w-76 flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-md">
         <div className="relative mx-4 mt-4 h-76 overflow-hidden rounded-xl bg-white bg-clip-border text-gray-700">
           <img src={picture} className="h-full w-full object-cover" />
