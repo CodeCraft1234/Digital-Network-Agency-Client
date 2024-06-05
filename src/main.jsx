@@ -10,6 +10,7 @@ import Root from "./Root";
 import Service from "./Components/Services/Services";
 import Home from "./Pages/Home/Home";
 import Card from "./Pages/Card/Card";
+import CardDetails from "./Pages/Card/CardDetails";
 
 const router = createBrowserRouter([
   {
@@ -25,11 +26,11 @@ const router = createBrowserRouter([
         path: "/services",
         element: <Service></Service>,
       },
-    //   {
-    //     path: "/card/:id",
-    //     element: <Card></Card>,
-    //     loader: () =>fetch('/cards.json')
-    // },
+      {
+        path: "/card/:id",
+        element: <CardDetails></CardDetails>,
+        loader: () =>fetch('/cards.json')
+    },
     {
       path: "/category/:category",
       element: <Card></Card>,
