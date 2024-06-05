@@ -25,10 +25,15 @@ const router = createBrowserRouter([
         path: "/services",
         element: <Service></Service>,
       },
-      {
-        path: "/card/:id",
-        element: <Card></Card>,
-        loader: () =>fetch('/cards.json')
+    //   {
+    //     path: "/card/:id",
+    //     element: <Card></Card>,
+    //     loader: () =>fetch('/cards.json')
+    // },
+    {
+      path: "/category/:category",
+      element: <Card></Card>,
+      loader: () =>fetch('/cards.json')
     }
     ]
   },

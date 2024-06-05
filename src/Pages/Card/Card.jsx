@@ -3,18 +3,37 @@ import { useLoaderData, useParams } from "react-router-dom";
 import DonationDetails from "./DonationDetails";
 
 const Card = () => {
-    const [card, setCard] = useState(null);
-    const {id} = useParams();
-    const cards = useLoaderData();
+    const [filteredCards, setFilteredCards] = useState([]);
+  const { category } = useParams();
+  const cards = useLoaderData();
 
-    useEffect(()=>{
-        const findCard = cards?.find(card =>card.id === id);
-        setCard(findCard);
-    }, [id, cards])
+  useEffect(() => {
+    console.log('Fetched Cards:', cards);
+    console.log('Category from URL:', category);
+
+    if (!cards) {
+      console.error('No cards found.');
+      return;
+    }
+
+    if (!category) {
+      console.error('Category is not defined.');
+      return;
+    }
+
+    if (!Array.isArray(cards)) {
+      console.error('Cards is not an array:', cards);
+      return;
+    }
+
+    const filtered = cards.filter(card => card.category === category);
+    setFilteredCards(filtered);
+    console.log('Filtered Cards:', filtered);
+  }, [category, cards]);
     
     return (
         <div>
-            <DonationDetails card={card}></DonationDetails>
+            <DonationDetails filteredCards={filteredCards}></DonationDetails>
         </div>
     );
 };
