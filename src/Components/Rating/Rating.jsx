@@ -5,8 +5,8 @@ const Rating = () => {
         What our clients are saying
       </h2>
       <div className="flex flex-col md:flex-row justify-center items-center md:space-x-4 card ">
-        <div className="flex flex-col items-center mb-8 md:mb-0 bg-green-100 rounded-lg">
-          <div className="rounded-full overflow-hidden mb-4 transform hover:scale-110 transition-transform duration-300 mt-3">
+        <div className="flex flex-col items-center mb-8 md:mb-0 bg-green-100 rounded-lg p-7">
+          <div className="rounded-tr-full rounded-br-full rounded-tl-full overflow-hidden mb-4 transform hover:scale-110 transition-transform duration-300 mt-3">
             <img
               src="https://i.ibb.co/3yQ9kQW/Partho.jpg"
               alt="Client 1"
@@ -29,8 +29,8 @@ const Rating = () => {
             </h6>
           </p>
         </div>
-        <div className="flex flex-col items-center mb-8 md:mb-0 bg-green-100 rounded-lg">
-          <div className="rounded-full overflow-hidden mb-4 transform hover:scale-110 transition-transform duration-300 mt-3">
+        <div className="flex flex-col items-center mb-8 md:mb-0 bg-green-100 rounded-lg p-7">
+          <div className="rounded-tr-full rounded-br-full rounded-tl-full overflow-hidden mb-4 transform hover:scale-110 transition-transform duration-300 mt-3">
             <img
               src="https://i.ibb.co/d7RTx6v/Anowarul.jpg"
               alt="Client 2"
@@ -53,8 +53,8 @@ const Rating = () => {
             </h6>
           </p>
         </div>
-        <div className="flex flex-col items-center bg-green-100 rounded-lg">
-          <div className="rounded-full overflow-hidden mb-4 transform hover:scale-110 transition-transform duration-300 mt-3">
+        <div className="flex flex-col items-center bg-green-100 rounded-lg p-7">
+          <div className="rounded-tr-full rounded-br-full rounded-tl-full overflow-hidden mb-4 transform hover:scale-110 transition-transform duration-300 mt-3">
             <img
               src="https://i.ibb.co/GPVNYgh/Sharmin.jpg"
               alt="Client 3"
