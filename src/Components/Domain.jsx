@@ -1,28 +1,31 @@
 const Card = ({ plan }) => {
   return (
-    <div className="">
-      <div className={`p-2 rounded-lg ${plan.headerBg}`}>
-        <h2 className="text-xl font-bold text-center mt-1 mb-1">
+   
+     <div className="">
+       <div className={`p-2 rounded-lg ${plan.headerBg}`}>
+        <h2 className="text-xl font-bold text-center ">
           {plan.storage}
         </h2>
-        <p className="text-center mt-1 mb-1">{plan.description}</p>
+        <p className="text-center ">{plan.description}</p>
       </div>
+     
 
       <div>
-        <div className="bg-white text-black p-6 rounded-lg shadow-lg w-80 h-auto md:h-96 flex flex-col justify-between">
-          <p className="text-center text-4xl font-bold my-4">{plan.price}</p>
-          <ul className="space-y-2 text-blue-900">
-            {plan.features.map((feature, index) => (
-              <li key={index}>{feature}</li>
-            ))}
-          </ul>
-          <div className="text-center mt-6">
-            <button className={`py-2 px-4 rounded ${plan.buttonBg} text-white`}>
-              অর্ডার করুন
-            </button>
-          </div>
-        </div>
+ <div className="bg-white text-black p-6 rounded-lg shadow-lg w-80 h-auto md:h-96 flex flex-col justify-between">
+      
+      <p className="text-center text-4xl font-bold my-4">{plan.price}</p>
+      <ul className="space-y-2 text-black">
+        {plan.features.map((feature, index) => (
+          <li key={index}>{feature}</li>
+        ))}
+      </ul>
+      <div className="text-center mt-6">
+        <button className={`py-2 px-4 rounded ${plan.buttonBg} text-white`}>
+          অর্ডার করুন
+        </button>
       </div>
+    </div>
+    </div>
     </div>
   );
 };
@@ -86,6 +89,7 @@ const Domain = () => {
         ))}
       </div>
     </div>
+  
   );
 };
 
