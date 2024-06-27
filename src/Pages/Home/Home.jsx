@@ -1,4 +1,5 @@
 import Banner from "../../Components/Banner/Banner";
+import LandingPage from "../../Components/Banner/LandingPage";
 import Carousel from "../../Components/Carousel/Caousel";
 import ContactUS from "../../Components/ContactUs/ContactUS";
 import Payment from "../../Components/Payment/Payment";
@@ -10,11 +11,12 @@ import Cards from "../../components/Cards/Cards";
 const Home = () => {
     return (
         <div className="mt-36">
+            <LandingPage></LandingPage>
             <Banner></Banner>
             <Service></Service>
             <Cards></Cards>
             <Rating></Rating>
-            <Carousel></Carousel>
+            {/* <Carousel></Carousel> */}
             <ContactUS></ContactUS>
             <Payment></Payment>
         </div>

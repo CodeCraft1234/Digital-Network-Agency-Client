@@ -1,131 +1,78 @@
-import {  useEffect, useState } from "react";
-import { Link, NavLink } from "react-router-dom";
-import { FcAbout, FcContacts, FcServiceMark } from "react-icons/fc";
-const NavBar = () => {
-  const [theme, setTheme] = useState(
-    localStorage.getItem("theme") ? localStorage.getItem("theme") : "light"
-  );
-  useEffect(() => {
-    localStorage.setItem("theme", theme);
-    const localTheme = localStorage.getItem("theme");
-    document.querySelector("html").setAttribute("data-theme", localTheme);
-  }, [theme]);
-  const handleToggle = (e) => {
-    if (e.target.checked) {
-      setTheme("dark");
-    } else {
-      setTheme("light");
-    }
-  };
+import React, { useState } from 'react';
+import { Transition } from '@headlessui/react';
+
+const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
-    <div className="navbar bg-white text-black bg-opacity-50 backdrop-blur-lg p-1 rounded-md shadow-lg lg:px-28 md:px-10 px-5 fixed z-50 top-0 border-b">
-      <div className="navbar-start">    
-        <div className="dropdown">
-          <label tabIndex={0} className="btn btn-ghost lg:hidden">
-          
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-5 w-5"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M4 6h16M4 12h8m-8 6h16"
-              />
+    <nav className="bg-white shadow">
+      <div className=" px-6 py-3 flex justify-between items-center">
+        <div className="flex items-center">
+          <a href="#" className="text-2xl font-bold text-gray-800">DigeCo.</a>
+        </div>
+        <div className="hidden md:flex items-center justify-center flex-grow">
+          <div className="ml-10 flex items-baseline space-x-4">
+            <a href="#" className="text-gray-800 hover:text-gray-600">Home</a>
+            <a href="#" className="text-gray-800 hover:text-gray-600">Services</a>
+            <a href="#" className="text-gray-800 hover:text-gray-600">Portfolio</a>
+            <a href="#" className="text-gray-800 hover:text-gray-600">Pages</a>
+            <a href="#" className="text-gray-800 hover:text-gray-600">Blog</a>
+            <a href="#" className="text-gray-800 hover:text-gray-600">Contact</a>
+          </div>
+        </div>
+        <div className="flex items-center space-x-4">
+          <button className="text-gray-800 hover:text-gray-600 focus:outline-none">
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 1 1-14 0 7 7 0 0 1 14 0z"></path>
             </svg>
-          </label>
-          <ul
-            tabIndex={0}
-
-            className="menu menu-sm dropdown-content  bg-white mt-3 z-[1] p-2 shadow  rounded-box w-52 "
+          </button>
+          <button className="bg-white text-gray-800 border border-gray-800 py-2 px-6 rounded-md">Get a Quote</button>
+          <button
+            onClick={() => setIsOpen(!isOpen)}
+            type="button"
+            className="text-gray-800 hover:text-gray-600 focus:outline-none focus:text-gray-600 md:hidden"
+            aria-controls="mobile-menu"
+            aria-expanded="false"
           >
-          <li>
-
-    <NavLink to={"/"}> <img className="h-8 w-8" src="https://i.ibb.co/hL4n8S1/10473299.png" alt="" />Home </NavLink>
-  </li>
-  <li>
-    <NavLink to={"/services"}><FcServiceMark className="h-8 w-8" />Services </NavLink>
-  </li>
-  <li>
-    <NavLink to={"/blog"}> <img className="h-8 w-8" src="https://i.ibb.co/1sSTpBy/4729296.webp" alt="" />Blogs</NavLink>
-  </li>
-  <li>
-    <NavLink to={"/about"}><FcAbout className="h-8 w-8" />About US </NavLink>
-  </li>
-  <li>
-  <NavLink to={"/contact"}><FcContacts className="h-8 w-8" />Contact US</NavLink>
-  </li>
-
-          </ul>
-        </div>
-        <div className="flex justify-center items-center">
-       
-          <Link to={"/"}>
-         
-             
-          <img
-                className="h-24 rounded w-24"
-                src="https://i.ibb.co/Cnvg0RS/Digital-Network-Logo.png"
-                alt=""
-              />
-              
-          </Link>
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d={!isOpen ? "M4 6h16M4 12h16M4 18h16" : "M6 18L18 6M6 6l12 12"}></path>
+            </svg>
+          </button>
         </div>
       </div>
-      <div className="navbar-center hidden lg:flex">
 
-        <ul className="menu menu-horizontal items-center px-1 flex gap-4">
-        <li>
-            <NavLink to={"/"}> <img className="h-6 w-6" src="https://i.ibb.co/hL4n8S1/10473299.png" alt="" />Home</NavLink>
-          </li>
-          <li>
-            <NavLink to={"/services"}><FcServiceMark className="h-8 w-8" />Services </NavLink>
-          </li>
-          <li>
-            <NavLink to={"/blog"}> <img className="h-8 w-8" src="https://i.ibb.co/1sSTpBy/4729296.webp" alt="" />Blogs</NavLink>
-          </li>
-          <li>
-          <NavLink to={"/about"}><FcAbout className="h-8 w-8" />About US </NavLink>
-          </li>
-          <li>
-            <NavLink to={"/contact"}><FcContacts className="h-8 w-8" />Contact US</NavLink>
-          </li>
-        </ul>
-      </div>
-      <div className="navbar-end">
-        <label className="swap swap-rotate mr-5">
-          <input
-            type="checkbox"
-            onChange={handleToggle}
-            checked={theme == "light" ? false : true}
-          />
-          <svg
-            className="swap-on fill-current lg:w-10 md:w-10 w-8 lg:h-10 md:h-10 h-8"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-          >
-            <path d="M5.64,17l-.71.71a1,1,0,0,0,0,1.41,1,1,0,0,0,1.41,0l.71-.71A1,1,0,0,0,5.64,17ZM5,12a1,1,0,0,0-1-1H3a1,1,0,0,0,0,2H4A1,1,0,0,0,5,12Zm7-7a1,1,0,0,0,1-1V3a1,1,0,0,0-2,0V4A1,1,0,0,0,12,5ZM5.64,7.05a1,1,0,0,0,.7.29,1,1,0,0,0,.71-.29,1,1,0,0,0,0-1.41l-.71-.71A1,1,0,0,0,4.93,6.34Zm12,.29a1,1,0,0,0,.7-.29l.71-.71a1,1,0,1,0-1.41-1.41L17,5.64a1,1,0,0,0,0,1.41A1,1,0,0,0,17.66,7.34ZM21,11H20a1,1,0,0,0,0,2h1a1,1,0,0,0,0-2Zm-9,8a1,1,0,0,0-1,1v1a1,1,0,0,0,2,0V20A1,1,0,0,0,12,19ZM18.36,17A1,1,0,0,0,17,18.36l.71.71a1,1,0,0,0,1.41,0,1,1,0,0,0,0-1.41ZM12,6.5A5.5,5.5,0,1,0,17.5,12,5.51,5.51,0,0,0,12,6.5Zm0,9A3.5,3.5,0,1,1,15.5,12,3.5,3.5,0,0,1,12,15.5Z" />
-          </svg>
-
-          
-          <svg
-            className="swap-off fill-current lg:w-10 md:w-10 w-8 lg:h-10 md:h-10 h-8"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 24 24"
-          >
-            <path d="M21.64,13a1,1,0,0,0-1.05-.14,8.05,8.05,0,0,1-3.37.73A8.15,8.15,0,0,1,9.08,5.49a8.59,8.59,0,0,1,.25-2A1,1,0,0,0,8,2.36,10.14,10.14,0,1,0,22,14.05,1,1,0,0,0,21.64,13Zm-9.5,6.69A8.14,8.14,0,0,1,7.08,5.22v.27A10.15,10.15,0,0,0,17.22,15.63a9.79,9.79,0,0,0,2.1-.22A8.11,8.11,0,0,1,12.14,19.73Z" />
-          </svg>
-        </label>
-
-        <div className="items-center">
-          
-        </div>
-      </div>
-    </div>
+      <Transition
+        show={isOpen}
+        enter="transition ease-out duration-100 transform"
+        enterFrom="opacity-0 scale-95"
+        enterTo="opacity-100 scale-100"
+        leave="transition ease-in duration-75 transform"
+        leaveFrom="opacity-100 scale-100"
+        leaveTo="opacity-0 scale-95"
+      >
+        {(ref) => (
+          <div className="md:hidden" id="mobile-menu">
+            <div ref={ref} className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+              <a href="#" className="block px-3 py-2 rounded-md text-base font-medium text-gray-800 hover:bg-gray-100">Home</a>
+              <a href="#" className="block px-3 py-2 rounded-md text-base font-medium text-gray-800 hover:bg-gray-100">About</a>
+              <a href="#" className="block px-3 py-2 rounded-md text-base font-medium text-gray-800 hover:bg-gray-100">Services</a>
+              <a href="#" className="block px-3 py-2 rounded-md text-base font-medium text-gray-800 hover:bg-gray-100">Portfolio</a>
+              <a href="#" className="block px-3 py-2 rounded-md text-base font-medium text-gray-800 hover:bg-gray-100">Team</a>
+              <a href="#" className="block px-3 py-2 rounded-md text-base font-medium text-gray-800 hover:bg-gray-100">Blog</a>
+              <a href="#" className="block px-3 py-2 rounded-md text-base font-medium text-gray-800 hover:bg-gray-100">Contact</a>
+              <div className="flex justify-center mt-4">
+                <a href="#" className="text-gray-600 hover:text-gray-800">
+                  <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M18.94 10.06a6 6 0 0 1 0 3.88C19.86 13.15 22 11 22 11s-2.86 2.15-3.06 4.94a6 6 0 0 1-3.88 0C10.85 19.14 13 22 13 22s-2.15-2.86-4.94-3.06a6 6 0 0 1 0-3.88C4.86 10.85 2 13 2 13s2.86-2.15 3.06-4.94a6 6 0 0 1 3.88 0C13.15 4.86 11 2 11 2s2.15 2.86 4.94 3.06a6 6 0 0 1 3.88 0C19.14 4.86 22 2 22 2s-2.86 2.15-3.06 4.94zM12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8z" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        )}
+      </Transition>
+    </nav>
   );
 };
-export default NavBar;
+
+export default Navbar;
