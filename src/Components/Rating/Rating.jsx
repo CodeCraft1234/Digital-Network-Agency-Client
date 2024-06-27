@@ -8,7 +8,7 @@ const Rating = () => {
         <div className="flex flex-col items-center mb-8 md:mb-0 bg-green-100 rounded-lg p-7">
           <div className="rounded-tr-full rounded-br-full rounded-tl-full overflow-hidden mb-4 transform hover:scale-110 transition-transform duration-300 mt-3">
             <img
-              src="https://i.ibb.co/3yQ9kQW/Partho.jpg"
+              src="https://i.ibb.co/9G3xhxg/MD-Muzahidul-Islam.jpg"
               alt="Client 1"
               className="w-48 h-48 object-cover"
             />
@@ -19,7 +19,7 @@ const Rating = () => {
             great feedback at our expo showcase.
             <br />
             <h6 className="font-bold text-center text-black text-lg">
-              Partho Saha
+              MD. Muzahidul Islam
               <br />
               <em className="ml-6">
                 <span className="font-semibold text-black text-md">
@@ -56,7 +56,7 @@ const Rating = () => {
         <div className="flex flex-col items-center bg-green-100 rounded-lg p-7">
           <div className="rounded-tr-full rounded-br-full rounded-tl-full overflow-hidden mb-4 transform hover:scale-110 transition-transform duration-300 mt-3">
             <img
-              src="https://i.ibb.co/GPVNYgh/Sharmin.jpg"
+              src="https://hellodigitalnetwork.com/wp-content/uploads/2024/05/Sharmin.jpg"
               alt="Client 3"
               className="w-48 h-48 object-cover"
             />
