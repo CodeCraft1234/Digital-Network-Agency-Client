@@ -13,6 +13,7 @@ import Card from "./Pages/Card/Card";
 import CardDetails from "./Pages/Card/CardDetails";
 import AboutUs from "./Pages/AboutUs";
 import Contact from "./Pages/Contact";
+import Faq from "./Pages/Faq";
 
 const router = createBrowserRouter([
   {
@@ -31,6 +32,10 @@ const router = createBrowserRouter([
       {
         path: "/about",
         element: <AboutUs></AboutUs>,
+      },
+      {
+        path: "/faq",
+        element: <Faq></Faq>,
       },
       {
         path: "/contact",
