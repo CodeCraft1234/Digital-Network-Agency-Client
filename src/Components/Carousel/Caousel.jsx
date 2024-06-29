@@ -589,17 +589,7 @@ const teamMembers = [
       instagram: '#'
     },
   },
-  {
-    name: 'Partho Saha',
-    position: 'Graphics & Motion Designer',
-    image: 'https://hellodigitalnetwork.com/wp-content/uploads/2024/05/Partho.jpg',
-    social: {
-      facebook: 'https://facebook.com/parthogd69',
-      twitter: 'https://twitter.com/parthogd69',
-      linkedin: 'https://linkedin.com/in/parthogd69',
-      instagram: 'https://instagram.com/parthogd69'
-    },
-  },
+ 
   {
     name: 'Farzana Akter Bethe',
     position: 'Graphic Designer & Digital Marketer',

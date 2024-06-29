@@ -1,0 +1,16 @@
+@keyframes colorChange {
+    0% {
+      background-color: #ffffff; /* Initial white color */
+    }
+    50% {
+      background-color: #1e3a8a; /* Intermediate blue color */
+    }
+    100% {
+      background-color: #3b82f6; /* Final indigo color */
+    }
+  }
+  
+  .hover\:color-change:hover {
+    animation: colorChange 2s forwards;
+  }
+  
