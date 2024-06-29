@@ -12,6 +12,7 @@ import Home from "./Pages/Home/Home";
 import Card from "./Pages/Card/Card";
 import CardDetails from "./Pages/Card/CardDetails";
 import AboutUs from "./Pages/AboutUs";
+import Contact from "./Pages/Contact";
 
 const router = createBrowserRouter([
   {
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
       {
         path: "/about",
         element: <AboutUs></AboutUs>,
+      },
+      {
+        path: "/contact",
+        element: <Contact></Contact>,
       },
       {
         path: "/card/:id",
