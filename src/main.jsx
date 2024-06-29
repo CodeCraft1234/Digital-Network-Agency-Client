@@ -11,6 +11,7 @@ import Service from "./Components/Services/Services";
 import Home from "./Pages/Home/Home";
 import Card from "./Pages/Card/Card";
 import CardDetails from "./Pages/Card/CardDetails";
+import AboutUs from "./Pages/AboutUs";
 
 const router = createBrowserRouter([
   {
@@ -25,6 +26,10 @@ const router = createBrowserRouter([
       {
         path: "/services",
         element: <Service></Service>,
+      },
+      {
+        path: "/about",
+        element: <AboutUs></AboutUs>,
       },
       {
         path: "/card/:id",
