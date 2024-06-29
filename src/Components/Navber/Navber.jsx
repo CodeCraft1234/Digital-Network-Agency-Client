@@ -1,6 +1,6 @@
 import {  useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
-import { FcAbout, FcContacts, FcServiceMark } from "react-icons/fc";
+import { FcAbout, FcContacts, FcFaq, FcServiceMark } from "react-icons/fc";
 const NavBar = () => {
   const [theme, setTheme] = useState(
     localStorage.getItem("theme") ? localStorage.getItem("theme") : "light"
@@ -57,6 +57,9 @@ const NavBar = () => {
     <NavLink to={"/about"}><FcAbout className="h-8 w-8" />About US </NavLink>
   </li>
   <li>
+          <NavLink to={"/faq"}><FcFaq className="h-8 w-8" />FAQ </NavLink>
+          </li>
+  <li>
   <NavLink to={"/contact"}><FcContacts className="h-8 w-8" />Contact US</NavLink>
   </li>
 
@@ -90,6 +93,9 @@ const NavBar = () => {
           </li>
           <li>
           <NavLink to={"/about"}><FcAbout className="h-8 w-8" />About US </NavLink>
+          </li>
+          <li>
+          <NavLink to={"/faq"}><FcFaq className="h-8 w-8" />FAQ </NavLink>
           </li>
           <li>
             <NavLink to={"/contact"}><FcContacts className="h-8 w-8" />Contact US</NavLink>
