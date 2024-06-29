@@ -42,7 +42,11 @@ const Navbar = () => {
     <nav className={`transition-colors duration-300 ${scrolled ? 'bg-white text-gray-800' : 'bg-transparent text-white'}`}>
       <div className="px-6 py-3 flex justify-between items-center">
         <div className="flex items-center">
-          <a href="#" className="text-2xl font-bold">DigeCo.</a>
+        <img
+                className="h-10 w-10 mt-2 sm:h-16 sm:w-16 md:h-14 md:w-14 lg:h-16 lg:w-16 transition-transform transform hover:scale-110"
+                src={latestLogo?.photo}
+                alt="Logo"
+              />
         </div>
         <div className="hidden md:flex items-center justify-center flex-grow">
           <div className="ml-10 flex items-baseline space-x-4">

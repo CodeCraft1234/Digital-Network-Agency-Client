@@ -1,16 +1,35 @@
-import React from 'react';
+import React, { useEffect, useState } from "react";
+import useLogo from "../../Hook/useLogo";
 
 const Footer = () => {
+  const [logo, setLogo] = useLogo();
+  const [latestLogo, setLatestLogo] = useState(null);
+
+  useEffect(() => {
+    if (logo && logo.length > 0) {
+      const sortedLogo = [...logo].sort(
+        (a, b) => new Date(b.date) - new Date(a.date)
+      );
+      const latest = sortedLogo[0];
+      setLogo(sortedLogo);
+      setLatestLogo(latest);
+    }
+  }, [logo, setLogo]);
   return (
     <footer className="bg-gray-100 px-16 text-gray-800 py-10">
       <div className=" ">
         <div className="flex flex-wrap justify-between">
           <div className="w-full lg:w-1/5 md:w-1/2 mb-8">
             <div className="text-lg font-bold mb-2">
-              DigeCo.
+              <img
+                className="h-10 w-10 mt-2 sm:h-16 sm:w-16 md:h-14 md:w-14 lg:h-16 lg:w-16 transition-transform transform hover:scale-110"
+                src={latestLogo?.photo}
+                alt="Logo"
+              />
             </div>
             <p className="text-gray-600">
-              Grursus mal suada faci Lorem to the ipsum dolarorit more ametion more consectetur elit.
+              Grursus mal suada faci Lorem to the ipsum dolarorit more ametion
+              more consectetur elit.
             </p>
             <div className="flex space-x-4 mt-4">
               <a href="#" className="text-gray-600 hover:text-blue-500">
@@ -33,31 +52,91 @@ const Footer = () => {
           <div className="w-full lg:w-1/5 md:w-1/2 mb-8">
             <h4 className="text-lg font-bold mb-4">Workflows</h4>
             <ul className="space-y-2">
-              <li><a href="#" className="text-gray-600 hover:text-blue-500">Management</a></li>
-              <li><a href="#" className="text-gray-600 hover:text-blue-500">Reporting</a></li>
-              <li><a href="#" className="text-gray-600 hover:text-blue-500">Support</a></li>
-              <li><a href="#" className="text-gray-600 hover:text-blue-500">Community</a></li>
-              <li><a href="#" className="text-gray-600 hover:text-blue-500">Customers</a></li>
+              <li>
+                <a href="#" className="text-gray-600 hover:text-blue-500">
+                  Management
+                </a>
+              </li>
+              <li>
+                <a href="#" className="text-gray-600 hover:text-blue-500">
+                  Reporting
+                </a>
+              </li>
+              <li>
+                <a href="#" className="text-gray-600 hover:text-blue-500">
+                  Support
+                </a>
+              </li>
+              <li>
+                <a href="#" className="text-gray-600 hover:text-blue-500">
+                  Community
+                </a>
+              </li>
+              <li>
+                <a href="#" className="text-gray-600 hover:text-blue-500">
+                  Customers
+                </a>
+              </li>
             </ul>
           </div>
           <div className="w-full lg:w-1/5 md:w-1/2 mb-8">
             <h4 className="text-lg font-bold mb-4">Important Link</h4>
             <ul className="space-y-2">
-              <li><a href="#" className="text-gray-600 hover:text-blue-500">About Us</a></li>
-              <li><a href="#" className="text-gray-600 hover:text-blue-500">How to work</a></li>
-              <li><a href="#" className="text-gray-600 hover:text-blue-500">Contact Us</a></li>
-              <li><a href="#" className="text-gray-600 hover:text-blue-500">Our Media</a></li>
-              <li><a href="#" className="text-gray-600 hover:text-blue-500">Privacy</a></li>
+              <li>
+                <a href="#" className="text-gray-600 hover:text-blue-500">
+                  About Us
+                </a>
+              </li>
+              <li>
+                <a href="#" className="text-gray-600 hover:text-blue-500">
+                  How to work
+                </a>
+              </li>
+              <li>
+                <a href="#" className="text-gray-600 hover:text-blue-500">
+                  Contact Us
+                </a>
+              </li>
+              <li>
+                <a href="#" className="text-gray-600 hover:text-blue-500">
+                  Our Media
+                </a>
+              </li>
+              <li>
+                <a href="#" className="text-gray-600 hover:text-blue-500">
+                  Privacy
+                </a>
+              </li>
             </ul>
           </div>
           <div className="w-full lg:w-1/5 md:w-1/2 mb-8">
             <h4 className="text-lg font-bold mb-4">Our Services</h4>
             <ul className="space-y-2">
-              <li><a href="#" className="text-gray-600 hover:text-blue-500">Web Design</a></li>
-              <li><a href="#" className="text-gray-600 hover:text-blue-500">Development</a></li>
-              <li><a href="#" className="text-gray-600 hover:text-blue-500">Graphic Design</a></li>
-              <li><a href="#" className="text-gray-600 hover:text-blue-500">Branding</a></li>
-              <li><a href="#" className="text-gray-600 hover:text-blue-500">Creative Solution</a></li>
+              <li>
+                <a href="#" className="text-gray-600 hover:text-blue-500">
+                  Web Design
+                </a>
+              </li>
+              <li>
+                <a href="#" className="text-gray-600 hover:text-blue-500">
+                  Development
+                </a>
+              </li>
+              <li>
+                <a href="#" className="text-gray-600 hover:text-blue-500">
+                  Graphic Design
+                </a>
+              </li>
+              <li>
+                <a href="#" className="text-gray-600 hover:text-blue-500">
+                  Branding
+                </a>
+              </li>
+              <li>
+                <a href="#" className="text-gray-600 hover:text-blue-500">
+                  Creative Solution
+                </a>
+              </li>
             </ul>
           </div>
           <div className="w-full lg:w-1/5 md:w-1/2 mb-8">
