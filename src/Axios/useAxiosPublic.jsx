@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const AxiosPublic=axios.create({
-    baseURL:'https://server-omega-cyan.vercel.app'
+    baseURL:'https://digital-network-agency-server.vercel.app'
 })
 const useAxiosPublic = () => {
     return AxiosPublic

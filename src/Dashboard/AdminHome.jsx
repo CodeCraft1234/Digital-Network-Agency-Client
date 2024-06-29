@@ -1,240 +1,185 @@
-
-import { useEffect, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import PieChartComponent from "./PieChartComponent.JSX";
-import BarChartComponent from "./BarchartComponent";
-import useOrders from "../Hook/useOrders";
-import useProducts from "../Hook/useProducts";
-
+import React, { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
+import Swal from 'sweetalert2';
+import toast from 'react-hot-toast';
+import useAxiosPublic from '../Axios/useAxiosPublic';
+import useOrders from '../Hook/useOrders';
 
 const AdminHome = () => {
-  const [orders] = useOrders(); // Assuming useOrders returns an array of orders
-  const [products] = useProducts(); // Assuming useProducts returns an array of products
+    const [orders, refetch] = useOrders();
+    const [sortOption, setSortOption] = useState('');
+    const [searchInput, setSearchInput] = useState('');
+    const [activeDropdown, setActiveDropdown] = useState(null);
+    const navigate = useNavigate();
+    const AxiosPublic = useAxiosPublic();
 
-  // Step 1: Extract phone numbers from orders
-  const phoneNumbers = orders.map((order) => order.phone);
-
-  // Step 2: Remove duplicates using Set
-  const uniquePhoneNumbers = new Set(phoneNumbers);
-
-  // Step 3: Count the total number of unique phone numbers
-  const totalUniquePhoneNumbers = uniquePhoneNumbers.size;
-
-  console.log("Total unique phone numbers:", totalUniquePhoneNumbers);
-
-  const [todayTotalSales, setTodayTotalSales] = useState(0);
-  const [totalSales, setTotalSales] = useState(0);
-
-  const navigate = useNavigate();
-
-  const handleOrderClick = (title) => {
-      navigate(`/dashboard/admin/orders/${title}`);
-  }
-
-  useEffect(() => {
-    // Function to calculate today's total sales
-    const calculateTodayTotalSales = () => {
-      const today = new Date();
-      const startOfToday = new Date(today.getFullYear(), today.getMonth(), today.getDate());
-
-      // Filter orders for today and sum their totalAmount
-      const todaySales = orders
-        .filter((order) => {
-          const orderDate = new Date(order.date);
-          return (
-            orderDate >= startOfToday &&
-            orderDate < new Date(startOfToday.getTime() + 24 * 60 * 60 * 1000)
-          );
-        })
-        .reduce((acc, order) => acc + order.totalAmount, 0);
-
-      // Update state with today's total sales
-      setTodayTotalSales(todaySales);
-    };
-
-    // Function to calculate total sales
-    const calculateTotalSales = () => {
-      // Sum totalAmount for all orders
-      const total = orders.reduce((acc, order) => acc + order.totalAmount, 0);
-
-      // Update state with total sales
-      setTotalSales(total);
-    };
-
-    // Call the functions to calculate today's and total sales
-    calculateTodayTotalSales();
-    calculateTotalSales();
-  }, [orders]); // Execute when orders change
-
-  //////////////////////////////////////
-  const [totalOrderQuantity, setTotalOrderQuantity] = useState(0);
-  const [todayOrderQuantity, setTodayOrderQuantity] = useState(0);
-
-  useEffect(() => {
-    // Function to calculate total order quantity
-    const calculateTotalOrderQuantity = () => {
-      let totalQuantity = 0;
-      let todayQuantity = 0;
-      const today = new Date();
-      const startOfToday = new Date(today.getFullYear(), today.getMonth(), today.getDate());
-
-      // Iterate through each order
-      orders.forEach((order) => {
-        // Iterate through each item in the cartItems array of the order
-        order.cartItems.forEach((item) => {
-          totalQuantity += item.quantity;
+    const handleCancelOrder = async (orderId) => {
+        const result = await Swal.fire({
+            title: 'Are you sure?',
+            text: 'Do you want to cancel this order?',
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonText: 'Yes, Delete it!',
+            cancelButtonText: 'No, keep it',
         });
 
-        // Check if the order date is today
-        const orderDate = new Date(order.date);
-        if (
-          orderDate >= startOfToday &&
-          orderDate < new Date(startOfToday.getTime() + 24 * 60 * 60 * 1000)
-        ) {
-          // Iterate through each item in the cartItems array of the order
-          order.cartItems.forEach((item) => {
-            todayQuantity += item.quantity;
-          });
+        if (result.isConfirmed) {
+            try {
+                const response = await AxiosPublic.delete(`https://server-omega-cyan.vercel.app/orders/${orderId}`);
+                console.log(response.data);
+                refetch();
+                toast.success('Order cancelled successfully');
+            } catch (error) {
+                console.error('Error cancelling order:', error);
+                toast.error('Failed to cancel order');
+            }
         }
-      });
-
-      // Update states with total order quantity and today's order quantity
-      setTotalOrderQuantity(totalQuantity);
-      setTodayOrderQuantity(todayQuantity);
     };
--
-    // Call the function to calculate total and today's order quantities
-    calculateTotalOrderQuantity();
-  }, [orders]);
 
-  // Function to filter orders by status and count them
-  const countOrdersByStatus = (status) => {
-    return orders.filter((order) => order.status === status).length;
-  };
+    const handleSortChange = (e) => {
+        setSortOption(e.target.value);
+    };
 
-  const orderss = [
-    { title: "New Order",status:'New', count: countOrdersByStatus("New"), icon: "🆕" },
-    { title: "Pending Order",status:'Pending', count: countOrdersByStatus("Pending"), icon: "⏳" },
-    { title: "Approved Order",status:'Approved', count: countOrdersByStatus("Approved"), icon: "✅" },
-    { title: "Packaging Order",status:'Packaging', count: countOrdersByStatus("Packaging"), icon: "📦" },
-    { title: "Shipment Order",status:'Shipment', count: countOrdersByStatus("Shipment"), icon: "🚚" },
-    { title: "Delivered Order",status:'Delivered', count: countOrdersByStatus("Delivered"), icon: "😀" },
-  ];
+    const handleStatusChange = async (orderId, newStatus) => {
+        try {
+            const response = await AxiosPublic.patch(`https://server-omega-cyan.vercel.app/orders/${orderId}`, { status: newStatus });
+            console.log(response.data);
+            refetch();
+            toast.success('Order status updated successfully');
+        } catch (error) {
+            console.error('Error updating order status:', error);
+            toast.error('Failed to update order status');
+        }
+    };
 
+    const handleSearchInputChange = (e) => {
+        setSearchInput(e.target.value);
+    };
 
+    const sortedOrders = [...orders].sort((a, b) => {
+        const dateA = new Date(a.date);
+        const dateB = new Date(b.date);
 
-  const pieChartData = [
-    { name: 'New', value: countOrdersByStatus('New') },
-    { name: 'Pending', value: countOrdersByStatus('Pending') },
-    { name: 'Approved', value: countOrdersByStatus('Approved') },
-    { name: 'Packaging', value: countOrdersByStatus('Packaging') },
-    { name: 'Shipment', value: countOrdersByStatus('Shipment') },
-    { name: 'Delivered', value: countOrdersByStatus('Delivered') }
-  ];
+        if (sortOption === 'date-asc') {
+            return dateA - dateB;
+        } else if (sortOption === 'date-desc') {
+            return dateB - dateA;
+        }
 
-  const barChartData = [
-    { name: 'Today Sales', value: todayTotalSales },
-    { name: 'Total Sales', value: totalSales },
-  ];
+        return dateB - dateA;
+    });
 
-  const barChartData2 = [
-   
-    { name: 'Today Orders', value: todayOrderQuantity },
-    { name: 'Total Orders', value: totalOrderQuantity },
-  
-  ];
-  const barChartData3 = [
-    { name: 'Total Customers', value: totalUniquePhoneNumbers },
-    { name: 'Total Products', value: products.length }
-  ];
+    const filteredOrders = sortedOrders.filter(order => 
+        order.phone.toLowerCase().includes(searchInput.toLowerCase())
+    );
 
-  return (
-    <section className="">
-      <div className="mx-auto max-w-screen-xl px-4 pt-8 pb-4 ">
-        <div className="">
-          <dl className="grid grid-cols-2 gap-4 lg:grid-cols-6 md:grid-cols-3">
-            <Link to={"/dashboard/admin/todayOrders"} className="text-center">
-              <div className="flex flex-col rounded-lg bg-blue-50 px-4 py-8">
-                <dt className="text-lg font-medium text-gray-500">Today's Sales</dt>
-                <dd className="font-extrabold text-blue-600">৳ {todayTotalSales}</dd>
-              </div>
-            </Link>
-            <Link to={"/dashboard/admin/todayOrders"} className="text-center">
-              <div className="flex flex-col rounded-lg bg-blue-50 px-4 py-8">
-                <dt className="text-lg font-medium text-gray-500">Today's Orders</dt>
-                <dd className="font-extrabold text-blue-600">{todayOrderQuantity}</dd>
-              </div>
-            </Link>
-            <Link to={"/dashboard/admin/totalCustomers"} className="text-center">
-              <div className="flex flex-col rounded-lg bg-blue-50 px-4 py-8">
-                <dt className="text-lg font-medium text-gray-500">All Customers</dt>
-                <dd className="font-extrabold text-blue-600">{totalUniquePhoneNumbers}</dd>
-              </div>
-            </Link>
-            <Link to={"/dashboard/admin/allOrders"} className="text-center">
-              <div className="flex flex-col rounded-lg bg-blue-50 px-4 py-8">
-                <dt className="text-lg font-medium text-gray-500">Total Sales</dt>
-                <dd className="font-extrabold text-blue-600">৳ {totalSales}</dd>
-              </div>
-            </Link>
-            <Link to={"/dashboard/admin/allOrders"} className="text-center">
-              <div className="flex flex-col rounded-lg bg-blue-50 px-4 py-8">
-                <dt className="text-lg font-medium text-gray-500">Total Orders</dt>
-                <dd className="font-extrabold text-blue-600">{totalOrderQuantity}</dd>
-              </div>
-            </Link>
-            <Link to={"/dashboard/admin/allProducts"} className="text-center">
-              <div className="flex flex-col rounded-lg bg-blue-50 px-4 py-8">
-                <dt className="text-lg font-medium text-gray-500">Total Products</dt>
-                <dd className="font-extrabold text-blue-600">{products.length}</dd>
-              </div>
-            </Link>
-          </dl>
-        </div>
+    const openOrderDetails = (orderId) => {
+        navigate(`/order-details/${orderId}`);
+    };
 
+    const toggleDropdown = (orderId) => {
+        if (activeDropdown === orderId) {
+            setActiveDropdown(null);
+        } else {
+            setActiveDropdown(orderId);
+        }
+    };
 
-       
-
-<div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-4  pt-4 pb-4  ">
-
-            {orderss.map((order, index) => (
-                <div
-                    key={index}
-                    className="bg-gray-800 text-white rounded-lg p-6 flex flex-col items-center justify-between"
-                    onClick={() => handleOrderClick(order.status)}
-                >
-                    <div className="text-4xl mb-2">{order.icon}</div>
-                    <div className="text-lg font-semibold mb-4 text-center">{order.title}</div>
-                    <button className="bg-red-500 text-white rounded-full py-2 px-6">
-                        + {order.count}
-                    </button>
+    return (
+        <div className="py-3 pb-10 px-4">
+            <Helmet>
+                <title>PerfectArch | All Orders</title>
+            </Helmet>
+            <div className="flex flex-col sm:flex-row justify-between items-center mb-2 w-full sm:w-auto mt-6">
+                <input
+                    type="text"
+                    placeholder="Search by customer phone number"
+                    value={searchInput}
+                    onChange={handleSearchInputChange}
+                    className="w-full sm:w-auto mb-4 sm:mb-0 py-2 px-4 rounded-full border bg-gray-300 border-black text-black font-bold"
+                />
+                <div className="ml-0 sm:ml-auto">
+                    <label htmlFor="sort" className="mr-2 text-black font-base">Sort by:</label>
+                    <select
+                        id="sort"
+                        value={sortOption}
+                        onChange={handleSortChange}
+                        className="border border-gray-300 p-2 rounded text-base md:text-base"
+                    >
+                        <option value="">Select</option>
+                        <option value="date-asc">Date (Oldest to Newest)</option>
+                        <option value="date-desc">Date (Newest to Oldest)</option>
+                    </select>
                 </div>
-            ))}
+            </div>
+            <h2 className="text-3xl font-bold mb-6 text-center text-black">
+                Total Orders
+            </h2>
+            {filteredOrders.length === 0 ? (
+                <div className="flex justify-center items-center p-6 lg:min-h-[400px] text-center">
+                    <div>
+                        <h1 className="text-base md:text-base font-base mb-5 text-black">No products available</h1>
+                        <Link to="/">
+                            <button className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-800 text-base md:text-base">
+                                Click here to view other products
+                            </button>
+                        </Link>
+                    </div>
+                </div>
+            ) : (
+                <div className="overflow-x-auto ">
+                    <table className="min-w-full text-center bg-gray-200 text-black">
+                        <thead>
+                            <tr className="text-black bg-green-300">
+                                <th className="px-4 border border-gray-500 py-2">SL</th>
+                                <th className="px-4 border border-gray-500 py-2">Customer Name</th>
+                                <th className="px-4 border border-gray-500 py-2">Customer Mobile</th>
+                                <th className="px-4 border border-gray-500 py-2">Ordered At</th>
+                                <th className="px-4 border border-gray-500 py-2">Storage & Price</th>
+                                <th className="px-4 border border-gray-500 py-2">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {filteredOrders.map((order, index) => (
+                                <tr key={index} className={index % 2 === 0 ? 'bg-gray-100' : 'bg-white'}>
+                                    <td className="px-4 border border-gray-500 py-2">{index + 1}</td>
+                                    <td className="px-4 border border-gray-500 py-2">{order.name}</td>
+                                    <td className="px-4 border border-gray-500 py-2">{order.phone}</td>
+                                    <td className="px-4 border border-gray-500 py-2">{new Date(order.date).toLocaleString()}</td>
+                                    <td className="px-4 border border-gray-500 py-2">
+                                        {order.items.map((item, i) => (
+                                            <div key={i}>
+                                                {item.storage} - {item.price}
+                                            </div>
+                                        ))}
+                                    </td>
+                                    <td className="px-4 border border-gray-500 py-2 relative">
+                                        <button
+                                            onClick={() => toggleDropdown(order._id)}
+                                            className=" focus:outline-none"
+                                        >
+                                            &#8226;&#8226;&#8226;
+                                        </button>
+                                        {activeDropdown === order._id && (
+                                            <div className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg z-10">
+                                                <button
+                                                    onClick={() => { handleCancelOrder(order._id); toggleDropdown(order._id); }}
+                                                    className="block w-full text-left px-4 py-2 text-black hover:bg-gray-100"
+                                                >
+                                                    Delete
+                                                </button>
+                                            </div>
+                                        )}
+                                    </td>
+                                </tr>
+                            ))}
+                        </tbody>
+                    </table>
+                </div>
+            )}
         </div>
-
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4  pb-4  ">
-          <div className="bg-white p-3 rounded-lg shadow-md">
-            <h3 className="text-lg font-semibold ">Orders by Status</h3>
-
-            <PieChartComponent data={pieChartData} />
-          </div>
-          <div className="bg-white p-8 rounded-lg shadow-md">
-            <h3 className="text-lg font-semibold mb-4">Sales Overview</h3>
-            <BarChartComponent data={barChartData} />
-          </div>
-          <div className="bg-white p-8 rounded-lg shadow-md">
-            <h3 className="text-lg font-semibold mb-4">Sales Overview</h3>
-            <BarChartComponent data={barChartData2} />
-          </div>
-          <div className="bg-white p-8 rounded-lg shadow-md">
-            <h3 className="text-lg font-semibold mb-4">Sales Overview</h3>
-            <BarChartComponent data={barChartData3} />
-          </div>
-        </div>
-      </div>
-    </section>
-  );
+    );
 };
 
 export default AdminHome;

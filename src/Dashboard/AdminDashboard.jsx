@@ -68,12 +68,7 @@ const AdminDashboard = () => {
                 Dashboard
               </button>
             </Link>
-            <Link to="/dashboard/admin/allOrders">
-              <button className={getButtonClass("/dashboard/admin/allOrders")}>
-                <MdOutlinePayments className="text-xl inline-block mr-2" />
-                Orders
-              </button>
-            </Link>
+           
            
             
           

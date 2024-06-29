@@ -18,7 +18,7 @@ import DashboardRoot from "./Dashboard/DashboardRoot";
 import TodayOrders from "./Dashboard/Routes/TodayOrders";
 import TotalCustomers from "./Dashboard/Routes/TotalCustomers";
 import OrderDetailsFinal from "./Dashboard/Routes/OrderDetailsFinal";
-import AllOrders from "./Dashboard/Routes/AllOrders";
+
 import AddLinks from "./Dashboard/AddLinks";
 import Settings from "./Dashboard/Settings";
 import AdminHome from "./Dashboard/AdminHome";
@@ -26,6 +26,8 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { HelmetProvider } from "react-helmet-async";
 import AuthProvider from "./Security/AuthProvider";
 import Login from "./Security/Login";
+import MyCart from "./Pages/MyCart/MyCart";
+import OrderSuccess from "./Pages/OrderSuccess/OrderSuccess";
 
 
 const router = createBrowserRouter([
@@ -53,6 +55,14 @@ const router = createBrowserRouter([
       {
         path: "/faq",
         element: <Faq></Faq>,
+      },
+      {
+        path:'/order-success',
+        element: <OrderSuccess></OrderSuccess>
+      },
+      {
+        path:'/myCart',
+        element:<MyCart></MyCart>
       },
       {
         path: "/contact",
@@ -88,10 +98,7 @@ const router = createBrowserRouter([
           path:'/dashboard/admin/orders/:status',
           element:<OrderDetailsFinal></OrderDetailsFinal>
         },
-        {
-          path:'/dashboard/admin/allOrders',
-          element:<AllOrders></AllOrders>
-        },
+       
         {
           path: "/dashboard/admin/addLinks",
           element: <AddLinks />,
