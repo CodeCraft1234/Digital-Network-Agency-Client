@@ -36,19 +36,34 @@ const Footer = () => {
               more consectetur elit.
             </p>
             <div className="flex space-x-4 mt-4">
-              <a href="#" className="text-gray-600 hover:text-blue-500 hover:underline">
+              <a
+                href="#"
+                className="text-gray-600 hover:text-blue-500 hover:underline"
+              >
                 <i className="fab fa-facebook-f"></i>
               </a>
-              <a href="#" className="text-gray-600 hover:text-blue-500 hover:underline">
+              <a
+                href="#"
+                className="text-gray-600 hover:text-blue-500 hover:underline"
+              >
                 <i className="fab fa-twitter"></i>
               </a>
-              <a href="#" className="text-gray-600 hover:text-blue-500 hover:underline">
+              <a
+                href="#"
+                className="text-gray-600 hover:text-blue-500 hover:underline"
+              >
                 <i className="fab fa-instagram"></i>
               </a>
-              <a href="#" className="text-gray-600 hover:text-blue-500 hover:underline">
+              <a
+                href="#"
+                className="text-gray-600 hover:text-blue-500 hover:underline"
+              >
                 <i className="fab fa-pinterest"></i>
               </a>
-              <a href="#" className="text-gray-600 hover:text-blue-500 hover:underline">
+              <a
+                href="#"
+                className="text-gray-600 hover:text-blue-500 hover:underline"
+              >
                 <i className="fab fa-youtube"></i>
               </a>
             </div>
@@ -87,24 +102,32 @@ const Footer = () => {
             <h4 className="text-lg font-bold mb-4">Important Link</h4>
             <ul className="space-y-2">
               <li>
-                <Link to="/about" className="text-gray-600 hover:text-blue-500 hover:underline">
+                <Link
+                  to="/about"
+                  className="text-gray-600 hover:text-blue-500 hover:underline"
+                >
                   About Us
                 </Link>
               </li>
-            
+
               <li>
-              <Link to="/contact" className="text-gray-600 hover:text-blue-500 hover:underline">
+                <Link
+                  to="/contact"
+                  className="text-gray-600 hover:text-blue-500 hover:underline"
+                >
                   Contact Us
-                  </Link>
+                </Link>
               </li>
-              
+
               <li>
-              <Link to="/faq" className="text-gray-600 hover:text-blue-500 hover:underline">
+                <Link
+                  to="/faq"
+                  className="text-gray-600 hover:text-blue-500 hover:underline"
+                >
                   Faq & Policies
-                  </Link>
+                </Link>
               </li>
-           
-              
+
               {/* <li>
                 <a href="#" className="text-gray-600 hover:text-blue-500 hover:underline">
                   S
@@ -121,20 +144,29 @@ const Footer = () => {
             <h4 className="text-lg font-bold mb-4">Our Services</h4>
             <ul className="space-y-2">
               <li>
-              <Link to="/faq" className="text-gray-600 hover:text-blue-500 hover:underline">
+                <a
+                  href="#"
+                  className="text-gray-600 hover:text-blue-500 hover:underline"
+                >
                   Web Design
-                  </Link>
+                </a>
               </li>
-              
+
               <li>
-              <Link to="/faq" className="text-gray-600 hover:text-blue-500 hover:underline">
+                <a
+                  href="#"
+                  className="text-gray-600 hover:text-blue-500 hover:underline"
+                >
                   Graphic Design
-                  </Link>
+                </a>
               </li>
               <li>
-              <Link to="/faq" className="text-gray-600 hover:text-blue-500 hover:underline">
+                <a
+                  href="#"
+                  className="text-gray-600 hover:text-blue-500 hover:underline"
+                >
                   Digital Marketing
-                  </Link>
+                </a>
               </li>
               {/* <li>
                 <a href="#" className="text-gray-600 hover:text-blue-500 hover:underline">
@@ -149,16 +181,19 @@ const Footer = () => {
               Grursus mal suada faci lisis Lorem to ipsum consectetur.
             </p> */}
             <ul className="spaoce-y-2 mt-4">
-              <li className="flex items-center text-gray-600 hover:text-blue-500 hover:underline">
+              <li className="flex items-center text-gray-600 hover:text-blue-500 ">
                 <i className="fas fa-map-marker-alt mr-2"></i>
                 Samnagar, Satkhira, Khulna, Bangladesh
               </li>
               <li className="flex items-center text-gray-600 hover:text-blue-500 hover:underline">
-              <Link to="https://hellodigitalnetwork.com/" className="text-gray-600 hover:text-blue-500 hover:underline ml-2">
-                   Portfolio Website
-                  </Link>
+                <Link
+                  to="https://hellodigitalnetwork.com/"
+                  className="text-gray-600 hover:text-blue-500 hover:underline ml-2"
+                >
+                  Portfolio Website
+                </Link>
               </li>
-              <li className="flex items-center text-gray-600 hover:text-blue-500 hover:underline">
+              <li className="flex items-center text-gray-600 hover:text-blue-500">
                 <i className="fas fa-phone mr-2"></i>
                 +880 1718 767 738
               </li>
@@ -166,7 +201,14 @@ const Footer = () => {
           </div>
         </div>
         <div className="text-center text-gray-600 mt-8">
-          © 2024 <a href="https://hellodigitalnetwork.com/" className="text-gray-600 hover:text-blue-500 hover:underline" >Digital Network</a>. All Rights Reserved
+          © 2024{" "}
+          <a
+            href="https://hellodigitalnetwork.com/"
+            className="text-gray-600 hover:text-blue-500 hover:underline"
+          >
+            Digital Network
+          </a>
+          . All Rights Reserved
         </div>
       </div>
     </footer>
