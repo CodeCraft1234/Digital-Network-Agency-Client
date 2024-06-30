@@ -17,25 +17,24 @@ import Service from "../../Components/Services/Services";
 import WebDesignMarketing from "../../Components/WebDesignMarketing";
 import Cards from "../../components/Cards/Cards";
 
-
 const Home = () => {
-    return (
-        <div className="mt-16">
-            <Helmet>
+  return (
+    <div className="mt-16">
+      <Helmet>
         <title>Digital Network| Home</title>
         <link rel="canonical" href="https://www.tacobell.com/" />
       </Helmet>
-            <LandingPage></LandingPage>
-            <OurServices></OurServices>
-          
-            <WebDesignMarketing></WebDesignMarketing>
-            <GraphicDesignMarketing></GraphicDesignMarketing>
-            <DigitalMarketingMarketing></DigitalMarketingMarketing>
-            <HighlightClients></HighlightClients>
-            <Rating></Rating>
-            {/* <Domain></Domain> */}
-        </div>
-    );
+      <LandingPage></LandingPage>
+      <OurServices></OurServices>
+
+      <WebDesignMarketing></WebDesignMarketing>
+      <GraphicDesignMarketing></GraphicDesignMarketing>
+      <DigitalMarketingMarketing></DigitalMarketingMarketing>
+      <HighlightClients></HighlightClients>
+      <Rating></Rating>
+      {/* <Domain></Domain> */}
+    </div>
+  );
 };
 
 export default Home;
