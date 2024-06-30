@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import useOrders from "../../Hook/useOrders";
 
 
@@ -22,6 +23,10 @@ const TotalCustomers = () => {
 
     return (
         <div className=" py-4 mx-4 text-black  ">
+            <Helmet>
+        <title>Digital Network| Total Customers</title>
+        <link rel="canonical" href="https://www.tacobell.com/" />
+      </Helmet>
             <h2 className="text-3xl font-bold mb-6 text-center text-black">
                 Total Unique Customers: {uniqueCustomerDetails.length}
             </h2>

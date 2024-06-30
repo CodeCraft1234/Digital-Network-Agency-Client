@@ -9,6 +9,7 @@ import { RxDashboard } from "react-icons/rx";
 import { IoIosLogOut } from "react-icons/io";
 import useLogo from "../Hook/useLogo";
 import { AuthContext } from "../Security/AuthProvider";
+import { Helmet } from "react-helmet-async";
 
 const AdminDashboard = () => {
   const [logo, setLogo] = useLogo();
@@ -49,6 +50,10 @@ const AdminDashboard = () => {
 
   return (
     <div className="overflow-y-auto text-start h-screen">
+      <Helmet>
+        <title>Digital Network| Admin Dashboard</title>
+        <link rel="canonical" href="https://www.tacobell.com/" />
+      </Helmet>
       <div className="w-[150px]">
         <div className="flex items-center justify-center mb-8">
           <Link to={"/"}>

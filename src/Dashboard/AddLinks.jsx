@@ -52,7 +52,7 @@ const AddLinks = () => {
   return (
     <div className="text-white mt-3 flex items-center justify-center overflow-x-hidden">
       <Helmet>
-        <title>PerfectArch | AddLinks</title>
+        <title>DigitalNetwork | AddLinks</title>
         <link rel="canonical" href="https://www.example.com/" />
       </Helmet>
       <div className="bg-white p-8 rounded-lg shadow-xl w-full ">

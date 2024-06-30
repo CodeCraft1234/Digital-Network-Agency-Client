@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import Aos from 'aos';
 import styled, { createGlobalStyle } from 'styled-components';
 import { Link } from 'react-router-dom';
+import { Helmet } from 'react-helmet-async';
 
 const GlobalStyle = createGlobalStyle`
   @keyframes bottomToTop {
@@ -35,6 +36,10 @@ const OurServices = () => {
 
   return (
     <div>
+      <Helmet>
+        <title>Digital Network| Services</title>
+        <link rel="canonical" href="https://www.tacobell.com/" />
+      </Helmet>
       <GlobalStyle />
       <section className="py-10  px-12 bg-gray-50">
         <div className="text-black px-4">

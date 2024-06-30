@@ -84,7 +84,7 @@ const AllOrders = () => {
     return (
         <div className="py-3 pb-10 px-4">
             <Helmet>
-                <title>PerfectArch | All Orders</title>
+                <title>DigitalNetwork | All Orders</title>
             </Helmet>
             <div className="flex flex-col sm:flex-row justify-between items-center mb-2 w-full sm:w-auto mt-6">
                 <input
