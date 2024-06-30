@@ -2,7 +2,7 @@ import React, { useEffect, useState, useContext } from 'react';
 import { Transition } from '@headlessui/react';
 import useLogo from '../../Hook/useLogo';
 import { AuthContext } from '../../Security/AuthProvider';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { MdOutlineDashboard } from 'react-icons/md';
 
 const Navbar = () => {
@@ -15,10 +15,9 @@ const Navbar = () => {
   const [isServicesDropdownOpen, setIsServicesDropdownOpen] = useState(false);
 
   const services = [
-    { name: "Graphics Design", link: "{`/category/${service.category}`}" },
-    { name: "Web Design", link: "{`/category/${service.category}`}" },
-    { name: "Digital Marketing", link: "{`/category/${service.category}`} "},
-    { name: "Domain Hosting", link: "/domain" }
+    { category: "Graphics Design", icon: "https://i.ibb.co/sqbxMMH/gd.png" },
+    { category: "Web Design", icon: "https://i.ibb.co/WzdGH9y/wd.png" },
+    { category: "Digital Marketing", icon: "https://i.ibb.co/Fh30qcr/dm.png" },
   ];
 
   useEffect(() => {
@@ -72,14 +71,14 @@ const Navbar = () => {
                   <div className="absolute mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
                     <div className="py-1" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
                       {services.map((service, index) => (
-                        <a
+                        <Link
                           key={index}
-                          href={service.link}
+                          to={`/category/${service.category}`} 
                           className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                           role="menuitem"
                         >
-                          {service.name}
-                        </a>
+                          {service.category}
+                        </Link>
                       ))}
                     </div>
                   </div>
@@ -143,14 +142,14 @@ const Navbar = () => {
                     <div className="mt-2 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
                       <div className="py-1" role="menu" aria-orientation="vertical" aria-labelledby="options-menu">
                         {services.map((service, index) => (
-                          <a
+                          <Link
                             key={index}
-                            href={service.link}
+                            to={`/category/${service.category}`} 
                             className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
                             role="menuitem"
                           >
                             {service.name}
-                          </a>
+                          </Link>
                         ))}
                       </div>
                     </div>
