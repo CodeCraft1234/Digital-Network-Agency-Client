@@ -81,7 +81,7 @@ const AddLogos = () => {
   return (
     <div className="text-white flex items-center justify-center overflow-x-hidden">
       <Helmet>
-        <title>PerfectArch | AddLogo</title>
+        <title>Digital Network| AddLogo</title>
         <link rel="canonical" href="https://www.tacobell.com/" />
       </Helmet>
       <div className="bg-white text-black p-8 rounded-lg shadow-xl w-full">

@@ -34,7 +34,7 @@ const OrderDetailsFinal = () => {
     return (
         <div className="py-4 px-4 sm:px-6 lg:px-8">
             <Helmet>
-                <title>PerfectArch | {title}</title>
+                <title>DigitalNetwork | {title}</title>
             </Helmet>
             <h1 className="text-lg text-center md:text-3xl font-bold text-black">{title}</h1>
             <div className="rounded-lg mt-6 overflow-x-auto">

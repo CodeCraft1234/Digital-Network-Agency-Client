@@ -1,5 +1,6 @@
 import { useState } from "react";
 import CountUp from "react-countup";
+import { Helmet } from "react-helmet-async";
 
 const teamMembers = [
   {
@@ -53,6 +54,10 @@ const AboutUs = () => {
 
   return (
     <div className="mt-24">
+      <Helmet>
+        <title>Digital Network| About US</title>
+        <link rel="canonical" href="https://www.tacobell.com/" />
+      </Helmet>
       <section className="bg-gradient-to-r from-purple-500 to-blue-700 text-white py-10">
         <div className="container mx-auto px-4">
           <div className="text-center">
