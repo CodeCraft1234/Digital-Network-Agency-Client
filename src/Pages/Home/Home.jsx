@@ -28,7 +28,7 @@ const Home = () => {
             <DigitalMarketingMarketing></DigitalMarketingMarketing>
             <HighlightClients></HighlightClients>
             <Rating></Rating>
-            <Domain></Domain>
+            {/* <Domain></Domain> */}
         </div>
     );
 };

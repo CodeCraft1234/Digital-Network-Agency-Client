@@ -26,6 +26,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { HelmetProvider } from "react-helmet-async";
 import AuthProvider from "./Security/AuthProvider";
 import Login from "./Security/Login";
+import Domain from "./Components/Domain";
 
 
 const router = createBrowserRouter([
@@ -57,6 +58,10 @@ const router = createBrowserRouter([
       {
         path: "/contact",
         element: <Contact></Contact>,
+      },
+      {
+        path: "/domain",
+        element: <Domain></Domain>,
       },
       {
         path: "/card/:id",
