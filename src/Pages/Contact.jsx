@@ -31,8 +31,8 @@ const Contact = () => {
       <section className="bg-gradient-to-r from-purple-500 to-blue-700 text-white py-32">
         <div className="container mx-auto px-4">
           <div className="text-center">
-            <h1 className="text-4xl font-bold">Contact</h1>
-            <p className="mt-2">Home / Contact</p>
+            <h1 className="text-4xl font-bold">Contact Us</h1>
+            <p className="mt-2">Home / Contact Us</p>
           </div>
         </div>
       </section>
