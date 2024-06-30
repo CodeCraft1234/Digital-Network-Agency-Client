@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 
 
 const Card = ({ plan }) => {
@@ -104,7 +105,11 @@ const Domain = () => {
 
 
   return (
-    <div className=" p-4 px-5 md:px-8 lg:px-10 mx-12">
+    <div className=" p-4 px-5 md:px-8 lg:px-10 mx-12 mt-24">
+      <Helmet>
+        <title>Digital Network| Domain</title>
+        <link rel="canonical" href="https://www.tacobell.com/" />
+      </Helmet>
       <div className="text-center text-black mb-8">
         <h1 className="text-xl md:text-4xl lg:text-4xl font-bold">
           ফ্রি .COM ডোমেইনসহ <br /> সুপার ফাস্ট ক্লাউড হোস্টিং

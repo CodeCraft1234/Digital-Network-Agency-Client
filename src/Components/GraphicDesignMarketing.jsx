@@ -1,10 +1,24 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const GraphicDesignMarketing = () => {
+  useEffect(() => {
+    AOS.init({
+      duration: 500,
+      easing: 'ease-in-out',
+      once: true,
+      mirror: false,
+    });
+  }, []);
+
   return (
     <div className="flex px-10 flex-col md:flex-row items-center md:justify-between bg-white">
-      {/* Image section */}
-      <div className="w-full md:w-1/2 order-2 md:order-1 flex justify-center">
+      {/* Image section with animation */}
+      <div
+        className="w-full md:w-1/2 order-2 md:order-1 flex justify-center"
+        data-aos="fade-up"
+      >
         <img
           src="https://i.ibb.co/ydKYLFm/pngtree-professional-web-developer-3d-illustration-png-image-10165437.png"
           alt="Marketing"
@@ -12,8 +26,11 @@ const GraphicDesignMarketing = () => {
         />
       </div>
       
-      {/* Content section */}
-      <div className="w-full order-1 md:w-1/2 mt-4 text-black md:mt-0 md:pl-6">
+      {/* Content section with animation */}
+      <div
+        className="w-full order-1 md:w-1/2 mt-4 text-black md:mt-0 md:pl-6"
+        data-aos="fade-left"
+      >
         <h2 className="text-xl md:text-2xl font-bold text-black mb-3">
           Our Graphics Design Services
         </h2>
@@ -56,7 +73,10 @@ const GraphicDesignMarketing = () => {
             </p>
           </div>
         </div>
-        <div className="flex justify-start mt-4">
+        <div
+          className="flex justify-start mt-4"
+          data-aos="fade-up"
+        >
           <button className="relative flex items-center px-5 py-2 font-semibold text-white bg-blue-500 rounded-sm shadow-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-300 transition duration-300 ease-in-out transform hover:scale-105 group">
             <span className="absolute inset-0 transition duration-300 ease-in-out bg-blue-600 opacity-0 rounded-sm group-hover:opacity-100"></span>
             <span className="relative z-10 text-sm">Read More</span>

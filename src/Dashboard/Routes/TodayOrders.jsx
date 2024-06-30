@@ -41,7 +41,7 @@ const TodayOrders = () => {
         <div>
             <div className="container mx-auto py-8 px-4 md:px-8">
                 <Helmet>
-                    <title>PerfectArch | All Orders</title>
+                    <title>Digital Network | All Orders</title>
                 </Helmet>
                 <h6 className="ml-12 text-left font-bold text-black text-3xl sm:text-4xl md:text-3xl mb-10">
                     Today's <span className="text-blue-600">Orders</span>

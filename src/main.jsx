@@ -28,6 +28,7 @@ import AuthProvider from "./Security/AuthProvider";
 import Login from "./Security/Login";
 import MyCart from "./Pages/MyCart/MyCart";
 import OrderSuccess from "./Pages/OrderSuccess/OrderSuccess";
+import Domain from "./Components/Domain";
 
 
 const router = createBrowserRouter([
@@ -67,6 +68,10 @@ const router = createBrowserRouter([
       {
         path: "/contact",
         element: <Contact></Contact>,
+      },
+      {
+        path: "/domain",
+        element: <Domain></Domain>,
       },
       {
         path: "/card/:id",

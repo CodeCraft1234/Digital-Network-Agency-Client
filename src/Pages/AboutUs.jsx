@@ -1,5 +1,6 @@
 import { useState } from "react";
 import CountUp from "react-countup";
+import { Helmet } from "react-helmet-async";
 
 const teamMembers = [
   {
