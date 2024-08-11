@@ -14,22 +14,10 @@ const DigitalMarketingMarketing = () => {
 
   return (
     <div className="flex px-10 flex-col md:flex-row items-center md:justify-between bg-white">
-      {/* Image section with animation */}
-      <div
-        className="w-full md:w-1/2 order-2 md:order-1 flex justify-center"
-        data-aos="fade-right"
-      >
-        <img
-          src="https://i.ibb.co/CBnptxz/social-media-and-digital-marketing-3d-illustration-png.webp"
-          alt="Marketing"
-          className="w-full h-auto"
-        />
-      </div>
-
       {/* Content section with animation */}
       <div
-        className="w-full order-1 md:w-1/2 text-black mt-4 md:mt-0 md:pl-6"
-        data-aos="fade-left"
+        className="w-full md:w-1/2 order-1 md:order-1 text-black mt-4 md:mt-0 md:pr-6"
+        data-aos="fade-right"
       >
         <h2 className="text-xl md:text-2xl font-bold text-black mb-3">
           Our Digital Marketing Strategies
@@ -85,6 +73,18 @@ const DigitalMarketingMarketing = () => {
             </span>
           </button>
         </div>
+      </div>
+
+      {/* Image section with animation */}
+      <div
+        className="w-full md:w-1/2 order-2 md:order-2 flex justify-center"
+        data-aos="fade-left"
+      >
+        <img
+          src="https://i.ibb.co/CBnptxz/social-media-and-digital-marketing-3d-illustration-png.webp"
+          alt="Marketing"
+          className="w-full h-auto"
+        />
       </div>
     </div>
   );

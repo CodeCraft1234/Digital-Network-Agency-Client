@@ -2,15 +2,15 @@ import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet-async';
 import Swal from 'sweetalert2';
-
 import toast from 'react-hot-toast';
-
 import useOrders from '../../Hook/useOrders';
 import useAxiosPublic from '../../Axios/useAxiosPublic';
 
 const AllOrders = () => {
     const [orders, refetch] = useOrders();
     const [sortOption, setSortOption] = useState('');
+    const [filterOption, setFilterOption] = useState('');
+    const [searchTerm, setSearchTerm] = useState('');
     const [activeDropdown, setActiveDropdown] = useState(null);
     const navigate = useNavigate();
     const AxiosPublic = useAxiosPublic();
@@ -42,6 +42,14 @@ const AllOrders = () => {
         setSortOption(e.target.value);
     };
 
+    const handleFilterChange = (e) => {
+        setFilterOption(e.target.value);
+    };
+
+    const handleSearchChange = (e) => {
+        setSearchTerm(e.target.value);
+    };
+
     const handleStatusChange = async (orderId, newStatus) => {
         try {
             const response = await AxiosPublic.patch(`https://server-omega-cyan.vercel.app/orders/${orderId}`, { status: newStatus });
@@ -54,20 +62,39 @@ const AllOrders = () => {
         }
     };
 
-    const sortedOrders = [...orders].sort((a, b) => {
+    const filterOrders = (orders) => {
+        if (searchTerm) {
+            return orders.filter(order =>
+                order.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                order.phone.includes(searchTerm)
+            );
+        }
+        return orders;
+    };
+
+    const sortedOrders = filterOrders([...orders]).sort((a, b) => {
         const dateA = new Date(a.date);
         const dateB = new Date(b.date);
 
-        if (sortOption === 'date-asc') {
-            return dateA - dateB;
-        } else if (sortOption === 'date-desc') {
-            return dateB - dateA;
+        switch (sortOption) {
+            case 'date-asc':
+                return dateA - dateB;
+            case 'date-desc':
+                return dateB - dateA;
+            case 'title-asc':
+                return a.name.localeCompare(b.name);
+            case 'title-desc':
+                return b.name.localeCompare(a.name);
+            case 'phone-asc':
+                return a.phone.localeCompare(b.phone);
+            case 'phone-desc':
+                return b.phone.localeCompare(a.phone);
+            default:
+                return dateB - dateA;
         }
-
-        return dateB - dateA;
     });
 
-    const totalAmount = orders.reduce((sum, order) => sum + order.totalAmount, 0);
+    const totalAmount = sortedOrders.reduce((sum, order) => sum + order.totalAmount, 0);
 
     const openOrderDetails = (orderId) => {
         navigate(`/order-details/${orderId}`);
@@ -89,7 +116,9 @@ const AllOrders = () => {
             <div className="flex flex-col sm:flex-row justify-between items-center mb-2 w-full sm:w-auto mt-6">
                 <input
                     type="text"
-                    placeholder="Search by product title"
+                    placeholder="Search by product title or phone number"
+                    value={searchTerm}
+                    onChange={handleSearchChange}
                     className="w-full sm:w-auto mb-4 sm:mb-0 py-2 px-4 rounded-full border bg-gray-300 border-black text-black font-bold"
                 />
                 <div className="ml-0 sm:ml-auto">
@@ -103,6 +132,25 @@ const AllOrders = () => {
                         <option value="">Select</option>
                         <option value="date-asc">Date (Oldest to Newest)</option>
                         <option value="date-desc">Date (Newest to Oldest)</option>
+                        <option value="title-asc">Title (A-Z)</option>
+                        <option value="title-desc">Title (Z-A)</option>
+                        <option value="phone-asc">Phone (Ascending)</option>
+                        <option value="phone-desc">Phone (Descending)</option>
+                    </select>
+                </div>
+                <div className="ml-0 sm:ml-auto mt-4 sm:mt-0">
+                    <label htmlFor="filter" className="mr-2 text-black font-base">Filter by:</label>
+                    <select
+                        id="filter"
+                        value={filterOption}
+                        onChange={handleFilterChange}
+                        className="border border-gray-300 p-2 rounded text-base md:text-base"
+                    >
+                        <option value="">Select</option>
+                        <option value="all">All</option>
+                        <option value="today">Today</option>
+                        <option value="this-week">This Week</option>
+                        <option value="this-month">This Month</option>
                     </select>
                 </div>
             </div>
@@ -110,9 +158,9 @@ const AllOrders = () => {
                 Total Orders
             </h2>
             {orders.length === 0 ? (
-                <div className=" flex justify-center items-center p-6 lg:min-h-[400px]  text-center">
+                <div className="flex justify-center items-center p-6 lg:min-h-[400px] text-center">
                     <div>
-                        <h1 className="text-base md:text-base font-base mb-5 text-black">No products available</h1>
+                        <h1 className="text-base md:text-base font-base mb-5 text-black">No orders available</h1>
                         <Link to="/">
                             <button className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-800 text-base md:text-base">
                                 Click here to view other products
@@ -121,7 +169,7 @@ const AllOrders = () => {
                     </div>
                 </div>
             ) : (
-                <div className="overflow-x-auto ">
+                <div className="overflow-x-auto">
                     <table className="min-w-full text-center bg-gray-200 text-black">
                         <thead>
                             <tr className="text-black bg-green-300">
@@ -156,7 +204,7 @@ const AllOrders = () => {
                                     <td className="px-4 border border-gray-500 py-2 relative">
                                         <button
                                             onClick={() => toggleDropdown(order._id)}
-                                            className=" focus:outline-none"
+                                            className="focus:outline-none"
                                         >
                                             &#8226;&#8226;&#8226;
                                         </button>
@@ -189,12 +237,8 @@ const AllOrders = () => {
                     </table>
                 </div>
             )}
-
-
         </div>
     );
 };
 
 export default AllOrders;
-
-

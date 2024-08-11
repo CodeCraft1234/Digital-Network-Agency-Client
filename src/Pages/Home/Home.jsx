@@ -9,6 +9,10 @@ import WebDesignMarketing from "../../Components/WebDesignMarketing";
 import TestimonialCarousel from "./TestimonialCarousel";
 import WhyChooseUs from "../../Components/WhyChooseUs";
 import Payment from "../../Components/Payment/Payment";
+import Cards from "../../components/Cards/Cards";
+import Package from "../../Components/Package/Package";
+import Domain from "../../Components/Domain";
+import Choose from "../../Components/Choose";
 
 const Home = () => {
   return (
@@ -28,6 +32,9 @@ const Home = () => {
       <Rating></Rating>
       <WhyChooseUs></WhyChooseUs>
       <Payment></Payment>
+      {/* <Package></Package> */}
+      <Choose></Choose>
+      <Domain></Domain>
     </div>
   );
 };
