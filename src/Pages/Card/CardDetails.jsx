@@ -20,12 +20,20 @@ const CardDetails = () => {
   }
 
   return (
-    <div className="container mx-auto mt-36 px-4 mb-16">
-      <div className="relative flex flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-md p-4 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-105"
+    <div className=" ">
+      <section className="bg-gradient-to-r from-purple-500 to-blue-700 text-white py-32">
+        <div className="container mx-auto px-4">
+          <div className="text-center">
+            <h1 className="text-4xl font-bold">Details</h1>
+            <p className="mt-2">Home / Details</p>
+          </div>
+        </div>
+      </section>
+      <div className="relative flex flex-col mx-12 px-4 rounded-xl bg-white bg-clip-border text-gray-700 shadow-md p-4 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-105"
         // style={{ backgroundColor: card.card_bg_color }}
       >
-        <div className="relative h-56 overflow-hidden rounded-xl bg-white bg-clip-border text-gray-700">
-          <img src={card.picture} alt={card.title} className="h-full w-full object-cover" />
+        <div className="relative h overflow-hidden rounded-xl bg-white bg-clip-border text-gray-700">
+          <img src={card.picture} alt={card.title} className="h-[400px] w-full object-cover" />
           <div className="absolute bottom-0 left-0 w-full h-16 bg-gradient-to-t from-black to-transparent opacity-70"></div>
         </div>
         <div className="p-4 flex-grow">

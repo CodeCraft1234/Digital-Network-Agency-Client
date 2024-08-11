@@ -72,9 +72,9 @@ const Navbar = () => {
           </div>
           <div className="hidden md:flex items-center justify-center flex-grow">
             <div className="ml-10 flex items-baseline space-x-4">
-              <a href="/" className="hover:text-gray-600 hover:underline">
+              <Link to="/" className="hover:text-gray-600 hover:underline">
                 Home
-              </a>
+              </Link>
               <div className="relative">
                 <button
                   onClick={() =>
@@ -106,23 +106,18 @@ const Navbar = () => {
                   </div>
                 )}
               </div>
-              <a href="/faq" className="hover:text-gray-600 hover:underline">
+              <Link to="/faq" className="hover:text-gray-600 hover:underline">
                 Faq
-              </a>
-              {/* <a href="/pages" className="hover:text-gray-600 hover:underline">Pages</a>
-              <a href="/blog" className="hover:text-gray-600 hover:underline">Blog</a> */}
-              <a
-                href="/contact"
+              </Link>
+              <Link
+                to="/contact"
                 className="hover:text-gray-600 hover:underline"
               >
                 Contact
-              </a>
-              <a
-                href="/about"
-                className="hover:text-gray-600 hover:underline"
-              >
+              </Link>
+              <Link to="/about" className="hover:text-gray-600 hover:underline">
                 About
-              </a>
+              </Link>
             </div>
           </div>
           <div className="flex items-center space-x-4">
@@ -188,63 +183,65 @@ const Navbar = () => {
           leaveFrom="opacity-100 scale-100"
           leaveTo="opacity-0 scale-95"
         >
-          {(ref) => (
-            <div className="md:hidden" id="mobile-menu">
-              <div ref={ref} className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                <a
-                  href="/"
-                  className="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-100 hover:underline"
+          <div className="md:hidden" id="mobile-menu">
+            <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+              <Link
+                to="/"
+                className="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-100 hover:underline"
+              >
+                Home
+              </Link>
+              <div className="relative">
+                <button
+                  onClick={() =>
+                    setIsServicesDropdownOpen(!isServicesDropdownOpen)
+                  }
+                  className="w-full text-left block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-100 hover:underline focus:outline-none"
                 >
-                  Home
-                </a>
-                <div className="relative">
-                  <button
-                    onClick={() =>
-                      setIsServicesDropdownOpen(!isServicesDropdownOpen)
-                    }
-                    className="w-full text-left block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-100 hover:underline focus:outline-none"
-                  >
-                    Services
-                  </button>
-                  {isServicesDropdownOpen && (
-                    <div className="mt-2 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
-                      <div
-                        className="py-1"
-                        role="menu"
-                        aria-orientation="vertical"
-                        aria-labelledby="options-menu"
-                      >
-                        {services.map((service, index) => (
-                          <Link
-                            key={index}
-                            to={`/category/${service.category}`}
-                            className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                            role="menuitem"
-                          >
-                            {service.category}
-                          </Link>
-                        ))}
-                      </div>
+                  Services
+                </button>
+                {isServicesDropdownOpen && (
+                  <div className="mt-2 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
+                    <div
+                      className="py-1"
+                      role="menu"
+                      aria-orientation="vertical"
+                      aria-labelledby="options-menu"
+                    >
+                      {services.map((service, index) => (
+                        <Link
+                          key={index}
+                          to={`/category/${service.category}`}
+                          className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                          role="menuitem"
+                        >
+                          {service.category}
+                        </Link>
+                      ))}
                     </div>
-                  )}
-                </div>
-                <a
-                  href="/faq"
-                  className="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-100 hover:underline"
-                >
-                  Faq
-                </a>
-                {/* <a href="/pages" className="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-100 hover:underline">Pages</a>
-                <a href="/blog" className="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-100 hover:underline">Blog</a> */}
-                <a
-                  href="/contact"
-                  className="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-100 hover:underline"
-                >
-                  Contact
-                </a>
+                  </div>
+                )}
               </div>
+              <Link
+                to="/faq"
+                className="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-100 hover:underline"
+              >
+                Faq
+              </Link>
+              <Link
+                to="/contact"
+                className="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-100 hover:underline"
+              >
+                Contact
+              </Link>
+              <Link
+                to="/about"
+                className="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-100 hover:underline"
+              >
+                About
+              </Link>
             </div>
-          )}
+          </div>
         </Transition>
       </nav>
     </div>
