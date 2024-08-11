@@ -16,6 +16,7 @@ import OurServices from "../../Components/Services/OurServices";
 import Service from "../../Components/Services/Services";
 import WebDesignMarketing from "../../Components/WebDesignMarketing";
 import Cards from "../../components/Cards/Cards";
+import Package from "../../Components/Package/Package";
 
 const Home = () => {
   return (
@@ -32,7 +33,9 @@ const Home = () => {
       <DigitalMarketingMarketing></DigitalMarketingMarketing>
       <HighlightClients></HighlightClients>
       <Rating></Rating>
-      {/* <Domain></Domain> */}
+      {/* <Package></Package> */}
+      <Choose></Choose>
+      <Domain></Domain>
     </div>
   );
 };
