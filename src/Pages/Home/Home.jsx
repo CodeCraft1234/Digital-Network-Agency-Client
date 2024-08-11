@@ -31,7 +31,7 @@ const Home = () => {
       <HighlightClients></HighlightClients>
       <Rating></Rating>
       <WhyChooseUs></WhyChooseUs>
-      <Payment></Payment>
+      {/* <Payment></Payment> */}
       {/* <Package></Package> */}
       <Choose></Choose>
       <Domain></Domain>

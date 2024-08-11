@@ -16,7 +16,7 @@ const Choose = () => {
           WE DELIVER OUR BEST
         </h2>
         <h3 className="mt-2 text-3xl font-bold text-gray-900 sm:text-4xl">
-          Why Choose Niwax
+          Why Choose Digital Network
         </h3>
         <p className="mt-4 text-gray-500">
           Donec metus lorem, vulputate at sapien sit amet, auctor iaculis lorem.

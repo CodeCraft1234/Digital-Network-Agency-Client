@@ -16,17 +16,29 @@ const CardDetails = () => {
     fetchCardDetails();
   }, [id]);
 
-  const handleEnroll = () => {
-    let cart = JSON.parse(localStorage.getItem("carts")) || [];
-    const newCartItem = {
-      ...card,
-      quantity: 1,
-    };
-    cart.push(newCartItem);
-    localStorage.setItem("carts", JSON.stringify(cart));
-    navigate("/myCart");
-  };
+  const handleCart = ( title, price, description, picture) => {
+    const cartItem = { title, price,  description, picture };
+    let cart = localStorage.getItem("carts");
 
+    if (!cart) {
+      cart = [];
+    } else {
+      try {
+        cart = JSON.parse(cart);
+      } catch (error) {
+        console.error("Error parsing cart from localStorage:", error);
+        cart = [];
+      }
+    }
+
+    if (!Array.isArray(cart)) {
+      cart = [];
+    }
+
+    cart.push(cartItem);
+    localStorage.setItem("carts", JSON.stringify(cart));
+    navigate(location?.state ? location.state : "/myCart");
+  };
   if (!card) {
     return <p>Loading...</p>;
   }
@@ -51,7 +63,7 @@ const CardDetails = () => {
             ${card.price}
           </p>
           <button
-            onClick={handleEnroll}
+            onClick={() => handleCart(card.title, card.price, card.description, card.picture)}
             className="mt-4 px-6 py-2 text-lg font-medium leading-normal text-white rounded-lg shadow-md"
             style={{ backgroundColor: card.text_button_bg_color }}
           >
