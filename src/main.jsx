@@ -27,6 +27,11 @@ import { HelmetProvider } from "react-helmet-async";
 import AuthProvider from "./Security/AuthProvider";
 import Login from "./Security/Login";
 import Domain from "./Components/Domain";
+import Cart from "./Pages/Card/Cart";
+import MyOrders from "./Pages/MyOrders/MyOrders";
+import Checkout from "./Components/Checkout/Checkout";
+import OrderSuccess from "./Components/OrderSuccess/OrderSuccess";
+import OrderDetails from "./Dashboard/Routes/OrderDetails";
 
 
 const router = createBrowserRouter([
@@ -67,6 +72,26 @@ const router = createBrowserRouter([
         path: "/card/:id",
         element: <CardDetails></CardDetails>,
         loader: () =>fetch('/cards.json')
+    },
+    {
+      path: "/myCart",
+      element: <Cart></Cart>
+    },
+    {
+      path:'/myOrders',
+      element:<MyOrders></MyOrders>
+    },
+    {
+      path:'/checkout/:title/:price',
+      element:<Checkout></Checkout>
+    },
+    {
+      path:'/order-success',
+      element: <OrderSuccess></OrderSuccess>
+    },
+    {
+      path:'/order-details/:orderId',
+      element: <OrderDetails></OrderDetails>
     },
     {
       path: "/category/:category",

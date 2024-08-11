@@ -58,11 +58,12 @@
 
 import React, { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
-import useOrders from "../../../Hook/useOrders";
-import useNumbers from "../../../Hook/useNumbers";
+
+import useNumbers from "../../Hook/useNumbers";
 import { FaPhoneAlt } from "react-icons/fa";
-import useAddress from "../../../Hook/useAddress";
+import useAddress from "../../Hook/useAddress";
 import { Helmet } from "react-helmet-async";
+import useOrders from "../../Hook/useOrders";
 
 const OrderDetails = () => {
   const { orderId } = useParams();
@@ -131,7 +132,7 @@ const OrderDetails = () => {
   return (
     <div className="container mx-auto py-8 px-4 md:px-8">
         <Helmet>
-              <title> PerfectArch | OrderDetails</title>
+              <title> Digital Network | OrderDetails</title>
               <link rel="canonical" href="https://www.tacobell.com/" />
                </Helmet>
       <div className="bg-white p-6 rounded-lg shadow-md">
