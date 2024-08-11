@@ -33,6 +33,7 @@ import Cart from "./Pages/Card/Cart";
 import MyOrders from "./Pages/MyOrders/MyOrders";
 import Checkout from "./Components/Checkout/Checkout";
 import OrderDetails from "./Dashboard/Routes/OrderDetails";
+import AllOrders from "./Dashboard/Routes/AllOrders";
 
 
 const router = createBrowserRouter([
@@ -123,6 +124,11 @@ const router = createBrowserRouter([
           path:'/dashboard/admin/totalCustomers',
           element:<TotalCustomers></TotalCustomers>
         },
+        {
+          path:'/dashboard/admin/allOrders',
+          element:<AllOrders></AllOrders>
+        },
+        
         {
           path:'/dashboard/admin/orders/:status',
           element:<OrderDetailsFinal></OrderDetailsFinal>
