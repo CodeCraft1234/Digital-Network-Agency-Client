@@ -116,6 +116,18 @@ const Navbar = () => {
               >
                 Contact
               </a>
+              <a
+                  href="/myCart"
+                  className="hover:text-gray-600 hover:underline"
+                >
+                  Cart
+                </a>
+              <a
+                  href="/myOrders"
+                  className="hover:text-gray-600 hover:underline"
+                >
+                  Orders
+                </a>
             </div>
           </div>
           <div className="flex items-center space-x-4">
@@ -234,6 +246,18 @@ const Navbar = () => {
                   className="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-100 hover:underline"
                 >
                   Contact
+                </a>
+                <a
+                  href="/myCart"
+                  className="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-100 hover:underline"
+                >
+                  Cart
+                </a>
+                <a
+                  href="/myOrders"
+                  className="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-100 hover:underline"
+                >
+                  Orders
                 </a>
               </div>
             </div>
