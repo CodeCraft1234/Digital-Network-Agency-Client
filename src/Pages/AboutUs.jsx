@@ -1,6 +1,15 @@
 import { useState } from "react";
 import CountUp from "react-countup";
+import TypingEffect from "react-typing-effect";
 import { Helmet } from "react-helmet-async";
+import {
+  FaBullhorn,
+  FaCogs,
+  FaDesktop,
+  FaHeadset,
+  FaMobileAlt,
+  FaPaintBrush,
+} from "react-icons/fa";
 
 const teamMembers = [
   {
@@ -54,10 +63,18 @@ const AboutUs = () => {
 
   return (
     <div className="mt-24">
-       <section className="bg-gradient-to-r from-purple-500 to-blue-700 text-white py-32">
+      <section className="bg-gradient-to-r from-purple-500 to-blue-700 text-white py-32">
         <div className="container mx-auto px-4">
           <div className="text-center">
-            <h1 className="text-4xl font-bold">About Us</h1>
+            <h1 className="text-4xl font-bold">
+              <TypingEffect
+                text={["About Us"]}
+                speed={50}
+                eraseSpeed={50}
+                typingDelay={500}
+                eraseDelay={2000}
+              />
+            </h1>
             <p className="mt-2">Home / About Us</p>
           </div>
         </div>
@@ -65,16 +82,22 @@ const AboutUs = () => {
 
       <section className="bg-white py-10">
         <div className="container mx-auto px-4 flex flex-col lg:flex-row items-center">
-          <div className="flex-1">
+          <div className="flex-1 animate-fade-in">
             <img
               src="https://i.ibb.co/5GWSwZ5/about2.png"
               alt="Exclusive Agency"
-              className="w-full h-auto"
+              className="w-full h-auto transform transition-transform duration-500 hover:scale-105"
             />
           </div>
           <div className="flex-1 mt-10 lg:mt-0 lg:ml-10">
             <h2 className="text-2xl font-bold">
-              Exclusive Agency For Technology Provide Solution
+              <TypingEffect
+                text={["Exclusive Agency For Technology Provide Solution"]}
+                speed={50}
+                eraseSpeed={50}
+                typingDelay={500}
+                eraseDelay={2000}
+              />
             </h2>
             <p className="mt-4">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
@@ -106,7 +129,7 @@ const AboutUs = () => {
 
       <section className="bg-gradient-to-r from-purple-500 to-blue-700 text-white py-10">
         <div className="container mx-auto px-4 flex flex-col lg:flex-row items-center">
-          <div className="flex-1 relative lg:mr-10">
+          <div className="flex-1 relative lg:mr-10 animate-fade-in">
             <img
               src="https://i.ibb.co/9Gyd3Dm/about-back.jpg"
               alt="Experience"
@@ -132,22 +155,45 @@ const AboutUs = () => {
             </div>
           </div>
           <div className="flex-1 mt-10 lg:mt-0">
-            <h2 className="text-3xl font-bold">
-              We Work With 20 Years Of <br />
-              Experience
+            <h2 className="text-3xl font-bold mb-4 animate-slide-in-left">
+              <TypingEffect
+                text={["We Work With 20 Years Of Experience"]}
+                speed={50}
+                eraseSpeed={50}
+                typingDelay={500}
+                eraseDelay={2000}
+              />
             </h2>
-            <p className="mt-4">
+            <p className="mt-4 mb-6 animate-fade-in">
               Grursus mal suada faci lisis Lorem ipsum dolarorit more a ametion
               that consectetur elit. Vesti at bulum nec odio aea the dumm ipsumm
               ipsum that dolocons rsus mal suada and fadolorit.
             </p>
-            <ul className="mt-6 space-y-2">
-              <li>✔ Web Design & Development</li>
-              <li>✔ Graphics Design</li>
-              <li>✔ Online Support</li>
-              <li>✔ App Development</li>
-              <li>✔ Consultancy</li>
-              <li>✔ Digital Marketing</li>
+            <ul className="mt-6 space-y-4">
+              <li className="flex items-center space-x-3 animate-fade-in-up">
+                <FaDesktop className="text-purple-300 text-2xl" />
+                <span> Web Design & Development</span>
+              </li>
+              <li className="flex items-center space-x-3 animate-fade-in-up">
+                <FaPaintBrush className="text-purple-300 text-2xl" />
+                <span> Graphics Design</span>
+              </li>
+              <li className="flex items-center space-x-3 animate-fade-in-up">
+                <FaHeadset className="text-purple-300 text-2xl" />
+                <span>Online Support</span>
+              </li>
+              <li className="flex items-center space-x-3 animate-fade-in-up">
+                <FaMobileAlt className="text-purple-300 text-2xl" />
+                <span> App Development</span>
+              </li>
+              <li className="flex items-center space-x-3 animate-fade-in-up">
+                <FaCogs className="text-purple-300 text-2xl" />
+                <span> Consultancy</span>
+              </li>
+              <li className="flex items-center space-x-3 animate-fade-in-up">
+                <FaBullhorn className="text-purple-300 text-2xl" />
+                <span> Digital Marketing</span>
+              </li>
             </ul>
           </div>
         </div>
@@ -175,10 +221,26 @@ const AboutUs = () => {
           </div>
         </div>
       )}
-      {/* team members */}
+
       <section className="text-center mb-12 mt-2">
-        <h6 className="text-xl font-bold text-blue-600 uppercase">Our Best</h6>
-        <h2 className="text-3xl font-bold mb-4">Dedicated Team</h2>
+        <h6 className="text-xl font-bold text-blue-600 uppercase">
+          <TypingEffect
+            text={["Our Best"]}
+            speed={50}
+            eraseSpeed={50}
+            typingDelay={500}
+            eraseDelay={2000}
+          />
+        </h6>
+        <h2 className="text-3xl font-bold mb-4">
+          <TypingEffect
+            text={["Dedicated Team"]}
+            speed={50}
+            eraseSpeed={50}
+            typingDelay={500}
+            eraseDelay={2000}
+          />
+        </h2>
         <p className="text-gray-600 mb-8">
           Lorem Ipsum is simply dummy text of the printing and typesetting
           industry. <br />
@@ -189,7 +251,7 @@ const AboutUs = () => {
           {teamMembers.map((member, index) => (
             <div
               key={index}
-              className="relative group w-64 h-80 overflow-hidden"
+              className="relative group w-64 h-80 overflow-hidden animate-fade-in-up"
             >
               <img
                 src={member.image}
