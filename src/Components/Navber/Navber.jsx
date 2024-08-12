@@ -50,7 +50,7 @@ const Navbar = () => {
   return (
     <div
       className={`fixed top-0 left-0 right-0 z-30 transition-colors duration-300 ${
-        scrolled ? "bg-white text-gray-800" : "bg-gradient-to-r from-purple-500 to-blue-700 text-white"
+        scrolled ? "bg-white text-gray-800" : "bg-white text-gray-800"
       }`}
     >
       <nav className="px-6 py-3">

@@ -48,7 +48,7 @@ const Card = ({ plan }) => {
             className={`py-2 px-4 rounded ${plan.buttonBg} text-white`}
             onClick={() => handleCart(plan.storage, plan.price)}
           >
-            অর্ডার করুন
+            Order Now
           </button>
         </div>
       </div>
@@ -59,46 +59,60 @@ const Card = ({ plan }) => {
 const Domain = () => {
   const plans = [
     {
-      storage: "১০ জিবি",
-      description: "ফাস্ট হোস্টিং & ফ্রি .COM ডোমেইন",
-      price: "৳৯৯৯",
+      storage: "10 GB",
+      description: "Fast Hosting & Free .COM Domain",
+      price: "৳999",
       features: [
-        "১০ জিবি SSD স্টোরেজ",
-        "আনলিমিটেড ব্যান্ডউইথ",
-        "৫ টি ইমেইল একাউন্ট/মাস",
-        "৫ টি ডাটাবেজ একাউন্ট/মাস",
-        "২৪/৭ সাপোর্ট",
+        "10 GB SSD Storage",
+        "Unlimited Bandwidth",
+        "5+ Email Account/Month",
+        "5+ Database Account/Month",
+        "24/7 Support",
       ],
       headerBg: "bg-blue-600 text-white",
       buttonBg: "bg-blue-600",
     },
     {
-      storage: "৫০ জিবি",
-      description: "ফাস্ট হোস্টিং & ফ্রি .COM ডোমেইন",
-      price: "৳২৫৫০",
+      storage: "50 GB",
+      description: "Fast Hosting & Free .COM Domain",
+      price: "৳2550",
       features: [
-        "৫০ জিবি SSD স্টোরেজ",
-        "আনলিমিটেড ব্যান্ডউইথ",
-        "১০ টি ইমেইল একাউন্ট/মাস",
-        "১০ টি ডাটাবেজ একাউন্ট/মাস",
-        "২৪/৭ সাপোর্ট",
+        "250 GB SSD Storage",
+        "Unlimited Bandwidth",
+        "10+ Email Account/Month",
+        "10+ Database Account/Month",
+        "24/7 Support",
       ],
       headerBg: "bg-black text-white",
       buttonBg: "bg-black",
     },
     {
-      storage: "১০০ জিবি",
-      description: "ফাস্ট হোস্টিং & ফ্রি .COM ডোমেইন",
-      price: "৳৩৯৯৯",
+      storage: "100 GB",
+      description: "Fast Hosting & Free .COM Domain",
+      price: "৳3999",
       features: [
-        "১০০ জিবি SSD স্টোরেজ",
-        "আনলিমিটেড ব্যান্ডউইথ",
-        "আনলিমিটেড ইমেইল একাউন্ট/মাস",
-        "আনলিমিটেড ডাটাবেজ একাউন্ট/মাস",
-        "২৪/৭ সাপোর্ট",
+        "250 GB SSD Storage",
+        "Unlimited Bandwidth",
+        "Unlimited Email Account/Month",
+        "Unlimited Database Account/Month",
+        "24/7 Support",
       ],
       headerBg: "bg-green-600 text-white",
       buttonBg: "bg-green-600",
+    },
+    {
+      storage: "200 GB",
+      description: "Fast Hosting & Free .COM Domain",
+      price: "৳4999",
+      features: [
+        "450 GB SSD Storage",
+        "Unlimited Bandwidth",
+        "Unlimited Email Account/Month",
+        "Unlimited Database Account/Month",
+        "24/7 Support",
+      ],
+      headerBg: "bg-red-500 text-white",
+      buttonBg: "bg-red-500",
     },
   ];
 
@@ -112,7 +126,7 @@ const Domain = () => {
       </Helmet>
       <div className="text-center text-black mb-8">
         <h1 className="text-xl md:text-4xl lg:text-4xl font-bold">
-          ফ্রি .COM ডোমেইনসহ <br /> সুপার ফাস্ট ক্লাউড হোস্টিং
+        Free .COM Domain With <br /> Super Fast Cloud Hosting
         </h1>
       </div>
       <div className="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-4">
