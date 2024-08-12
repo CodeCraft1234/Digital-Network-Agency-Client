@@ -54,15 +54,11 @@ const AboutUs = () => {
 
   return (
     <div className="mt-24">
-      <Helmet>
-        <title>Digital Network| About US</title>
-        <link rel="canonical" href="https://www.tacobell.com/" />
-      </Helmet>
-      <section className="bg-gradient-to-r from-purple-500 to-blue-700 text-white py-10">
+       <section className="bg-gradient-to-r from-purple-500 to-blue-700 text-white py-32">
         <div className="container mx-auto px-4">
           <div className="text-center">
             <h1 className="text-4xl font-bold">About Us</h1>
-            <p className="mt-2">Home / Page</p>
+            <p className="mt-2">Home / About Us</p>
           </div>
         </div>
       </section>

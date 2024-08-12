@@ -1,34 +1,57 @@
+import { useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 
 
 const Card = ({ plan }) => {
+
+  const navigate = useNavigate();
+
+  const handleCart = (storage, price) => {
+    const cartItem = { storage, price };
+    let cart = localStorage.getItem("Domain-Cart");
+
+    if (!cart) {
+      cart = [];
+    } else {
+      try {
+        cart = JSON.parse(cart);
+      } catch (error) {
+        console.error("Error parsing cart from localStorage:", error);
+        cart = [];
+      }
+    }
+
+    if (!Array.isArray(cart)) {
+      cart = [];
+    }
+
+    cart.push(cartItem);
+    localStorage.setItem("Domain-Cart", JSON.stringify(cart));
+    navigate("/myCart");
+  };
   return (
    
-     <div className="transition-transform  duration-300 transform hover:scale-105 hover:translate-y-[-10px] ">
-       <div className={`p-2 rounded-t-lg ${plan.headerBg}`}>
-        <h2 className="text-xl font-bold text-center ">
-          {plan.storage}
-        </h2>
-        <p className="text-center ">{plan.description}</p>
+<div className="transition-transform duration-300 transform hover:scale-105 hover:translate-y-[-10px]">
+      <div className={`p-2 rounded-t-lg ${plan.headerBg}`}>
+        <h2 className="text-xl font-bold text-center">{plan.storage}</h2>
+        <p className="text-center">{plan.description}</p>
       </div>
-     
-
-      <div>
- <div className="bg-white text-black p-6 rounded-lg shadow-lg w-80 h-auto md:h-96 flex flex-col justify-between">
-      
-      <p className="text-center text-4xl font-bold my-4">{plan.price}</p>
-      <ul className="space-y-2 text-black">
-        {plan.features.map((feature, index) => (
-          <li key={index}>{feature}</li>
-        ))}
-      </ul>
-      <div className="text-center mt-6">
-        <button className={`py-2 px-4 rounded ${plan.buttonBg} text-white`}>
-          অর্ডার করুন
-        </button>
+      <div className="bg-white text-black p-6 rounded-lg shadow-lg w-80 h-auto md:h-96 flex flex-col justify-between">
+        <p className="text-center text-4xl font-bold my-4">{plan.price}</p>
+        <ul className="space-y-2 text-black">
+          {plan.features.map((feature, index) => (
+            <li key={index}>{feature}</li>
+          ))}
+        </ul>
+        <div className="text-center mt-6">
+          <button
+            className={`py-2 px-4 rounded ${plan.buttonBg} text-white`}
+            onClick={() => handleCart(plan.storage, plan.price)}
+          >
+            অর্ডার করুন
+          </button>
+        </div>
       </div>
-    </div>
-    </div>
     </div>
   );
 };
@@ -78,6 +101,8 @@ const Domain = () => {
       buttonBg: "bg-green-600",
     },
   ];
+
+
 
   return (
     <div className=" p-4 px-5 md:px-8 lg:px-10 mx-12 mt-24">

@@ -8,7 +8,7 @@ const useProducts= () => {
         queryFn: async () => {
             const res=await AxiosPublic.get(`/products`)
             return res.data
-        }
+        } 
     })
         console.log(products)
         return [products,refetch]

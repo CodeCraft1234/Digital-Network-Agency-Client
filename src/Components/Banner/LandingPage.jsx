@@ -23,10 +23,13 @@ const LandingPage = () => {
             </div>
           </div>
           <div className="md:px-16">
-            <img className="h-80 md:h-96 w-full object-contain" src="https://i.ibb.co/k0Qx5FK/digital-marketing-concepts-illustration-ojmbrsjwcrlivi56.png" alt="Digital Marketing" />
+            <img className="h-80 md:h-96 w-full object-contain" src="https://i.ibb.co/BCNhxQR/digital-marketing-components-infographic-qx8jhc68jpm87z1v.png" alt="Digital Marketing" />
           </div>
         </div>
 
+      
+     
+       
         <div className="mb-12 grid grid-cols-1 md:grid-cols-2 items-center text-white">
           <div className="md:px-12 text-start">
             <h2 className="text-4xl md:text-5xl font-bold my-4 text-white">
@@ -41,7 +44,7 @@ const LandingPage = () => {
             </div>
           </div>
           <div className="md:px-16">
-            <img className="h-80 md:h-96 w-full object-contain" src="https://i.ibb.co/k0Qx5FK/digital-marketing-concepts-illustration-ojmbrsjwcrlivi56.png" alt="Web Design and Development" />
+            <img className="h-80 md:h-96 w-full object-contain" src="   https://i.ibb.co/txN9YMR/3d-illustration-of-web-development-png.webp" alt="Web Design and Development" />
           </div>
         </div>
 
@@ -59,7 +62,7 @@ const LandingPage = () => {
             </div>
           </div>
           <div className="md:px-16">
-            <img className="h-80 md:h-96 w-full object-contain" src="https://i.ibb.co/k0Qx5FK/digital-marketing-concepts-illustration-ojmbrsjwcrlivi56.png" alt="Graphics Design" />
+            <img className="h-80 md:h-96 w-full object-contain" src=" https://i.ibb.co/DDDNkX2/Graphic-Design-PNG-Clipart.png" alt="Graphics Design" />
           </div>
         </div>
       </Carousel>

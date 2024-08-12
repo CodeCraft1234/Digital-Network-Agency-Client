@@ -15,7 +15,7 @@ const Rating = () => {
   return (
     <div className="mb-4 mx-5 px-10">
       <h2 className="text-center font-bold text-blue-500 text-4xl py-5">
-        Testimonials
+        Meet Our Team Members
       </h2>
       <div className="flex flex-col md:flex-row justify-center items-center md:space-x-4 card">
         <div

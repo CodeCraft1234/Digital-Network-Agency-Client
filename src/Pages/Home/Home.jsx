@@ -1,22 +1,18 @@
 import { Helmet } from "react-helmet-async";
-import Award from "../../Components/Award";
-import Banner from "../../Components/Banner/Banner";
 import LandingPage from "../../Components/Banner/LandingPage";
-import Carousel from "../../Components/Carousel/Caousel";
-import Choose from "../../Components/Choose";
-import ContactUS from "../../Components/ContactUs/ContactUS";
 import DigitalMarketingMarketing from "../../Components/DigitalMarketingMarketing";
-import Domain from "../../Components/Domain";
 import GraphicDesignMarketing from "../../Components/GraphicDesignMarketing";
-import Marketing from "../../Components/GraphicDesignMarketing";
-import Payment from "../../Components/Payment/Payment";
 import Rating from "../../Components/Rating/Rating";
 import HighlightClients from "../../Components/Services/HighlightClient";
 import OurServices from "../../Components/Services/OurServices";
-import Service from "../../Components/Services/Services";
 import WebDesignMarketing from "../../Components/WebDesignMarketing";
+import TestimonialCarousel from "./TestimonialCarousel";
+import WhyChooseUs from "../../Components/WhyChooseUs";
+import Payment from "../../Components/Payment/Payment";
 import Cards from "../../components/Cards/Cards";
 import Package from "../../Components/Package/Package";
+import Domain from "../../Components/Domain";
+import Choose from "../../Components/Choose";
 
 const Home = () => {
   return (
@@ -31,8 +27,11 @@ const Home = () => {
       <WebDesignMarketing></WebDesignMarketing>
       <GraphicDesignMarketing></GraphicDesignMarketing>
       <DigitalMarketingMarketing></DigitalMarketingMarketing>
+      <TestimonialCarousel></TestimonialCarousel>
       <HighlightClients></HighlightClients>
       <Rating></Rating>
+      <WhyChooseUs></WhyChooseUs>
+      {/* <Payment></Payment> */}
       {/* <Package></Package> */}
       <Choose></Choose>
       <Domain></Domain>
