@@ -3,12 +3,15 @@ import CountUp from "react-countup";
 import TypingEffect from "react-typing-effect";
 import { Helmet } from "react-helmet-async";
 import {
+  FaBoxOpen,
   FaBullhorn,
   FaCogs,
   FaDesktop,
   FaHeadset,
+  FaLifeRing,
   FaMobileAlt,
   FaPaintBrush,
+  FaSyncAlt,
 } from "react-icons/fa";
 
 const teamMembers = [
@@ -221,6 +224,60 @@ const AboutUs = () => {
           </div>
         </div>
       )}
+
+<section className="flex flex-col-reverse md:flex-row items-center justify-between px-6 py-12 md:px-12 lg:px-24 bg-white">
+      {/* Image Section */}
+      <div className="relative w-full md:w-1/2 flex justify-center md:justify-start mb-8 md:mb-0 md:pr-12">
+        <img 
+          src="https://i.ibb.co/SnxRB6n/feature-photo.png" 
+          alt="Teamwork" 
+          className="w-full h-auto rounded-lg shadow-lg transform hover:rotate-3 transition-transform duration-500 ease-in-out"
+        />
+      </div>
+
+      {/* Content Section */}
+      <div className="w-full md:w-1/2 mt-8 md:mt-0 text-center md:text-left md:pl-12">
+        <h3 className="text-orange-600 text-sm font-semibold mb-4">WHY WORK WITH Digital Network</h3>
+        <h2 className="text-2xl md:text-4xl font-bold mb-6 leading-tight">
+          Best result with top <br /> user experience
+        </h2>
+        <p className="text-gray-600 mb-8">
+          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+        </p>
+
+        <div className="space-y-4">
+          <div className="flex items-center">
+            <div className="bg-orange-600 text-white p-3 rounded-full">
+              <FaLifeRing className="w-6 h-6" />
+            </div>
+            <div className="ml-4">
+              <h4 className="text-lg font-semibold">Lifetime Support</h4>
+              <p className="text-gray-600">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia mollit.</p>
+            </div>
+          </div>
+
+          <div className="flex items-center">
+            <div className="bg-orange-600 text-white p-3 rounded-full">
+              <FaBoxOpen className="w-6 h-6" />
+            </div>
+            <div className="ml-4">
+              <h4 className="text-lg font-semibold">No Coding Required</h4>
+              <p className="text-gray-600">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia mollit.</p>
+            </div>
+          </div>
+
+          <div className="flex items-center">
+            <div className="bg-orange-600 text-white p-3 rounded-full">
+              <FaSyncAlt className="w-6 h-6" />
+            </div>
+            <div className="ml-4">
+              <h4 className="text-lg font-semibold">Regular Updates</h4>
+              <p className="text-gray-600">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia mollit.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
       <section className="text-center mb-12 mt-2">
         <h6 className="text-xl font-bold text-blue-600 uppercase">
