@@ -7,7 +7,7 @@ const LandingPage = () => {
   const typingSpeed = 50; // Set typing speed in milliseconds
 
   return (
-    <div className="text-center py-2 px-6 bg-gradient-to-r from-purple-500 to-blue-700">
+    <div className="text-center py-1 px-1 bg-gradient-to-r from-yellow-700 to-[#05a0db]">
       <Carousel showThumbs={false} autoPlay infiniteLoop showArrows={false}>
         <div className="mb-12 grid grid-cols-1 md:grid-cols-2 items-center text-white">
           <div className="md:px-12 text-start">
@@ -23,7 +23,7 @@ const LandingPage = () => {
             </div>
           </div>
           <div className="md:px-16">
-            <img className="h-80 md:h-96 w-full object-contain" src="https://i.ibb.co/BCNhxQR/digital-marketing-components-infographic-qx8jhc68jpm87z1v.png" alt="Digital Marketing" />
+            <img className="h-80 md:h-96 w-full object-contain mt-10" src="https://i.ibb.co/BCNhxQR/digital-marketing-components-infographic-qx8jhc68jpm87z1v.png" alt="Digital Marketing" />
           </div>
         </div>
 
@@ -44,7 +44,7 @@ const LandingPage = () => {
             </div>
           </div>
           <div className="md:px-16">
-            <img className="h-80 md:h-96 w-full object-contain" src="   https://i.ibb.co/txN9YMR/3d-illustration-of-web-development-png.webp" alt="Web Design and Development" />
+            <img className="h-80 md:h-96 w-full object-contain mt-10" src="   https://i.ibb.co/txN9YMR/3d-illustration-of-web-development-png.webp" alt="Web Design and Development" />
           </div>
         </div>
 
@@ -62,7 +62,7 @@ const LandingPage = () => {
             </div>
           </div>
           <div className="md:px-16">
-            <img className="h-80 md:h-96 w-full object-contain" src=" https://i.ibb.co/DDDNkX2/Graphic-Design-PNG-Clipart.png" alt="Graphics Design" />
+            <img className="h-80 md:h-96 w-full object-contain mt-10" src=" https://i.ibb.co/DDDNkX2/Graphic-Design-PNG-Clipart.png" alt="Graphics Design" />
           </div>
         </div>
       </Carousel>

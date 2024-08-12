@@ -32,7 +32,7 @@ const Home = () => {
       <Rating></Rating>
       <WhyChooseUs></WhyChooseUs>
       {/* <Payment></Payment> */}
-      {/* <Package></Package> */}
+      <Package></Package>
       <Choose></Choose>
       <Domain></Domain>
     </div>

@@ -1,133 +1,105 @@
-import AOS from "aos";
-import "aos/dist/aos.css";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
-AOS.init();
+const testimonials = [
+  {
+    name: "James Anderson",
+    title: "Web Developer",
+    image: "https://i.ibb.co/fSys4Wf/testimonial-author-1.jpg",
+    quote:
+      "Ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit.",
+  },
+  {
+    name: "Dana Josefine",
+    title: "Web Developer",
+    image: "https://i.ibb.co/phs2b2s/testimonial-author-2.jpg",
+    quote:
+      "Ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit.",
+  },
+  {
+    name: "Dona Ganguly",
+    title: "Web Developer",
+    image: "https://i.ibb.co/pbVXNLy/testimonial-author-3.jpg",
+    quote:
+      "Ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit.",
+  },
+  {
+    name: "Mark Anthony",
+    title: "Web Developer",
+    image: "https://i.ibb.co/18brXk7/testimonial-author-4.jpg",
+    quote:
+      "Ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit.",
+  },
+];
 
 const Package = () => {
-  const plans = [
-    {
-      type: "basic",
-      id: 1,
-      name: "Basic",
-      price: "Free",
-      features: [
-        "Text Translation",
-        "Basic Language Pairs",
-        "Browser Extension",
-      ],
-      action: (e) => {
-        e.preventDefault();
-        window.location.href = "/translate";
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 3,  // Display three testimonials at a time
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 3000,  // Auto-change every 3 seconds
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+        },
       },
-    },
-    {
-      type: "standard",
-      id: 2,
-      name: "Standard",
-      price: "$24",
-      features: [
-        "Advance Accuracy",
-        "Multilingual Translation",
-        "Text and Document Translation",
-        "Priority Customer Support",
-      ],
-      action: () => {
-        window.location.href = `/order/2`;
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 1,
+        },
       },
-    },
-    {
-      type: "premium",
-      id: 3,
-      name: "Premium",
-      price: "$30",
-      features: [
-        "Unlimited Translation Quotes",
-        "Enhanced Language Support",
-        "Secure File Handling",
-        "Collaboration Tools",
-        "Advance Features",
-      ],
-      action: (e) => {
-        e.preventDefault();
-        window.location.href = "/order/3";
-      },
-    },
-  ];
+    ],
+  };
 
   return (
-    <div className="mb-24 sm:pt-20 mt-36 lg:mt-0 md:mt-80">
-      <div className="  dark:text-red-600">
-        <div className="container mx-auto">
-          <div className="max-w-2xl mx-auto mb-16 text-center">
-            <h2 className="text-4xl font-bold  lg:text-5xl" data-aos="zoom-in">
-              Choose your best plan
-            </h2>
-          </div>
-          <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5">
-            {plans.map((plan, index) => (
-              <div
-                key={index}
-                data-aos="fade-up"
-                data-aos-delay={index * 500}
-                data-aos-duration="1000"
-                data-aos-easing="ease-in-out"
-                data-aos-mirror="true"
-                data-aos-once="false"
-              >
-                <div
-                  className={`flex flex-grow flex-col p-6 space-y-6 h-[450px] rounded-md border shadow sm:p-8 dark:bg-gray-900 justify-between`}
-                >
-                  <div className="space-y-2">
-                    <h4 className="text-2xl font-bold">{plan.name}</h4>
-                    <span className="text-6xl font-bold">{plan.price}</span>
+    <div className="bg-gradient-to-b from-black via-gray-900 to-black py-16">
+      <div className="max-w-6xl mx-auto px-4 text-center">
+        <h2 className="text-3xl font-bold text-white mb-4">TESTIMONIALS</h2>
+        <p className="text-gray-400 mb-8">
+          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+          dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+          proident, sunt in culpa qui officia deserunt mollit anim id est
+          laborum.
+        </p>
+        <Slider {...settings}>
+          {testimonials.map((testimonial, index) => (
+            <div key={index} className="p-4">
+              <div className="bg-white rounded-lg shadow-lg p-6 transform transition duration-500 hover:-translate-y-2 hover:shadow-2xl relative">
+                <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-orange-500 w-16 h-16 flex items-center justify-center rounded-full">
+                  <img
+                    src="https://i.ibb.co/2cnpLJC/quote-icon.png"
+                    alt="Quote Icon"
+                    className="w-8 h-8"
+                  />
+                </div>
+                <p className="text-gray-700 mt-8 mb-6">{testimonial.quote}</p>
+                <div className="flex items-center justify-center">
+                  <img
+                    src={testimonial.image}
+                    alt={testimonial.name}
+                    className="w-12 h-12 rounded-full mr-4"
+                  />
+                  <div>
+                    <h5 className="font-bold text-gray-900">
+                      {testimonial.name}
+                    </h5>
+                    <p className="text-gray-500">{testimonial.title}</p>
                   </div>
-                  <p className="leadi dark:text-gray-400">{plan.features[0]}</p>
-                  <ul className="space-y-2 dark:text-gray-400">
-                    {plan.features.map((feature, i) => (
-                      <li key={i} className="flex items-start space-x-2">
-                        <svg
-                          xmlns="http://www.w3.org/2000/svg"
-                          viewBox="0 0 20 20"
-                          fill="currentColor"
-                          className="flex-shrink-0 w-6 h-6 dark:text-violet-400"
-                        >
-                          <path
-                            fillRule="evenodd"
-                            d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
-                            clipRule="evenodd"
-                          ></path>
-                        </svg>
-                        <span>{feature}</span>
-                      </li>
-                    ))}
-                    <button
-                      onClick={plan.action}
-                      className="bg-indigo-950 text-white items-center flex text-center mx-auto border-b-2 rounded-lg"
-                    >
-                      <a className="b rounded-lg">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        Get {plan.name} Plan
-                      </a>
-                    </button>
-                  </ul>
-                  {/* <button
-                    onClick={plan.action}
-                    className="btn btn-outline border-0 border-[#006bcb] hover:bg-[#006bcb] hover:border-[#006bcb] border-b-4 hover:text-white"
-                  >
-                    Get {plan.name} Plan
-                  </button> */}
                 </div>
               </div>
-            ))}
-          </div>
-        </div>
+            </div>
+          ))}
+        </Slider>
       </div>
     </div>
   );
 };
 
 export default Package;
-
