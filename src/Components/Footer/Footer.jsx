@@ -138,13 +138,69 @@ const Footer = () => {
             </ul>
           </div>
         </div>
-        <div className="absolute bottom-0 left-0 w-full bg-gray-800 text-center text-white py-4">
-          © 2024{" "}
-          <a href="https://hellodigitalnetwork.com/" className="text-blue-500">
-            Digital Network
-          </a>
-          . All Rights Reserved
-        </div>
+        <div className="absolute bottom-0 left-0 w-full bg-gray-800 text-white py-1">
+  <div className="container mx-auto flex flex-col md:flex-row justify-between items-center px-1">
+    {/* Left Side Text */}
+    <div className="text-center md:text-left mb-4 md:mb-0">
+      © 2024{" "}
+      <a
+        href="https://hellodigitalnetwork.com/"
+        className="text-blue-500"
+      >
+        Digital Network
+      </a>
+      . All Rights Reserved
+    </div>
+
+    {/* Right Side Images */}
+    <div className="relative flex items-center justify-end space-x-4">
+      <img
+        src="https://i.ibb.co/k12Cncn/bkash-logo-FBB258-B90-F-seeklogo-com.png"
+        alt="bKash"
+        className="h-6 w-auto md:h-8"
+      />
+      <img
+        src="https://i.ibb.co/2tDjxP3/DBBL-24-removebg-preview.png"
+        alt="rocket"
+        className="h-6 w-auto md:h-8"
+      />
+      <img
+        src="https://i.ibb.co/bPwqykY/Nagad-Logo-wine-removebg-preview.png"
+        alt="nagad"
+        className="h-6 w-auto md:h-8"
+      />
+      <img
+        src="https://i.ibb.co/Pw4N9GM/Mastercard-logo-svg.png"
+        alt="mastercard"
+        className="h-6 w-auto md:h-8"
+      />
+      <img
+        src="https://i.ibb.co/t8rkgWG/Pay-Pal-Card-removebg-preview.png"
+        alt="paypal"
+        className="h-6 w-auto md:h-8"
+      />
+      <img
+        src="https://i.ibb.co/cTkzss5/png-transparent-card-credit-logo-visa-logos-and-brands-icon-thumbnail-removebg-preview.png"
+        alt="visa"
+        className="h-6 w-auto md:h-8"
+      />
+      <img
+        src="https://i.ibb.co/j6wrjLN/png-transparent-american-express-amex-charge-credit-card-payment-credit-cards-icon-thumbnail-removeb.png"
+        alt="amex"
+        className="h-6 w-auto md:h-8"
+      />
+      <img
+        src="https://i.ibb.co/xmx2Z1H/iPay.jpg"
+        alt="ipay"
+        className="h-6 w-auto md:h-8"
+      />
+    </div>
+  </div>
+</div>
+
+
+  
+
       </div>
       {/* Scroll to Top/Bottom Button */}
       <button

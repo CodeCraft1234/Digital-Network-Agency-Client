@@ -67,7 +67,7 @@ const WhyChooseUs = () => {
           data-aos="fade-left"
         >
           {cards.slice(0, 3).map((cardItems, index) => (
-            <div key={index} className="bg-white border border-gray-200 rounded-lg shadow-md p-5 flex flex-col space-y-2 mx-2">
+            <div key={index} className="bg-white border border-gray-200 rounded-lg shadow-md p-5 flex flex-col space-y-2">
               {cardItems.map((item, subIndex) => (
                 <div key={subIndex} className="flex items-center space-x-2">
                   <FaCheckCircle className="text-green-500" />
