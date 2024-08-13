@@ -41,8 +41,8 @@ const OurServices = () => {
         <link rel="canonical" href="https://www.tacobell.com/" />
       </Helmet>
       <GlobalStyle />
-      <section className="py-10  px-12 bg-gray-50">
-        <div className="text-black px-4">
+      <section className=" bg-gray-50 mt-4">
+        <div className="text-black ">
           <div className="text-center mb-8">
             <h2 className="text-3xl font-bold">Let’s Check Our Services</h2>
             <p className="text-black">
