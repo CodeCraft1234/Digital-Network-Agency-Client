@@ -36,7 +36,7 @@ const Card = ({ plan }) => {
         <h2 className="text-xl font-bold text-center">{plan.storage}</h2>
         <p className="text-center">{plan.description}</p>
       </div>
-      <div className="bg-white text-black p-6 rounded-lg shadow-lg w-80 h-auto md:h-96 flex flex-col justify-between">
+      <div className="bg-white text-black p-6 rounded-lg shadow-lg w-96 h-auto md:h-96 flex flex-col justify-between">
         <p className="text-center text-4xl font-bold my-4">{plan.price}</p>
         <ul className="space-y-2 text-black">
           {plan.features.map((feature, index) => (
@@ -119,7 +119,7 @@ const Domain = () => {
 
 
   return (
-    <div className=" p-4 px-5 md:px-8 lg:px-10 mx-12 mt-24">
+    <div className="mt-24">
       <Helmet>
         <title>Digital Network| Domain</title>
         <link rel="canonical" href="https://www.tacobell.com/" />
@@ -129,7 +129,7 @@ const Domain = () => {
         Free .COM Domain With <br /> Super Fast Cloud Hosting
         </h1>
       </div>
-      <div className="flex flex-col md:flex-row justify-center items-center space-y-4 md:space-y-0 md:space-x-4">
+      <div className="flex flex-col md:flex-row justify-start items-start space-y-4 md:space-y-0 md:space-x-4">
         {plans.map((plan, index) => (
           <Card key={index} plan={plan} />
         ))}

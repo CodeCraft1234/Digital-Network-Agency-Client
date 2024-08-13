@@ -11,7 +11,7 @@ import {
 const Choose = () => {
   return (
     <div className="py-12 bg-gradient-to-b from-blue-50 to-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div className="max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
         <h2 className="text-lg font-semibold text-pink-600">
           WE DELIVER OUR BEST
         </h2>

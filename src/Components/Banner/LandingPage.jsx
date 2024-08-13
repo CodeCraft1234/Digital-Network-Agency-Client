@@ -7,7 +7,7 @@ const LandingPage = () => {
   const typingSpeed = 50; // Set typing speed in milliseconds
 
   return (
-    <div className="text-center py-1 px-1 bg-gradient-to-r from-yellow-700 to-[#05a0db]">
+    <div className="text-center py-1 px-1 bg-gradient-to-r from-yellow-900 to-[#05a0db]">
       <Carousel showThumbs={false} autoPlay infiniteLoop showArrows={false}>
         <div className="mb-12 grid grid-cols-1 md:grid-cols-2 items-center text-white">
           <div className="md:px-12 text-start">
