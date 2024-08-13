@@ -13,13 +13,13 @@ const Rating = () => {
   }, []);
 
   return (
-    <div className="mb-4 mx-5 px-10">
+    <div className="mb-4">
       <h2 className="text-center font-bold text-blue-500 text-4xl py-5">
         Meet Our Team Members
       </h2>
       <div className="flex flex-col md:flex-row justify-center items-center md:space-x-4 card">
         <div
-          className="flex flex-col items-center mb-8 md:mb-0 bg-green-100 rounded-lg p-7"
+          className="flex flex-col items-center mb-8 md:mb-0 bg-green-100 rounded-lg p-7 "
           data-aos="fade-right"
         >
           <div className="rounded-tr-full rounded-br-full rounded-tl-full overflow-hidden mb-4 transform hover:scale-110 transition-transform duration-300 mt-3">
