@@ -16,7 +16,7 @@ import Choose from "../../Components/Choose";
 
 const Home = () => {
   return (
-    <div className="mt-16 mx-16 my-16">
+    <div className="mt-16 bg-white mx-16 my-16">
       <Helmet>
         <title>Digital Network| Home</title>
         <link rel="canonical" href="https://www.tacobell.com/" />
