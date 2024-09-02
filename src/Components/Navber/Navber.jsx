@@ -1,24 +1,19 @@
-import React, { useEffect, useState, useContext } from "react";
+import React, { useEffect, useState } from "react";
 import { Transition } from "@headlessui/react";
 import useLogo from "../../Hook/useLogo";
-import { AuthContext } from "../../Security/AuthProvider";
 import { Link, useNavigate } from "react-router-dom";
 import { MdOutlineDashboard } from "react-icons/md";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [isServicesDropdownOpen, setIsServicesDropdownOpen] = useState(false);
-  const { user, logOut } = useContext(AuthContext);
-  const navigate = useNavigate();
   const [logo, setLogo] = useLogo();
   const [latestLogo, setLatestLogo] = useState(null);
 
   const services = [
     { category: "Graphics Design", icon: "https://i.ibb.co/sqbxMMH/gd.png" },
     { category: "Web Design", icon: "https://i.ibb.co/WzdGH9y/wd.png" },
-    { category: "Digital Marketing", icon: "https://i.ibb.co/Fh30qcr/dm.png" },
-    { category: "Domain Hosting", icon: "https://i.ibb.co/Fh30qcr/dm.png" },
+    { category: "Digital Marketing", icon: "https://i.ibb.co/Fh30qcr/dm.png" }
   ];
 
   useEffect(() => {
@@ -43,56 +38,60 @@ const Navbar = () => {
     }
   }, [logo]);
 
+  const navigate = useNavigate();
   const handleDashboardRedirect = () => {
     navigate("/dashboard/admin/adminHome");
   };
 
   return (
     <div
-      className={`fixed top-0 px-12 w-full z-30 transition-colors duration-300 ${
-        scrolled ? "bg-white text-gray-800" : "bg-white text-gray-800"
+      className={`fixed top-0  px-28 w-full z-30 transition-colors duration-300 ${
+        scrolled ? "bg-white shadow-2xl text-gray-800" : "bg-[#05a0db] text-white border-b border-gray-100"
       }`}
     >
       <nav className="px-6 py-3">
         <div className="flex justify-between items-center">
           <div className="flex items-center">
-            {latestLogo && (
+            {scrolled ? (
+              latestLogo && (
+                <img
+                  className="h-10 w-10 sm:h-16 sm:w-16 md:h-14 md:w-14 lg:h-16 lg:w-16 transition-transform transform hover:scale-110"
+                  src={latestLogo.photo}
+                  alt="Logo"
+                />
+              )
+            ) : (
               <img
-                className="h-10 w-10 sm:h-16 sm:w-16 md:h-14 md:w-14 lg:h-16 lg:w-16 transition-transform transform hover:scale-110"
-                src={latestLogo.photo}
-                alt="Logo"
+              className="h-10 w-10 sm:h-16 sm:w-16 md:h-14 md:w-14 lg:h-16 lg:w-16 transition-transform transform hover:scale-110"
+                src="https://i.ibb.co/YQx99mp/Logo-02.png"
+                alt="Default Logo"
               />
             )}
           </div>
-          <div className="hidden md:flex items-center space-x-6">
-            <Link to="/" className="hover:text-gray-600 hover:underline">Home</Link>
-            <div className="relative">
-              <button
-                onClick={() => setIsServicesDropdownOpen(!isServicesDropdownOpen)}
-                className="hover:text-gray-600 hover:underline focus:outline-none"
-              >
+          <div className="hidden md:flex font-bold items-center space-x-6">
+            <Link to="/" className="hover:text-blue-800 hover:font-extrabold">Home</Link>
+            <div className="relative group">
+              <button className="hover:text-blue-800 hover:font-extrabold focus:outline-none">
                 Services
               </button>
-              {isServicesDropdownOpen && (
-                <div className="absolute mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
-                  <div className="py-1">
-                    {services.map((service, index) => (
-                      <Link
-                        key={index}
-                        to={`/category/${service.category}`}
-                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                      >
-                        {service.category}
-                      </Link>
-                    ))}
-                  </div>
+              <div className="absolute hidden group-hover:block mt-0  w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
+                <div className="py-1">
+                  {services.map((service, index) => (
+                    <Link
+                      key={index}
+                      to={`/category/${service.category}`}
+                      className="block px-4 py-2 text-sm text-gray-700 hover:text-blue-800 hover:font-extrabold hover:bg-gray-100"
+                    >
+                      {service.category}
+                    </Link>
+                  ))}
                 </div>
-              )}
+              </div>
             </div>
-            <Link to="/faq" className="hover:text-gray-600 hover:underline">Faq</Link>
-            <Link to="/contact" className="hover:text-gray-600 hover:underline">Contact</Link>
-            <Link to="/myCart" className="hover:text-gray-600 hover:underline">Cart</Link>
-            <Link to="/myOrders" className="hover:text-gray-600 hover:underline">Orders</Link>
+            <Link to="/faq" className="hover:text-blue-800 hover:font-extrabold">Faq</Link>
+            <Link to="/contact" className="hover:text-blue-800 hover:font-extrabold">Contact</Link>
+            <Link to="/myCart" className="hover:text-blue-800 hover:font-extrabold">Cart</Link>
+            <Link to="/myOrders" className="hover:text-blue-800 hover:font-extrabold">Orders</Link>
           </div>
           <div className="flex items-center space-x-4">
             <button className="hover:text-gray-600 focus:outline-none">
@@ -129,28 +128,25 @@ const Navbar = () => {
           <div className="md:hidden" id="mobile-menu">
             <div className="px-2 pt-2 pb-3 space-y-1">
               <Link to="/" className="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-100 hover:underline">Home</Link>
-              <div className="relative">
+              <div className="relative group">
                 <button
-                  onClick={() => setIsServicesDropdownOpen(!isServicesDropdownOpen)}
                   className="w-full text-left block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-100 hover:underline focus:outline-none"
                 >
                   Services
                 </button>
-                {isServicesDropdownOpen && (
-                  <div className="mt-2 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
-                    <div className="py-1">
-                      {services.map((service, index) => (
-                        <Link
-                          key={index}
-                          to={`/category/${service.category}`}
-                          className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                        >
-                          {service.category}
-                        </Link>
-                      ))}
-                    </div>
+                <div className="hidden group-hover:block mt-2 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5">
+                  <div className="py-1">
+                    {services.map((service, index) => (
+                      <Link
+                        key={index}
+                        to={`/category/${service.category}`}
+                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                      >
+                        {service.category}
+                      </Link>
+                    ))}
                   </div>
-                )}
+                </div>
               </div>
               <Link to="/faq" className="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-100 hover:underline">Faq</Link>
               <Link to="/contact" className="block px-3 py-2 rounded-md text-base font-medium hover:bg-gray-100 hover:underline">Contact</Link>

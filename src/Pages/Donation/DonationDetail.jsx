@@ -7,10 +7,8 @@ const DonationDetail = ({ card }) => {
     picture,
     title,
     category,
-    category_bg_color,
     card_bg_color,
     text_button_bg_color,
-    description,
     price,
   } = card || {};
 
@@ -18,7 +16,7 @@ const DonationDetail = ({ card }) => {
 
   return (
     <div
-      className="flex justify-center items-center  my-5 md:mx-10"
+      className="flex justify-center items-center  my-5 "
       style={{ background: card_bg_color }}
     >
       <div className="relative w-full flex flex-row max-w-[48rem] rounded-xl  bg-clip-border shadow-md">

@@ -25,14 +25,24 @@ const MyOrders = () => {
     };
 
     return (
-        <div className=" pt-16 mx-auto py-2  px-4 md:px-8">
+        <div className=" pt-16  py-2  ">
             <Helmet>
                 <title>Digital Network | My Orders</title>
                 <link rel="canonical" href="https://www.tacobell.com/" />
             </Helmet>
-            {
+
+            <section className="bg-[#05a0db] pt-28 text-white py-28">
+        <div className=" px-4">
+          <div className="text-center">
+            <h1 className="text-4xl font-bold">My Orders</h1>
+            <p className="mt-2">Home / My Orders</p>
+          </div>
+        </div>
+      </section>
+<div className='mx-36 mt-5 border border-gray-600 p-5 '>
+{
                 orders.length === 0 ? (
-                    <div className="bg-white flex  justify-center items-center p-6 min-h-screen rounded-lg text-center">
+                    <div className="bg-white flex px-4 justify-center items-center p-6 min-h-screen rounded-lg text-center">
                         <div>
                             <h1 className="text-2xl font-bold mb-5 text-black">কোন প্রোডাক্ট নেই</h1>
                             <Link to="/">
@@ -44,10 +54,10 @@ const MyOrders = () => {
                     </div>
                 ) : (
                     <div>
-                        <h1 className="text-2xl font-bold mb-3 mt-12 text-center text-black">My Orders</h1>
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                       
+                        <div className="grid grid-cols-1  px-28 md:grid-cols-2 lg:grid-cols-3 gap-6">
                             {orders.map((order) => (
-                                <div key={order._id} className="border bg-green-200 rounded-lg p-6 ">
+                                <div key={order._id} className="border  bg-green-200 rounded-lg p-6 ">
                                     <h2 className="text-md font-bold mb-4 text-black">Order ID: {order._id}</h2>
                                     <p className="text-sm text-black"><strong>Name:</strong> {order.name}</p>
                                     <p className="text-sm text-black"><strong>Phone:</strong> {order.phone}</p>
@@ -76,6 +86,7 @@ const MyOrders = () => {
                     </div>
                 )
             }
+</div>
         </div>
     );
 };

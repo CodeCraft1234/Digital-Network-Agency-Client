@@ -18,7 +18,7 @@ const Donation = () => {
   return (
     <div>
       {nodata ? (
-        <p className="h-[80vh] flex justify-center items-center">{nodata}</p>
+        <p className="h-[80vh]  flex justify-center items-center">{nodata}</p>
       ) : (
         <div>
           <div className="grid md:grid-cols-2 gap-5">

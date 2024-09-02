@@ -1,5 +1,5 @@
 import { Helmet } from "react-helmet-async";
-import LandingPage from "../../Components/Banner/LandingPage";
+import LandingPage from "../../Components/Banner/MainBanner";
 import DigitalMarketingMarketing from "../../Components/DigitalMarketingMarketing";
 import GraphicDesignMarketing from "../../Components/GraphicDesignMarketing";
 import Rating from "../../Components/Rating/Rating";
@@ -16,7 +16,7 @@ import Choose from "../../Components/Choose";
 
 const Home = () => {
   return (
-    <div className="mt-16 bg-white mx-16 my-16">
+    <div className="mt-16 bg-white  my-16">
       <Helmet>
         <title>Digital Network| Home</title>
         <link rel="canonical" href="https://www.tacobell.com/" />
@@ -27,11 +27,7 @@ const Home = () => {
       <WebDesignMarketing></WebDesignMarketing>
       <GraphicDesignMarketing></GraphicDesignMarketing>
       <DigitalMarketingMarketing></DigitalMarketingMarketing>
-      {/* <TestimonialCarousel></TestimonialCarousel> */}
       <HighlightClients></HighlightClients>
-      <Rating></Rating>
-      <WhyChooseUs></WhyChooseUs>
-      {/* <Payment></Payment> */}
       <Package></Package>
       <Choose></Choose>
       <Domain></Domain>

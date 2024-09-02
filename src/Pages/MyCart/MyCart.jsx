@@ -124,13 +124,22 @@ const MyCart = () => {
 
   
   return (
-    <div className="  mx-8 ">
+    <div className="   ">
        <Helmet>
               <title> বিশ্বস্ত-বাজার | MyCart</title>
               <link rel="canonical" href="https://www.tacobell.com/" />
                </Helmet>
+
+               <section className="bg-[#05a0db] pt-44 text-white py-28">
+        <div className=" px-4">
+          <div className="text-center">
+            <h1 className="text-4xl font-bold">My Cart</h1>
+            <p className="mt-2">Home / My Cart</p>
+          </div>
+        </div>
+      </section>
       {
-        cartItems.length === 0 ? <div className="bg-white flex justify-center items-center p-6 min-h-screen rounded-lg shadow-lg text-center">
+        cartItems.length === 0 ? <div className="bg-white mx-12 flex justify-center items-center p-6 min-h-screen rounded-lg shadow-lg text-center">
      <div>
      <h1 className="text-3xl font-bold mb-5 text-black">  কোন প্রোডাক্ট নেই</h1>
         <Link to="/">
@@ -139,7 +148,7 @@ const MyCart = () => {
           </button>
         </Link>
      </div>
-      </div> : <div className=" flex justify-center items-center    text-center">
+      </div> : <div className=" flex px-24 mt-5 justify-center items-center    text-center">
 
       <div className=" grid gap-5 md:grid-cols-2  mt-28">
         <div className="bg-gray-100 p-6 mx-4 rounded-lg ">

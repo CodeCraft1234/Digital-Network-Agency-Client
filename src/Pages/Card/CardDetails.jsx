@@ -16,8 +16,8 @@ const CardDetails = () => {
     fetchCardDetails();
   }, [id]);
 
-  const handleCart = ( title, price, description, picture) => {
-    const cartItem = { title, price,  description, picture };
+  const handleCart = (title, price, description, picture) => {
+    const cartItem = { title, price, description, picture };
     let cart = localStorage.getItem("carts");
 
     if (!cart) {
@@ -39,19 +39,25 @@ const CardDetails = () => {
     localStorage.setItem("carts", JSON.stringify(cart));
     navigate(location?.state ? location.state : "/myCart");
   };
+
   if (!card) {
     return <p>Loading...</p>;
   }
 
   return (
-    <div className="container mx-auto mt-36 px-4 mb-16">
-      <div className="relative flex flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-md p-4 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-105">
-        <div className="relative h-56 overflow-hidden rounded-xl bg-white bg-clip-border text-gray-700">
-          <img
-            src={card.picture}
-            alt={card.title}
-            className="h-full w-full object-cover"
-          />
+    <div className="px-32 pt-32 mb-16">
+      <div className="relative flex flex-col bg-white text-gray-700 p-4">
+        {/* Replaced the image with the YouTube video */}
+        <div className="relative h-96 overflow-hidden rounded-xl bg-white text-gray-700">
+          <iframe
+            width="100%"
+            height="100%"
+            src={card.video}
+            title={card.title}
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          ></iframe>
           <div className="absolute bottom-0 left-0 w-full h-16 bg-gradient-to-t from-black to-transparent opacity-70"></div>
         </div>
         <div className="p-4 flex-grow">
@@ -63,7 +69,9 @@ const CardDetails = () => {
             ${card.price}
           </p>
           <button
-            onClick={() => handleCart(card.title, card.price, card.description, card.picture)}
+            onClick={() =>
+              handleCart(card.title, card.price, card.description, card.picture)
+            }
             className="mt-4 px-6 py-2 text-lg font-medium leading-normal text-white rounded-lg shadow-md"
             style={{ backgroundColor: card.text_button_bg_color }}
           >

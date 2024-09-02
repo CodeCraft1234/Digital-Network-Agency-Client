@@ -33,8 +33,8 @@ const Card = () => {
     
     return (
         <div>
-           <section className="bg-gradient-to-r from-purple-500 to-blue-700 text-white py-32">
-        <div className="container mx-auto px-4">
+           <section className="bg-[#05a0db] pt-44 text-white py-28">
+        <div className=" px-4">
           <div className="text-center">
             <h1 className="text-4xl font-bold">{category}</h1>
             <p className="mt-2">Home / {category}</p>

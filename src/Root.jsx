@@ -20,7 +20,7 @@ const Root = () => {
     <div className="bg-white">
       <ScrollTop />
       {!noheaderfooter && <NavBar />}
-      <div className="min-h-screen max-w-auto ">
+      <div className="min-h-screen  max-w-auto ">
         <Outlet />
       </div>
       {!noheaderfooter && <Footer />}

@@ -19,14 +19,14 @@ const testimonials = [
   },
   {
     name: "Dona Ganguly",
-    title: "Web Developer",
+    title: "Degital Marketer",
     image: "https://i.ibb.co/pbVXNLy/testimonial-author-3.jpg",
     quote:
       "Ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit.",
   },
   {
     name: "Mark Anthony",
-    title: "Web Developer",
+    title: "Graphics Designer",
     image: "https://i.ibb.co/18brXk7/testimonial-author-4.jpg",
     quote:
       "Ut enim ad minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit.",
@@ -59,24 +59,21 @@ const Package = () => {
   };
 
   return (
-    <div className="bg-gradient-to-b from-black via-gray-900 to-black py-16">
-      <div className="max-w-6xl mx-auto px-4 text-center">
+    <div className="bg-gradient-to-b  from-black via-gray-900 to-black py-16">
+      <div className=" px-44  text-center">
         <h2 className="text-3xl font-bold text-white mb-4">TESTIMONIALS</h2>
         <p className="text-gray-400 mb-8">
-          Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
-          dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-          proident, sunt in culpa qui officia deserunt mollit anim id est
-          laborum.
+        Hear what our clients have to say about our web development, graphic design, and digital marketing services.
         </p>
         <Slider {...settings}>
           {testimonials.map((testimonial, index) => (
-            <div key={index} className="p-4">
-              <div className="bg-white rounded-lg shadow-lg p-6 transform transition duration-500 hover:-translate-y-2 hover:shadow-2xl relative">
-                <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-orange-500 w-16 h-16 flex items-center justify-center rounded-full">
+            <div key={index} className="p-4 ">
+              <div className="bg-white h-[300px] rounded-lg mt-10 shadow-lg p-5 transform transition duration-500 hover:-translate-y-2 hover:shadow-2xl relative">
+                <div className="absolute top-0 left-1/2  transform -translate-x-1/2 -translate-y-1/2 bg-orange-500 w-24 h-24 flex items-center justify-center rounded-full">
                   <img
                     src="https://i.ibb.co/2cnpLJC/quote-icon.png"
                     alt="Quote Icon"
-                    className="w-8 h-8"
+                    className="w-8 h-8 rounded-full"
                   />
                 </div>
                 <p className="text-gray-700 mt-8 mb-6">{testimonial.quote}</p>

@@ -13,7 +13,7 @@ const GraphicDesignMarketing = () => {
   }, []);
 
   return (
-    <div className="flex px-10 flex-col md:flex-row items-center md:justify-between bg-white">
+    <div className="flex px-18 mx-24 flex-col md:flex-row items-center md:justify-between bg-white">
       {/* Image section with animation */}
       <div
         className="w-full md:w-1/2 order-2 md:order-1 flex justify-center"
@@ -22,13 +22,13 @@ const GraphicDesignMarketing = () => {
         <img
           src="https://i.ibb.co/ydKYLFm/pngtree-professional-web-developer-3d-illustration-png-image-10165437.png"
           alt="Marketing"
-          className="w-full h-auto"
+          className="w-[450px] h-[450px]"
         />
       </div>
       
       {/* Content section with animation */}
       <div
-        className="w-full order-1 md:w-1/2 mt-4 text-black md:mt-0 md:pl-6"
+        className="w-full order-1 pr-10 md:w-1/2 mt-4 text-black md:mt-0 md:pl-6"
         data-aos="fade-left"
       >
         <h2 className="text-xl md:text-2xl font-bold text-black mb-3">

@@ -1,14 +1,12 @@
 import { useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 
-
 const Card = ({ plan }) => {
-
   const navigate = useNavigate();
 
-  const handleCart = (storage, price) => {
-    const cartItem = { storage, price };
-    let cart = localStorage.getItem("Domain-Cart");
+  const handleCart = (storage, price,picture) => {
+    const cartItem = { storage, price,picture };
+    let cart = localStorage.getItem("carts");
 
     if (!cart) {
       cart = [];
@@ -26,31 +24,31 @@ const Card = ({ plan }) => {
     }
 
     cart.push(cartItem);
-    localStorage.setItem("Domain-Cart", JSON.stringify(cart));
+    localStorage.setItem("carts", JSON.stringify(cart));
     navigate("/myCart");
   };
+
+
   return (
-   
-<div className="transition-transform duration-300 transform hover:scale-105 hover:translate-y-[-10px]">
-      <div className={`p-2 rounded-t-lg ${plan.headerBg}`}>
+    <div className="transition-transform duration-300 transform hover:scale-105 hover:translate-y-[-10px] bg-white shadow-lg rounded-lg">
+      <div className={`p-4 rounded-t-lg ${plan.headerBg}`}>
         <h2 className="text-xl font-bold text-center">{plan.storage}</h2>
         <p className="text-center">{plan.description}</p>
       </div>
-      <div className="bg-white text-black p-6 rounded-lg shadow-lg w-96 h-full md:h-96 flex flex-col justify-between">
-        <p className="text-center text-4xl font-bold my-4">{plan.price}</p>
+      <div className="p-6 flex flex-col justify-between h-[350px]">
+        <p className="text-center text-black text-4xl font-bold my-4">{plan.price}</p>
         <ul className="space-y-2 text-black">
           {plan.features.map((feature, index) => (
             <li key={index}>{feature}</li>
           ))}
         </ul>
-        <div className="text-center mt-6">
-          <button
-            className={`py-2 px-4 rounded ${plan.buttonBg} text-white`}
-            onClick={() => handleCart(plan.storage, plan.price)}
+        <button
+            className={`py-2 px-4  rounded ${plan.buttonBg} text-white`}
+            onClick={() => handleCart(plan.storage, plan.price,plan.image)}
           >
             Order Now
           </button>
-        </div>
+       
       </div>
     </div>
   );
@@ -71,6 +69,11 @@ const Domain = () => {
       ],
       headerBg: "bg-blue-600 text-white",
       buttonBg: "bg-blue-600",
+      image:'https://i.ibb.co/5YRyhwB/10-gb-3d-word-on-600nw-1389824156.webp'
+
+     
+
+
     },
     {
       storage: "50 GB",
@@ -85,6 +88,7 @@ const Domain = () => {
       ],
       headerBg: "bg-black text-white",
       buttonBg: "bg-black",
+      image:'https://i.ibb.co/3hW8HpS/50gb-capacity-download-upload-vector-600nw-2232989733.webp'
     },
     {
       storage: "100 GB",
@@ -99,6 +103,7 @@ const Domain = () => {
       ],
       headerBg: "bg-green-600 text-white",
       buttonBg: "bg-green-600",
+      image:'https://i.ibb.co/yPWhLWq/pngtree-cloud-icon-100-gb-storage-capacity-3d-computer-png-image-11098474.png'
     },
     {
       storage: "200 GB",
@@ -113,29 +118,28 @@ const Domain = () => {
       ],
       headerBg: "bg-red-500 text-white",
       buttonBg: "bg-red-500",
+      image:'https://i.ibb.co/SrDDyXw/cloud-icon-200-gb-storage-capacity-3d-rendering-isolated-on-white-background-PKJYY0.jpg'
     },
   ];
 
-
-
   return (
-    <div className="mt-24">
+    <div className="mt-10 mx-36   ">
       <Helmet>
-        <title>Digital Network| Domain</title>
+        <title>Digital Network | Domain</title>
         <link rel="canonical" href="https://www.tacobell.com/" />
       </Helmet>
       <div className="text-center text-black mb-8">
-        <h1 className="text-xl md:text-4xl lg:text-4xl font-bold">
-        Free .COM Domain With <br /> Super Fast Cloud Hosting
+        <h1 className="text-xl md:text-4xl font-bold">
+          Free .COM Domain With <br /> Super Fast Cloud Hosting
         </h1>
       </div>
-      <div className="flex flex-col md:flex-row justify-start items-start space-y-4 md:space-y-0 md:space-x-4 gap-16">
+      {/* Grid layout */}
+      <div className="grid grid-cols-1 justify-center sm:grid-cols-2 lg:grid-cols-4 gap-5">
         {plans.map((plan, index) => (
           <Card key={index} plan={plan} />
         ))}
       </div>
     </div>
-  
   );
 };
 

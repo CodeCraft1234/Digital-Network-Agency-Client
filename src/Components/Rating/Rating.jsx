@@ -13,7 +13,7 @@ const Rating = () => {
   }, []);
 
   return (
-    <div className="mb-4">
+    <div className="mb-4 mx-24 px-12">
       <h2 className="text-center font-bold text-blue-500 text-4xl py-5">
         Meet Our Team Members
       </h2>
@@ -26,7 +26,7 @@ const Rating = () => {
             <img
               src="https://i.ibb.co/9G3xhxg/MD-Muzahidul-Islam.jpg"
               alt="Client 1"
-              className="w-48 h-48 object-cover"
+              className="w-32 h-32 object-cover"
             />
           </div>
           <p className="text-center text-black px-4 mb-2">
@@ -53,7 +53,7 @@ const Rating = () => {
             <img
               src="https://i.ibb.co/d7RTx6v/Anowarul.jpg"
               alt="Client 2"
-              className="w-48 h-48 object-cover"
+              className="w-32 h-32 object-cover"
             />
           </div>
           <p className="text-center text-black px-4 mb-2">
@@ -80,7 +80,7 @@ const Rating = () => {
             <img
               src="https://hellodigitalnetwork.com/wp-content/uploads/2024/05/Sharmin.jpg"
               alt="Client 3"
-              className="w-48 h-48 object-cover"
+              className="w-32 h-32 object-cover"
             />
           </div>
           <p className="text-center text-black px-4 mb-2">

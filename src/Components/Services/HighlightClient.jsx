@@ -34,7 +34,7 @@ const HighlightClients = () => {
 
   return (
     <section
-      className="relative  bg-cover bg-center bg-no-repeat h-96"
+      className="relative px-32   bg-cover bg-center bg-no-repeat h-[600px]"
       style={{ 
         backgroundImage: `url(${bgImageUrl})`, 
         backgroundAttachment: 'fixed',
@@ -51,7 +51,7 @@ const HighlightClients = () => {
             We specialize in crafting compelling digital experiences through expert web design, innovative graphics solutions, and impactful digital marketing strategies. Our passion drives us to deliver excellence in every project, ensuring your online presence stands out.
           </p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 text-white">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-5 text-white">
           <div className="bg-transparent border border-white p-4 rounded-lg text-center">
             <h2 className="text-3xl font-bold">{happyClients}</h2>
             <p className="text-xl">Happy Clients</p>

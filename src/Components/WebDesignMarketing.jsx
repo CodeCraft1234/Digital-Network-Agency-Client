@@ -13,7 +13,7 @@ const WebDesignMarketing = () => {
   }, []);
 
   return (
-    <div className="flex flex-col px-10 md:flex-row items-center md:justify-between bg-white">
+    <div className="flex mx-24 flex-col px-8 md:flex-row items-center md:justify-between bg-white">
       {/* Image section with animation */}
       <div
         className="w-full order-2 md:w-1/2 flex justify-center"
@@ -22,7 +22,7 @@ const WebDesignMarketing = () => {
         <img
           src="https://i.ibb.co/bPRLS1X/designer-designing-web-page-3d-character-illustration-png.webp"
           alt="Marketing"
-          className="w-full h-auto"
+          className="w-[450px] h-[450px]"
         />
       </div>
       

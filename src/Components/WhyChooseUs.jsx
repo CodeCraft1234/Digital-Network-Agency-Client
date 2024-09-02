@@ -32,7 +32,7 @@ const WhyChooseUs = () => {
   const cards = createCardItems(textItems);
 
   return (
-    <div className="bg-white p-10 flex flex-col items-center relative mb-10">
+    <div className="bg-white mt-10 px-12 mx-24  flex flex-col items-center relative mb-10">
       <h2 className="text-4xl font-bold text-center z-10">
         Why Should You <span className="text-pink-600">Choose Us!</span>
       </h2>

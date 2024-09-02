@@ -8,7 +8,9 @@
       "card_bg_color": "#79c23f26",
       "text_button_bg_color": "#79C23F",
       "description": "Considering the growing demand for visual content, marketers are promoting their products through graphical ideas nowadays. The increasing need for graphic designers has unlocked many opportunities for the people who prefer working independently. A study shows, all the companies prioritize their visual acceptance, even a small company spends up to 500 dollars to create a perfect logo. If you are passionate about making designs, this updated Graphic Design course is for you.",
-      "price": "299.99"
+      "price": "299.99",
+      "video":"https://www.youtube.com/embed/uOpmWcAXrls"
+     
     },
     {
       "picture": "https://i.ibb.co/w6qSWXP/course-1662552115.jpg",
@@ -19,7 +21,9 @@
       "card_bg_color": "#79c23f26",
       "text_button_bg_color": "#79C23F",
       "description": "Motion graphics bring stunning visuals to life using movements . A report by MIT shows, human brain takes a brief moment, only 13 milliseconds to process visual content. As a result, many companies are using motion graphics to engage the audience with ideas. If you have the basic knowledge on making intro or broadcasting videos, this course is for you.",
-      "price": "49.95"
+      "price": "49.95",
+      "video":"https://www.youtube.com/embed/1nNz_58fEb4"
+     
     },
     {
       "picture": "https://i.ibb.co/QCW3ZXq/course-1662637290.jpg",
@@ -30,7 +34,9 @@
       "card_bg_color": "#79c23f26",
       "text_button_bg_color": "#79C23F",
       "description": "UX Design has become one of the top high demand jobs in the tech world. Companies are prioritizing on hiring skilled designers as it plays a crucial role in ensuring user friendly websites. A study shows, almost 77% of online business fail to survive in the competitive global market due to complex interface design. UX designers ensure the efficacy of the website, making it easily accessible to the users. If you like to work with graphical elements, this course is for you.",
-      "price": "79.99"
+      "price": "79.99",
+      "video":"https://www.youtube.com/embed/mV8ftdZgvdQ"
+     
     },
     {
       "picture": "https://i.ibb.co/7gsXtqV/course-1662795698.jpg",
@@ -41,29 +47,34 @@
       "card_bg_color": "#f8714726",
       "text_button_bg_color": "#F87147",
       "description": "Web development is in high demand and a top-five technology job, with an anticipated 30.3% increase in demand for web developers from 2021 to 2031. Keep ahead of the competition by enrolling in our Comprehensive Web Development Course to learn the latest trends from experienced web developers.",
-      "price": "39.99"
+      "price": "39.99",
+      "video":"https://www.youtube.com/embed/GLB8A-uCiEA"
+     
     },
     {
         "picture": "https://i.ibb.co/7gsXtqV/course-1662795698.jpg",
-        "title": "MERN Stack Development",
+        "title": "E-commers Website",
         "category": "Web Design",
         "id": "5",
         "category_bg_color": "#F87147",
         "card_bg_color": "#f8714726",
         "text_button_bg_color": "#F87147",
         "description": "MERN Stack is a combination of four different technologies that is used to develop a website in an efficient manner. In this course, you can gain your expertise in three areas- Web Development, Web Design and App Development. Most of the companies nowadays are using the MERN Stack Programme for its easily customizable, cost-effective features. Enroll in this course to develop your skills in this field.",
-        "price": "39.99"
+        "price": "39.99",
+        "video":"https://www.youtube.com/embed/wf4F2-9UXUo"
     },
     {
         "picture": "https://i.ibb.co/JQqSH47/course-1674371266.jpg",
-        "title": "Front-End Development ",
+        "title": "Business Website",
         "category": "Web Design",
         "id": "6",
         "category_bg_color": "#F87147",
         "card_bg_color": "#f8714726",
         "text_button_bg_color": "#F87147",
         "description": "React js is one of the most popular frameworks that you can use to design your website interface. It ensures your convenience by providing you a hassle-free, flexible work experience. In addition, React js is built on an open source platform with an extensive library that simplifies the complex coding. Considering the feasibility, most of the developers prefer using this framework, you can also have your expertise with our advanced Front-End Development Course.",
-        "price": "79.99"
+        "price": "79.99",
+         "video":"https://www.youtube.com/embed/GGf1JjSAKP4"
+     
     },
     {
         "picture": "https://i.ibb.co/qYj7Dv6/course-1663052131.jpg",
@@ -85,7 +96,8 @@
         "card_bg_color": "#0052ff26",
         "text_button_bg_color": "#0052FF",
         "description": "Google Adsense; the largest ad network in the world to reach potential customers. Enrolling in our Complete Google AdSense Course can be an excellent investment for website owners and bloggers who want to maximize their earnings potential and improve their user experience.",
-        "price": "299.99"
+        "price": "299.99",
+        "video":"https://www.youtube.com/embed/JcklujFmJu8"
     },
     {
         "picture": "https://i.ibb.co/Jv3Ggj4/course-1674372625.jpg",
@@ -107,7 +119,8 @@
         "card_bg_color": "#0052ff26",
         "text_button_bg_color": "#0052FF",
         "description": "A study shows, almost 76% of people only go through the first page of a website to find the necessary information. You need to know the proper SEO strategies to rank your post or website on the first page of search engines. Our comprehensive SEO course can be your first priority if you want to be a digital marketer.",
-        "price": "299.99"
+        "price": "299.99",
+        "video":"https://www.youtube.com/embed/hF515-0Tduk"
     },
     {
         "picture": "https://i.ibb.co/d5L8Q2M/course-1663052587.jpg",
@@ -118,7 +131,8 @@
         "card_bg_color": "#0052ff26",
         "text_button_bg_color": "#0052FF",
         "description": "Social media advertising can be an effective tool for increasing your business revenue. It easily connects the audience with your products, raising the chance of sales to a great extent. But success highly depends on your approach and strategies to attract potential customers. If you don't know how this course will lead you to the right path.",
-        "price": "299.99"
+        "price": "299.99",
+        "video":"https://www.youtube.com/embed/HUhCyNp_wKU"
     },
     {
         "picture": "https://i.ibb.co/d5L8Q2M/course-1663052587.jpg",

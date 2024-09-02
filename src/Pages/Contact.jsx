@@ -43,10 +43,12 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    emailjs.send('service_ogobvag', 'template_qtlkvpn', formData, 'pndgWc7HdsdPDRjuq')
+    emailjs
+      .send('service_ogobvag', 'template_qtlkvpn', formData, 'pndgWc7HdsdPDRjuq')
       .then((response) => {
         console.log('Success:', response);
         setStatus('Message sent successfully!');
+        setFormData({ name: '', email: '', subject: '', message: '' }); // Clear the form fields
       })
       .catch((error) => {
         console.error('Error:', error);
@@ -57,10 +59,10 @@ const Contact = () => {
   return (
     <div className="mt-16">
       <Helmet>
-        <title>Digital Network| Contact</title>
+        <title>Digital Network | Contact</title>
         <link rel="canonical" href="https://www.tacobell.com/" />
       </Helmet>
-      <section className="bg-gradient-to-r from-purple-500 to-blue-700 text-white py-32">
+      <section className="bg-[#05a0db] text-white py-28">
         <div className="container mx-auto px-4">
           <div className="text-center">
             <h1 className="text-4xl font-bold">Contact Us</h1>
@@ -69,7 +71,7 @@ const Contact = () => {
         </div>
       </section>
 
-      <div className="mx-10 px-4 py-10 flex flex-col lg:flex-row gap-10">
+      <div className=" px-28 py-10 border border-gray-600 mt-5 mx-36 flex flex-col lg:flex-row gap-10">
         <motion.div
           initial={{ x: -100, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
@@ -103,7 +105,7 @@ const Contact = () => {
                   value={formData.name}
                   onChange={handleChange}
                   placeholder="Name"
-                  className="w-full p-3 border border-gray-300 rounded focus:outline-none focus:border-purple-500"
+                  className="w-full p-3 border bg-white text-black border-gray-800 rounded focus:outline-none focus:border-purple-500"
                 />
               </div>
               <div className="w-full md:w-1/2 px-2 mb-4">
@@ -113,7 +115,7 @@ const Contact = () => {
                   value={formData.email}
                   onChange={handleChange}
                   placeholder="Email"
-                  className="w-full p-3 border border-gray-300 rounded focus:outline-none focus:border-purple-500"
+                  className="w-full p-3 border bg-white text-black border-gray-800 rounded focus:outline-none focus:border-purple-500"
                 />
               </div>
             </div>
@@ -124,7 +126,7 @@ const Contact = () => {
                 value={formData.subject}
                 onChange={handleChange}
                 placeholder="Subject"
-                className="w-full p-3 border border-gray-300 rounded focus:outline-none focus:border-purple-500"
+                className="w-full p-3 border bg-white text-black border-gray-800 rounded focus:outline-none focus:border-purple-500"
               />
             </div>
             <div className="mb-4">
@@ -134,7 +136,7 @@ const Contact = () => {
                 onChange={handleChange}
                 placeholder="Comment"
                 rows="5"
-                className="w-full p-3 border border-gray-300 rounded focus:outline-none focus:border-purple-500"
+                className="w-full p-3 border bg-white text-black border-gray-800 rounded focus:outline-none focus:border-purple-500"
               ></textarea>
             </div>
             <div className="text-center">
@@ -149,7 +151,7 @@ const Contact = () => {
           </form>
         </motion.div>
       </div>
-      <div className="w-full h-64 lg:h-96 mt-10">
+      <div className="w-full mb-10 h-64 lg:h-96 mt-10">
         <iframe
           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3651.8487425375986!2d90.39945231445558!3d23.750841194616728!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755b894a29c05a7%3A0x697e6fdeb22536c!2sDhaka%2C%20Bangladesh!5e0!3m2!1sen!2sbd!4v1629780134955!5m2!1sen!2sbd"
           width="100%"

@@ -16,12 +16,12 @@ const Faq = () => {
   };
 
   return (
-    <div className="mt-16">
+    <div className="mt-16 ">
       <Helmet>
         <title>Digital Network | FAQ</title>
         <link rel="canonical" href="https://www.tacobell.com/" />
       </Helmet>
-      <section className="bg-gradient-to-r from-purple-500 to-blue-700 text-white py-32">
+      <section className="bg-[#05a0db] text-white py-28">
         <div className="px-4">
           <div className="text-center">
             <h1 className="text-4xl font-bold">FAQ</h1>
@@ -29,7 +29,7 @@ const Faq = () => {
           </div>
         </div>
       </section>
-      <div className="px-4 py-10 mx-10 flex flex-col md:flex-row gap-10">
+      <div className=" px-20 py-10 mx-10 flex flex-col md:flex-row gap-10">
         <div
           className="md:w-1/3 bg-white p-6"
           data-aos="fade-up"

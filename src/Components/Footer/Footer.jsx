@@ -40,7 +40,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-gray-900 px-4 md:px-16 text-white py-10 relative">
+    <footer className="bg-gray-900 px-4 md:px-16 text-white py-16 relative">
       <div className="">
         <div className="flex flex-wrap justify-between">
           <div className="w-full lg:w-1/5 md:w-1/2 mb-8">

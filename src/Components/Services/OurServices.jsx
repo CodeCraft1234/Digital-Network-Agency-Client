@@ -15,7 +15,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   .hover\\:bottom-to-top:hover {
-    background: linear-gradient(to top, #ff0000, #ffffff);
+    background: linear-gradient(to top, #05a0db, #ffffff);
     animation: bottomToTop 2s forwards;
     background-size: 200% 200%;
   }
@@ -35,7 +35,7 @@ const OurServices = () => {
   }, []);
 
   return (
-    <div>
+    <div className='mx-24 px-12 py-10'>
       <Helmet>
         <title>Digital Network| Services</title>
         <link rel="canonical" href="https://www.tacobell.com/" />
@@ -49,12 +49,14 @@ const OurServices = () => {
               Lorem Ipsum is simply dummy text of the printing and typesetting has been the industry's standard dummy text ever since
             </p>
           </div>
-          <div className="grid grid-cols-1 lg:grid-cols-3 sm:grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-3 sm:grid-cols-1 md:grid-cols-3 gap-5">
             {services.map((service, index) => (
+ <Link  key={index} to={`/category/${service.category}`} className="text-blue-600 mt-4   hover:text-white">
               <div
-                key={index}
+               
                 className="flex flex-col items-center justify-center text-center p-6 bg-white shadow-md rounded-lg transition-all duration-500 text-black transform hover:translate-y-[-10px] hover:bottom-to-top"
               >
+                
                 <div className="mb-4">
                   <img
                     className="w-16 h-16"
@@ -64,8 +66,9 @@ const OurServices = () => {
                 </div>
                 <h6 className="text-xl font-semibold mb-2">{service.category}</h6>
                 <p className="text-black">Grursus suada lisis the Lorem ipsum dolarorit more and manys this as this of ready consectetur elit.</p>
-                <Link to={`/category/${service.category}`} className="text-blue-600 mt-4 hover:text-white">Read More</Link>
+               <p className='hover:text-black hover:underline'>   Read More</p>
               </div>
+              </Link>
             ))}
           </div>
         </div>

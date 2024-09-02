@@ -9,13 +9,13 @@ const DonationDetails = ({ filteredCards }) => {
 
 
   return (
-    <div className="container mx-auto mt-36 px-4 mb-16">
+    <div className="px-12 mt-5  mb-16">
       {filteredCards.length ? (
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {filteredCards.map((card) => (
             <Link key={card.id} to={`/card/${card.id}`}>
               <div
-                className="relative flex flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-md p-4"
+                className="relative flex flex-col rounded-xl bg-indigo-100 bg-clip-border text-gray-700 shadow-xl p-4"
                
               >
                 <div className="relative h-60 overflow-hidden rounded-xl bg-white bg-clip-border text-gray-700">
