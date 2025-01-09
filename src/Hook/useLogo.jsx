@@ -10,7 +10,6 @@ const useLogo= () => {
             return res.data
         }
     })
-        console.log(logo)
         return [logo,refetch]
 
 }

@@ -23,7 +23,7 @@ const Login = () => {
     googleSignIn()
       .then((result) => {
         console.log(result.user);
-        navigate(location?.state ? location.state : "/dashboard/admin/adminHome");
+        navigate(location?.state ? location.state : "/dashboard");
         toast.success("Google login successful");
       })
       .catch((error) => {
@@ -36,7 +36,7 @@ const Login = () => {
     facebookSignin()
       .then((result) => {
         console.log(result.user);
-        navigate(location?.state ? location.state : "/dashboard/admin/adminHome");
+        navigate(location?.state ? location.state : "/dashboard");
         return toast.success("Facebook login successful");
       })
       .catch((error) => {
@@ -55,7 +55,7 @@ const Login = () => {
     signIn(email, password)
       .then((result) => {
         console.log(result.user);
-        navigate(location?.state ? location.state : "/dashboard/admin/adminHome");
+        navigate(location?.state ? location.state : "/dashboard");
         Swal.fire({
           title: "Login successful!",
           text: "You have logged in successfully.",
@@ -72,47 +72,14 @@ const Login = () => {
       });
   };
 
-  const handleForgetPassword = () => {
-    const email = emailRef.current.value;
-    if (!email) {
-      Swal.fire({
-        title: "Error",
-        text: "Please enter your email to reset password.",
-        icon: "error"
-      });
-      return;
-    }
-    sendPasswordResetEmail(auth, email)
-      .then(() => {
-        Swal.fire({
-          title: "Success",
-          text: "Check your email to reset your password.",
-          icon: "success"
-        });
-      })
-      .catch((error) => {
-        console.log(error);
-        Swal.fire({
-          title: "Error",
-          text: "Failed to send reset email.",
-          icon: "error"
-        });
-      });
-  };
-
   const [logo, setLogo] = useLogo();
   const [latestLogo, setLatestLogo] = useState(null);
   console.log(latestLogo);
 
   useEffect(() => {
     if (logo && logo.length > 0) {
-      // Sort the logos based on date in descending order
       const sortedLogo = [...logo].sort((a, b) => new Date(b.date) - new Date(a.date));
-
-      // Get the latest logo
       const latest = sortedLogo[0];
-
-      // Set the sorted logo and latest logo state
       setLogo(sortedLogo);
       setLatestLogo(latest);
     }

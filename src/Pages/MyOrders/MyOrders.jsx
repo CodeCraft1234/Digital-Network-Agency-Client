@@ -25,21 +25,14 @@ const MyOrders = () => {
     };
 
     return (
-        <div className=" pt-16  py-2  ">
+        <div className=" py-32  py-2  ">
             <Helmet>
                 <title>Digital Network | My Orders</title>
                 <link rel="canonical" href="https://www.tacobell.com/" />
             </Helmet>
 
-            <section className="bg-[#05a0db] pt-28 text-white py-28">
-        <div className=" px-4">
-          <div className="text-center">
-            <h1 className="text-4xl font-bold">My Orders</h1>
-            <p className="mt-2">Home / My Orders</p>
-          </div>
-        </div>
-      </section>
-<div className='mx-36 mt-5 border border-gray-600 p-5 '>
+
+<div className='lg:mx-36  mt-5  p-5 '>
 {
                 orders.length === 0 ? (
                     <div className="bg-white flex px-4 justify-center items-center p-6 min-h-screen rounded-lg text-center">
@@ -55,7 +48,7 @@ const MyOrders = () => {
                 ) : (
                     <div>
                        
-                        <div className="grid grid-cols-1  px-28 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <div className="grid grid-cols-1  lg:px-28 md:grid-cols-2 lg:grid-cols-3 gap-5">
                             {orders.map((order) => (
                                 <div key={order._id} className="border  bg-green-200 rounded-lg p-6 ">
                                     <h2 className="text-md font-bold mb-4 text-black">Order ID: {order._id}</h2>
@@ -64,8 +57,8 @@ const MyOrders = () => {
                                     <p className="text-sm text-black"><strong>Address:</strong> {order.address}</p>
                                     <p className="text-sm text-black"><strong>Order Date:</strong> {order.date}</p>
                                     <h3 className="text-md font-bold mt-6 mb-4 text-black">Cart Items</h3>
-                                    <div className="grid gap-4">
-                                        {order.cartItems.map(item => (
+                                    {/* <div className="grid gap-4">
+                                        {order?.cartItems?.map(item => (
                                             <div key={item.id} className="flex items-center border border-gray-300 p-2 rounded-md bg-white">
                                                 <img src={item.image} alt={item.title} className="w-16 h-16 mr-4 rounded-md" />
                                                 <div className="text-black">
@@ -75,7 +68,7 @@ const MyOrders = () => {
                                                 </div>
                                             </div>
                                         ))}
-                                    </div>
+                                    </div> */}
                                     <p className="mt-6 text-black font-bold text-sm"><strong>Delivery Charge:</strong> {order.deliveryCharge} টাকা</p>
                                     <p className="text-black font-bold text-sm"><strong>Subtotal:</strong> {order.subTotal} টাকা</p>
                                     <p className="text-md font-bold mt-6 text-black">Total Amount: {order.totalAmount} টাকা</p>

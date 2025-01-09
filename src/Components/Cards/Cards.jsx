@@ -1,7 +1,6 @@
 import { useLoaderData } from "react-router-dom";
-import AllCards from "./AllCards";
+import  AllCards from "./AllCards";
 import { useState } from "react";
-
 
 const Cards = () => {
     const initialCards = useLoaderData();

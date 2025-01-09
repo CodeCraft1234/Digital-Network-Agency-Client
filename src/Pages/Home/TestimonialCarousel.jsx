@@ -24,7 +24,7 @@ const testimonials = [
 
 const TestimonialsCarousel = () => {
   return (
-    <div className="bg-gray-900 mx-14 py-16">
+    <div className="bg-gray-900 mx-20 py-16">
       <div className="container mx-auto text-center mb-12">
         <h2 className="text-3xl text-white font-bold">Cusomers Feedbacks</h2>
         <p className="text-gray-400 mt-4">

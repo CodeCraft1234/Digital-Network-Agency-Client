@@ -1,36 +1,57 @@
+import { useEffect } from "react";
 import { Helmet } from "react-helmet-async";
 import LandingPage from "../../Components/Banner/MainBanner";
-import DigitalMarketingMarketing from "../../Components/DigitalMarketingMarketing";
-import GraphicDesignMarketing from "../../Components/GraphicDesignMarketing";
-import Rating from "../../Components/Rating/Rating";
 import HighlightClients from "../../Components/Services/HighlightClient";
 import OurServices from "../../Components/Services/OurServices";
-import WebDesignMarketing from "../../Components/WebDesignMarketing";
-import TestimonialCarousel from "./TestimonialCarousel";
-import WhyChooseUs from "../../Components/WhyChooseUs";
-import Payment from "../../Components/Payment/Payment";
-import Cards from "../../components/Cards/Cards";
 import Package from "../../Components/Package/Package";
-import Domain from "../../Components/Domain";
 import Choose from "../../Components/Choose";
+import TeamMembers from "../TeamMembers";
+import Services from "../Card/Services";
+import PaymentSystem from "../../Components/Package/PaymentSystem";
+import CategoryCarosel from "../../Components/Package/CategoryCarosel";
+import CategoryService from "../Card/CategoryService";
 
 const Home = () => {
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.async = true;
+    script.src = "https://embed.tawk.to/677a908baf5bfec1dbe6e13d/1igrc98i1";
+    script.charset = "UTF-8";
+    script.setAttribute("crossorigin", "*");
+    document.body.appendChild(script);
+
+    script.onload = () => {
+      if (window.Tawk_API) {
+        window.Tawk_API.onLoad = function () {
+          console.log("Tawk.to widget loaded");
+          window.Tawk_API.setWidgetPosition("left");
+        };
+      }
+    };
+
+    return () => {
+      if (script) {
+        document.body.removeChild(script);
+      }
+    };
+  }, []);
+
   return (
-    <div className="mt-16 bg-white  my-16">
+    <div className="mt-16 bg-white my-16">
       <Helmet>
-        <title>Digital Network| Home</title>
+        <title>Digital Network | </title>
         <link rel="canonical" href="https://www.tacobell.com/" />
       </Helmet>
-      <LandingPage></LandingPage>
-      <OurServices></OurServices>
-
-      <WebDesignMarketing></WebDesignMarketing>
-      <GraphicDesignMarketing></GraphicDesignMarketing>
-      <DigitalMarketingMarketing></DigitalMarketingMarketing>
-      <HighlightClients></HighlightClients>
-      <Package></Package>
-      <Choose></Choose>
-      <Domain></Domain>
+      <LandingPage />
+      <div className="mx-auto px-5 container">
+        <Services/>
+        <HighlightClients />
+        <PaymentSystem></PaymentSystem>
+        <Package />
+        <TeamMembers />
+        <Choose />
+        <CategoryService></CategoryService>
+      </div>
     </div>
   );
 };

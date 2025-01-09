@@ -13,7 +13,7 @@ const DigitalMarketingMarketing = () => {
   }, []);
 
   return (
-    <div className="flex px-14 flex-col mx-24 md:flex-row items-center md:justify-between bg-white">
+    <div className="flex px-5  flex-col  md:flex-row items-center md:justify-between bg-white">
       {/* Content section with animation */}
       <div
         className="w-full md:w-1/2 order-1 md:order-1 text-black mt-4 md:mt-0 md:pr-6"

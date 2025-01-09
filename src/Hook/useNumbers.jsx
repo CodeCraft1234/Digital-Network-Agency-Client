@@ -10,7 +10,6 @@ const useNumbers = () => {
             return res.data
         }
     })
-        console.log(numbers)
         return [numbers,refetch]
 
 };

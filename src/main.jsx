@@ -18,7 +18,6 @@ import DashboardRoot from "./Dashboard/DashboardRoot";
 import TodayOrders from "./Dashboard/Routes/TodayOrders";
 import TotalCustomers from "./Dashboard/Routes/TotalCustomers";
 import OrderDetailsFinal from "./Dashboard/Routes/OrderDetailsFinal";
-
 import AddLinks from "./Dashboard/AddLinks";
 import Settings from "./Dashboard/Settings";
 import AdminHome from "./Dashboard/AdminHome";
@@ -34,7 +33,14 @@ import MyOrders from "./Pages/MyOrders/MyOrders";
 import Checkout from "./Components/Checkout/Checkout";
 import OrderDetails from "./Dashboard/Routes/OrderDetails";
 import AllOrders from "./Dashboard/Routes/AllOrders";
-
+import OurTeam from "./Dashboard/OurTeam";
+import TeamMemberRoute from "./Pages/TeamMemberRoute";
+import AddServices from "./Components/Services/AddServices";
+import PrivacyPolicy from "./Pages/PrivachyPolichy";
+import OurOtherVentures from "./Dashboard/OurOtherVentures";
+import OurWorks from "./Dashboard/OurWorks";
+import OurPaymentLogo from "./Dashboard/OurPaymentLogo";
+import WebDevelopmentDetails from "./Pages/Card/WebDevelopmentDetails";
 
 const router = createBrowserRouter([
   {
@@ -44,7 +50,6 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home></Home>,
-        loader: () =>fetch('/cards.json')
       },
       {
         path: "/services",
@@ -55,9 +60,10 @@ const router = createBrowserRouter([
         element: <Login></Login>,
       },
       {
-        path: "/about",
+        path: "/about-us",
         element: <AboutUs></AboutUs>,
       },
+
       {
         path: "/faq",
         element: <Faq></Faq>,
@@ -71,7 +77,7 @@ const router = createBrowserRouter([
         element:<MyCart></MyCart>
       },
       {
-        path: "/contact",
+        path: "/contact-us",
         element: <Contact></Contact>,
       },
       {
@@ -81,15 +87,22 @@ const router = createBrowserRouter([
       {
         path: "/card/:id",
         element: <CardDetails></CardDetails>,
-        loader: () =>fetch('/cards.json')
-    },
+      },
     {
       path: "/myCart",
       element: <Cart></Cart>
     },
     {
-      path:'/myOrders',
+      path: "/privacy-policy",
+      element: <PrivacyPolicy></PrivacyPolicy>
+    },
+    {
+      path:'/my-orders',
       element:<MyOrders></MyOrders>
+    },
+    {
+      path:'/team-member',
+      element:<TeamMemberRoute></TeamMemberRoute>
     },
     {
       path:'/checkout/:title/:price',
@@ -104,43 +117,66 @@ const router = createBrowserRouter([
       element: <OrderDetails></OrderDetails>
     },
     {
-      path: "/category/:category",
+      path: "/service/:category",
       element: <Card></Card>,
-      loader: () =>fetch('/cards.json')
+    },
+    {
+      path: "/web-design/:id",
+      element: <WebDevelopmentDetails></WebDevelopmentDetails>,
     },
     {
       path:'dashboard',
       element:<DashboardRoot></DashboardRoot>,
       children:[
         {
-          path:'/dashboard/admin/adminHome',
+          path:'/dashboard',
           element:<AdminHome></AdminHome>
         },
         {
-          path:'/dashboard/admin/todayOrders',
+          path:'/dashboard/todayOrders',
           element:<TodayOrders></TodayOrders>
         },
         {
-          path:'/dashboard/admin/totalCustomers',
+          path: "/dashboard/services",
+          element: <AddServices></AddServices>,
+        },
+        {
+          path: "/dashboard/ventures",
+          element: <OurOtherVentures></OurOtherVentures>
+        },
+        {
+          path: "/dashboard/paymentLogo",
+          element: <OurPaymentLogo></OurPaymentLogo>
+        },
+        {
+          path: "/dashboard/works",
+          element: <OurWorks></OurWorks>
+        },
+        {
+          path:'/dashboard/totalCustomers',
           element:<TotalCustomers></TotalCustomers>
         },
         {
-          path:'/dashboard/admin/allOrders',
+          path:'/dashboard/allOrders',
           element:<AllOrders></AllOrders>
         },
         
         {
-          path:'/dashboard/admin/orders/:status',
+          path:'/dashboard/orders/:status',
           element:<OrderDetailsFinal></OrderDetailsFinal>
         },
        
         {
-          path: "/dashboard/admin/addLinks",
+          path: "/dashboard/addLinks",
           element: <AddLinks />,
         },
         {
-          path: "/dashboard/admin/settings",
+          path: "/dashboard/settings",
           element: <Settings />,
+        },
+        {
+          path: "/dashboard/ourTeam",
+          element: <OurTeam />,
         },
       ]
     }

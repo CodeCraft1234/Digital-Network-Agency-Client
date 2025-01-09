@@ -32,7 +32,7 @@ const WhyChooseUs = () => {
   const cards = createCardItems(textItems);
 
   return (
-    <div className="bg-white mt-10 px-12 mx-24  flex flex-col items-center relative mb-10">
+    <div className="bg-white mt-10 w-full flex flex-col items-center relative mb-10">
       <h2 className="text-4xl font-bold text-center z-10">
         Why Should You <span className="text-pink-600">Choose Us!</span>
       </h2>
@@ -40,7 +40,7 @@ const WhyChooseUs = () => {
         Discover why we're the right choice for you
       </p>
 
-      <div className="flex flex-col md:flex-row justify-between w-full max-w-4xl mb-8 z-10">
+      <div className="flex flex-col md:flex-row justify-between w-full  mb-8 z-10">
         {/* Left Side Image */}
         <div 
           className="hidden md:block absolute left-0 top-0 w-1/3 h-full bg-cover bg-center rounded-lg" 

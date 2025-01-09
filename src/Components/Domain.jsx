@@ -4,8 +4,17 @@ import { Helmet } from "react-helmet-async";
 const Card = ({ plan }) => {
   const navigate = useNavigate();
 
-  const handleCart = (storage, price,picture) => {
-    const cartItem = { storage, price,picture };
+  const generateRandomId = () => {
+    const characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+    let id = "";
+    for (let i = 0; i < 8; i++) {
+      id += characters.charAt(Math.floor(Math.random() * characters.length));
+    }
+    return id;
+  };
+
+  const handleCart = (storage,title, price,picture) => {
+    const cartItem = {id: generateRandomId(),  storage,title, price,picture };
     let cart = localStorage.getItem("carts");
 
     if (!cart) {
@@ -36,7 +45,7 @@ const Card = ({ plan }) => {
         <p className="text-center">{plan.description}</p>
       </div>
       <div className="p-6 flex flex-col justify-between h-[350px]">
-        <p className="text-center text-black text-4xl font-bold my-4">{plan.price}</p>
+        <p className="text-center text-black text-4xl font-bold my-4">${plan.price}</p>
         <ul className="space-y-2 text-black">
           {plan.features.map((feature, index) => (
             <li key={index}>{feature}</li>
@@ -44,7 +53,7 @@ const Card = ({ plan }) => {
         </ul>
         <button
             className={`py-2 px-4  rounded ${plan.buttonBg} text-white`}
-            onClick={() => handleCart(plan.storage, plan.price,plan.image)}
+            onClick={() => handleCart(plan.storage,plan.storage, plan.price,plan.image)}
           >
             Order Now
           </button>
@@ -59,7 +68,7 @@ const Domain = () => {
     {
       storage: "10 GB",
       description: "Fast Hosting & Free .COM Domain",
-      price: "৳999",
+      price: "9.99",
       features: [
         "10 GB SSD Storage",
         "Unlimited Bandwidth",
@@ -78,7 +87,7 @@ const Domain = () => {
     {
       storage: "50 GB",
       description: "Fast Hosting & Free .COM Domain",
-      price: "৳2550",
+      price: "19.99",
       features: [
         "250 GB SSD Storage",
         "Unlimited Bandwidth",
@@ -93,7 +102,7 @@ const Domain = () => {
     {
       storage: "100 GB",
       description: "Fast Hosting & Free .COM Domain",
-      price: "৳3999",
+      price: "29.99",
       features: [
         "250 GB SSD Storage",
         "Unlimited Bandwidth",
@@ -108,7 +117,7 @@ const Domain = () => {
     {
       storage: "200 GB",
       description: "Fast Hosting & Free .COM Domain",
-      price: "৳4999",
+      price: "39.99",
       features: [
         "450 GB SSD Storage",
         "Unlimited Bandwidth",
@@ -123,15 +132,15 @@ const Domain = () => {
   ];
 
   return (
-    <div className="mt-10 mx-36   ">
+    <div className="mt-10 px-5 lg:mx-36   ">
       <Helmet>
         <title>Digital Network | Domain</title>
         <link rel="canonical" href="https://www.tacobell.com/" />
       </Helmet>
       <div className="text-center text-black mb-8">
-        <h1 className="text-xl md:text-4xl font-bold">
-          Free .COM Domain With <br /> Super Fast Cloud Hosting
-        </h1>
+      <h2 className="text-3xl text-center text-gray-700 font-bold my-10">
+      Free .COM Domain With Super Fast Cloud Hosting
+        </h2>
       </div>
       {/* Grid layout */}
       <div className="grid grid-cols-1 justify-center sm:grid-cols-2 lg:grid-cols-4 gap-5">

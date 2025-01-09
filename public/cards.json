@@ -8,7 +8,7 @@
       "card_bg_color": "#79c23f26",
       "text_button_bg_color": "#79C23F",
       "description": "Considering the growing demand for visual content, marketers are promoting their products through graphical ideas nowadays. The increasing need for graphic designers has unlocked many opportunities for the people who prefer working independently. A study shows, all the companies prioritize their visual acceptance, even a small company spends up to 500 dollars to create a perfect logo. If you are passionate about making designs, this updated Graphic Design course is for you.",
-      "price": "299.99",
+      "price": "49.99",
       "video":"https://www.youtube.com/embed/uOpmWcAXrls"
      
     },
@@ -34,7 +34,7 @@
       "card_bg_color": "#79c23f26",
       "text_button_bg_color": "#79C23F",
       "description": "UX Design has become one of the top high demand jobs in the tech world. Companies are prioritizing on hiring skilled designers as it plays a crucial role in ensuring user friendly websites. A study shows, almost 77% of online business fail to survive in the competitive global market due to complex interface design. UX designers ensure the efficacy of the website, making it easily accessible to the users. If you like to work with graphical elements, this course is for you.",
-      "price": "79.99",
+      "price": "49.99",
       "video":"https://www.youtube.com/embed/mV8ftdZgvdQ"
      
     },
@@ -47,7 +47,7 @@
       "card_bg_color": "#f8714726",
       "text_button_bg_color": "#F87147",
       "description": "Web development is in high demand and a top-five technology job, with an anticipated 30.3% increase in demand for web developers from 2021 to 2031. Keep ahead of the competition by enrolling in our Comprehensive Web Development Course to learn the latest trends from experienced web developers.",
-      "price": "39.99",
+      "price": "49.99",
       "video":"https://www.youtube.com/embed/GLB8A-uCiEA"
      
     },
@@ -60,7 +60,7 @@
         "card_bg_color": "#f8714726",
         "text_button_bg_color": "#F87147",
         "description": "MERN Stack is a combination of four different technologies that is used to develop a website in an efficient manner. In this course, you can gain your expertise in three areas- Web Development, Web Design and App Development. Most of the companies nowadays are using the MERN Stack Programme for its easily customizable, cost-effective features. Enroll in this course to develop your skills in this field.",
-        "price": "39.99",
+        "price": "49.99",
         "video":"https://www.youtube.com/embed/wf4F2-9UXUo"
     },
     {
@@ -72,10 +72,135 @@
         "card_bg_color": "#f8714726",
         "text_button_bg_color": "#F87147",
         "description": "React js is one of the most popular frameworks that you can use to design your website interface. It ensures your convenience by providing you a hassle-free, flexible work experience. In addition, React js is built on an open source platform with an extensive library that simplifies the complex coding. Considering the feasibility, most of the developers prefer using this framework, you can also have your expertise with our advanced Front-End Development Course.",
-        "price": "79.99",
+        "price": "49.99",
          "video":"https://www.youtube.com/embed/GGf1JjSAKP4"
      
     },
+    {
+      "picture": "https://i.ibb.co.com/48v1BQs/1685030653456.jpg",
+      "title": "Facebook Page Promotion",
+      "category": "Digital Marketing",
+      "id": "13",
+      "category_bg_color": "#0052FF",
+      "card_bg_color": "#0052ff26",
+      "text_button_bg_color": "#0052FF",
+      "description": "Learn how to promote your Facebook page effectively to reach a larger audience and engage with potential customers.",
+      "dollerRate":"140",
+      "price": "10"
+  },
+  {
+      "picture": "https://i.ibb.co.com/qd2JW1h/Facebook-Ads.webp",
+      "title": "Running Ads on Facebook",
+      "category": "Digital Marketing",
+      "id": "14",
+      "category_bg_color": "#0052FF",
+      "card_bg_color": "#0052ff26",
+      "text_button_bg_color": "#0052FF",
+      "description": "A beginner-friendly course on creating and running successful Facebook ad campaigns to drive traffic and increase conversions.",
+      "dollerRate":"140",
+      "price": "10"
+  },
+  {
+      "picture": "https://i.ibb.co.com/nbjnfF1/CAMPAIGNMANAGEMENTFTIMG-copy.webp",
+      "title": "Campaign Management",
+      "category": "Digital Marketing",
+      "id": "15",
+      "category_bg_color": "#0052FF",
+      "card_bg_color": "#0052ff26",
+      "text_button_bg_color": "#0052FF",
+      "description": "Master the basics of managing digital campaigns from start to finish to maximize your ad spend.",
+      "dollerRate":"140",
+      "price": "10"
+  },
+  {
+      "picture": "https://i.ibb.co.com/jhGss8n/facebook-page-promotion-500x500.webp",
+      "title": "Facebook Page Setup",
+      "category": "Digital Marketing",
+      "id": "16",
+      "category_bg_color": "#0052FF",
+      "card_bg_color": "#0052ff26",
+      "text_button_bg_color": "#0052FF",
+      "description": "Learn to set up a professional Facebook page for your brand to attract and engage followers.",
+      "dollerRate":"140",
+      "price": "10"
+  },
+  {
+
+   
+
+      "picture": " https://i.ibb.co.com/LNL5SRT/1634932275171.png",
+      "title": "YouTube Channel Boosting",
+      "category": "Digital Marketing",
+      "id": "17",
+      "category_bg_color": "#0052FF",
+      "card_bg_color": "#0052ff26",
+      "text_button_bg_color": "#0052FF",
+      "description": "Discover techniques to grow your YouTube channel and reach a larger audience through effective promotion.",
+      "dollerRate":"140",
+      "price": "10"
+  },
+  {
+      "picture": "https://i.ibb.co.com/mRZN5pk/tiktok-marketing-strategy.png",
+      "title": "TikTok Growth Strategies",
+      "category": "Digital Marketing",
+      "id": "18",
+      "category_bg_color": "#0052FF",
+      "card_bg_color": "#0052ff26",
+      "text_button_bg_color": "#0052FF",
+      "description": "Gain insights into TikTok growth strategies to increase followers and engagement on the platform.",
+      "dollerRate":"140",
+      "price": "10"
+  },
+  {
+    
+      "picture": "https://i.ibb.co.com/3djvZtz/Faecbook-Business-Manager-001.jpg",
+      "title": "Business Manager Setup",
+      "category": "Digital Marketing",
+      "id": "19",
+      "category_bg_color": "#0052FF",
+      "card_bg_color": "#0052ff26",
+      "text_button_bg_color": "#0052FF",
+      "description": "Step-by-step guidance on setting up Facebook Business Manager for managing multiple pages and ad accounts.",
+      "dollerRate":"140",
+      "price": "10"
+  },
+  {
+      "picture": "https://i.ibb.co.com/JySRSTc/Instagram-Advertising-Cost-Everything-You-Need-To-Know.png",
+      "title": "Instagram Ads Basics",
+      "category": "Digital Marketing",
+      "id": "20",
+      "category_bg_color": "#0052FF",
+      "card_bg_color": "#0052ff26",
+      "text_button_bg_color": "#0052FF",
+      "description": "Learn how to create, launch, and manage ads on Instagram to reach a visually-engaged audience.",
+      "dollerRate":"140",
+      "price": "10"
+  },
+  {
+      "picture": "https://i.ibb.co.com/9Hy1hbD/1677832228219.jpg",
+      "title": "LinkedIn Page Setup",
+      "category": "Digital Marketing",
+      "id": "21",
+      "category_bg_color": "#0052FF",
+      "card_bg_color": "#0052ff26",
+      "text_button_bg_color": "#0052FF",
+      "description": "Set up a LinkedIn company page to build your professional network and attract industry connections.",
+      "dollerRate":"140",
+      "price": "10"
+  },
+  {
+      "picture": "https://i.ibb.co.com/GM2whmt/17-tools-1-blog.jpg",
+      "title": "Content Creation for Social Media",
+      "category": "Digital Marketing",
+      "id": "22",
+      "category_bg_color": "#0052FF",
+      "card_bg_color": "#0052ff26",
+      "text_button_bg_color": "#0052FF",
+      "description": "Create compelling content that resonates with audiences across social media platforms.",
+      "dollerRate":"140",
+      "price": "10"
+  }
+,  
     {
         "picture": "https://i.ibb.co/qYj7Dv6/course-1663052131.jpg",
         "title": "Affiliate Marketing",
@@ -85,7 +210,8 @@
         "card_bg_color": "#0052ff26",
         "text_button_bg_color": "#0052FF",
         "description": "Searching for an easy source of passive income? Then affiliate marketing can be on your to-do list. Google statistics show, almost 9% of affiliate marketers earn a hefty amount, around 50,000 dollars on a monthly basis. You only need guidelines and effective marketing techniques to excel in this sector. If you prefer a hassle-free, independent way of work, our Complete Affiliate Marketing Course is for you.",
-        "price": "49.95"
+        "dollerRate":"140",
+        "price": "10"
     },
     {
         "picture": "https://i.ibb.co/fkPtHmS/course-1663052296.jpg",
@@ -96,7 +222,8 @@
         "card_bg_color": "#0052ff26",
         "text_button_bg_color": "#0052FF",
         "description": "Google Adsense; the largest ad network in the world to reach potential customers. Enrolling in our Complete Google AdSense Course can be an excellent investment for website owners and bloggers who want to maximize their earnings potential and improve their user experience.",
-        "price": "299.99",
+        "dollerRate":"140",
+        "price": "10",
         "video":"https://www.youtube.com/embed/JcklujFmJu8"
     },
     {
@@ -108,7 +235,8 @@
         "card_bg_color": "#0052ff26",
         "text_button_bg_color": "#0052FF",
         "description": "Do you aspire to be a great content writer? If yes, our course has much to offer you to furnish your writing skills. With the comprehensive topics and project-based works, you will gradually improve your competency towards mastery. Most of the companies boost their product sales through digital platforms and the demand for content writers is skyrocketing in the global market at present. So, enroll now to be ahead of others in this competitive field.",
-        "price": "299.99"
+        "dollerRate":"140",
+        "price": "10"
     },
     {
         "picture": "https://i.ibb.co/qBcVZx7/course-1662962744.jpg",
@@ -119,7 +247,8 @@
         "card_bg_color": "#0052ff26",
         "text_button_bg_color": "#0052FF",
         "description": "A study shows, almost 76% of people only go through the first page of a website to find the necessary information. You need to know the proper SEO strategies to rank your post or website on the first page of search engines. Our comprehensive SEO course can be your first priority if you want to be a digital marketer.",
-        "price": "299.99",
+        "dollerRate":"140",
+        "price": "10",
         "video":"https://www.youtube.com/embed/hF515-0Tduk"
     },
     {
@@ -131,19 +260,9 @@
         "card_bg_color": "#0052ff26",
         "text_button_bg_color": "#0052FF",
         "description": "Social media advertising can be an effective tool for increasing your business revenue. It easily connects the audience with your products, raising the chance of sales to a great extent. But success highly depends on your approach and strategies to attract potential customers. If you don't know how this course will lead you to the right path.",
-        "price": "299.99",
+        "dollerRate":"140",
+        "price": "10",
         "video":"https://www.youtube.com/embed/HUhCyNp_wKU"
-    },
-    {
-        "picture": "https://i.ibb.co/d5L8Q2M/course-1663052587.jpg",
-        "title": "Social Media Marketing",
-        "category": "Digital Marketing",
-        "id": "12",
-        "category_bg_color": "#0052FF",
-        "card_bg_color": "#0052ff26",
-        "text_button_bg_color": "#0052FF",
-        "description": " Disaster Relief is a critical initiative dedicated to providing immediate assistance and support to individuals and communities affected by natural disasters and emergencies. We work tirelessly to deliver essential resources such as food, clean water, shelter, and medical aid to those in urgent need. Your contribution to our Disaster Relief efforts ensures that we can respond swiftly and effectively to crises, helping to save lives and provide comfort during times of hardship.",
-        "price": "299.99"
     }
   ]
   

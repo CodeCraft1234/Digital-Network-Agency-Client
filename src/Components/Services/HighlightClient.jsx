@@ -33,15 +33,16 @@ const HighlightClients = () => {
   }, [happyClients, projectsDone, daysOfWork, awardWinner]);
 
   return (
-    <section
-      className="relative px-32   bg-cover bg-center bg-no-repeat h-[600px]"
+   <div>
+     <section
+      className="relative px-5 mx-5 my-10   bg-cover bg-center bg-no-repeat lg:h-[600px]"
       style={{ 
         backgroundImage: `url(${bgImageUrl})`, 
         backgroundAttachment: 'fixed',
         backgroundSize: 'cover', // Ensure image covers the entire section
       }}
     >
-      <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-red-500 opacity-75"></div>
+      <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-blue-600 to-red-500 opacity-75"></div>
       <div className="relative z-10 p-5 grid grid-cols-1 md:grid-cols-2 justify-center items-center h-full ">
         <div className="flex flex-col justify-center">
           <h1 className="text-white text-xl md:text-3xl lg:text-4xl font-bold mb-4">
@@ -71,6 +72,7 @@ const HighlightClients = () => {
         </div>
       </div>
     </section>
+   </div>
   );
 };
 

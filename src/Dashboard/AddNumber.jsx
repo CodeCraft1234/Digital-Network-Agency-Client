@@ -51,7 +51,7 @@ const AddNumber = () => {
               type="number"
               id="facebookID"
               name="facebookID"
-              className="flex-1 text-black p-2 border rounded"
+              className="flex-1 bg-white text-black p-2 border rounded"
               placeholder="Enter Your Number"
               value={facebookID}
               onChange={(e) => setFacebookID(e.target.value)}

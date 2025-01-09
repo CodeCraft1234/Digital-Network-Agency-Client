@@ -59,7 +59,7 @@ const AdminDashboard = () => {
           <Link to={"/"}>
             <img
               className="h-20 w-20 "
-              src={latestLogo?.photo}
+              src='https://i.ibb.co.com/Y8wZB4B/Logo-White.png'
               alt="Logo"
             />
           </Link>
@@ -67,16 +67,40 @@ const AdminDashboard = () => {
 
         <nav>
           <div className="space-y-2 text-start">
-            <Link to="/dashboard/admin/adminHome">
-              <button className={getButtonClass("/dashboard/admin/adminHome")}>
+            <Link to="/dashboard">
+              <button className={getButtonClass("/dashboard")}>
                 <RxDashboard className="text-xl inline-block mr-2" />
                 Dashboard
               </button>
             </Link>
-            <Link to="/dashboard/admin/allOrders">
-              <button className={getButtonClass("/dashboard/admin/allOrders")}>
+            <Link to="/dashboard/allOrders">
+              <button className={getButtonClass("/dashboard/allOrders")}>
                 <MdOutlinePayments className="text-xl inline-block mr-2" />
                 Orders
+              </button>
+            </Link>
+            <Link to="/dashboard/ourTeam">
+              <button className={getButtonClass("/dashboard/ourTeam")}>
+                <MdOutlinePayments className="text-xl inline-block mr-2" />
+                Our Team
+              </button>
+            </Link>
+            <Link to="/dashboard/ventures">
+              <button className={getButtonClass("/dashboard/ventures")}>
+                <MdOutlinePayments className="text-xl inline-block mr-2" />
+                Our Ventures
+              </button>
+            </Link>
+            <Link to="/dashboard/paymentLogo">
+              <button className={getButtonClass("/dashboard/paymentLogo")}>
+                <MdOutlinePayments className="text-xl inline-block mr-2" />
+                Payment Logo
+              </button>
+            </Link>
+            <Link to="/dashboard/works">
+              <button className={getButtonClass("/dashboard/works")}>
+                <MdOutlinePayments className="text-xl inline-block mr-2" />
+                Our Works
               </button>
             </Link>
            
@@ -84,14 +108,21 @@ const AdminDashboard = () => {
             
           
           
-            <Link to="/dashboard/admin/totalCustomers">
-              <button className={getButtonClass("/dashboard/admin/totalCustomers")}>
+          
+            <Link to="/dashboard/Services">
+              <button className={getButtonClass("/dashboard/Services")}>
+                <MdPeopleOutline className="text-xl inline-block mr-2" />
+                Services
+              </button>
+            </Link>
+            <Link to="/dashboard/totalCustomers">
+              <button className={getButtonClass("/dashboard/totalCustomers")}>
                 <MdPeopleOutline className="text-xl inline-block mr-2" />
                 Customers
               </button>
             </Link>
-            <Link to="/dashboard/admin/settings">
-              <button className={getButtonClass("/dashboard/admin/settings")}>
+            <Link to="/dashboard/settings">
+              <button className={getButtonClass("/dashboard/settings")}>
                 <AiOutlineSetting className="text-xl inline-block mr-2" />
                 Settings
               </button>

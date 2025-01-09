@@ -35,13 +35,13 @@ const OurServices = () => {
   }, []);
 
   return (
-    <div className='mx-24 px-12 py-10'>
+    <div className=' px-5  py-10'>
       <Helmet>
         <title>Digital Network| Services</title>
         <link rel="canonical" href="https://www.tacobell.com/" />
       </Helmet>
       <GlobalStyle />
-      <section className=" bg-gray-50 mt-4">
+      <section className="  mt-4">
         <div className="text-black ">
           <div className="text-center mb-8">
             <h2 className="text-3xl font-bold">Let’s Check Our Services</h2>

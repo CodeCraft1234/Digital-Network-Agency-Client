@@ -1,17 +1,14 @@
 import { Link } from "react-router-dom";
+import Domain from "../../Components/Domain";
 
 
 const DonationDetails = ({ filteredCards }) => {
-  const { id, picture, title, description, price, text_button_bg_color } =
-  filteredCards || {};
-  console.log(filteredCards);
-
-
-
+ 
   return (
-    <div className="px-12 mt-5  mb-16">
+    <div className="lg:px-12 mt-5 px-5  mb-16">
+      
       {filteredCards.length ? (
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-5">
           {filteredCards.map((card) => (
             <Link key={card.id} to={`/card/${card.id}`}>
               <div
@@ -32,7 +29,7 @@ const DonationDetails = ({ filteredCards }) => {
           ))}
         </div>
       ) : (
-        <p>No cards found</p>
+        <Domain></Domain>
       )}
     </div>
   );

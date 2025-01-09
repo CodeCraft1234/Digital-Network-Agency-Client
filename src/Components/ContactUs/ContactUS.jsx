@@ -2,6 +2,18 @@ import React from 'react';
 import './ContactUS.css';
 
 const ContactUS = () => {
+
+  const [logo, setLogo] = useLogo();
+  const [latestLogo, setLatestLogo] = useState(null);
+
+  useEffect(() => {
+    if (logo && logo.length > 0) {
+      const sortedLogo = [...logo].sort((a, b) => new Date(b.date) - new Date(a.date));
+      const latest = sortedLogo[0];
+      setLogo(sortedLogo);
+      setLatestLogo(latest);
+    }
+  }, [logo, setLogo]);
   return (
     <div className="min-h-screen flex flex-col md:flex-row items-center justify-center bg-blue-500 py-12 px-4 sm:px-6 lg:px-8 gap-10">
       <div className="text-center text-white md:w-1/2">

@@ -1,3 +1,220 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+
+.icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem; /* 10/4 rem */
+    height: 2rem; /* 10/4 rem */
+    color: white;
+    border: 1px solid white; /* border-gray-600 */
+    border-radius: 9999px; /* fully rounded */
+    transition: border-color 0.3s ease; /* Smooth hover transition */
+  }
+  
+  .icon:hover {
+    background-color: #0d4691;
+    color: white;
+    border: 1px solid #0f172a; /* Replacing bg-slate-900 with its color code */
+}
+
+  
+  .icon svg {
+    color: white;
+  }
+
+.icon2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem; /* 10/4 rem */
+    height: 2rem; /* 10/4 rem */
+    color: white;
+    background-color: #0d4691;
+    
+    border-radius: 9999px; /* fully rounded */
+    transition: border-color 0.3s ease; /* Smooth hover transition */
+  }
+  
+  .icon2:hover {
+    
+    background-color: green;
+    color: white;
+    border: 1px solid #0f172a; /* Replacing bg-slate-900 with its color code */
+}
+
+  .icon2 svg {
+    color: white;
+  }
+  .icon2 svg:hover {
+    color: white;
+  }
+
+
+  /* ///////////////table css ///////////////////////// */
+/* ///////////////tr /////////////////////////////// */
+
+
+td {
+  border: 1px solid #9ca3af; 
+  padding: 0.75rem; /* Equivalent to Tailwind's p-3 */
+  text-align: left; /* Equivalent to text-left */
+  border-right: 2px solid var(--border); /* Border for separation */
+  transition: background-color 0.3s ease, color 0.3s ease, border 0.3s ease; /* Smooth transition */
+}
+
+.tr1 {
+  border: 1px solid #9ca3af;        /* Use the defined border variable */
+  padding: 0.75rem;              /* Equivalent to Tailwind's p-3 */
+  border-right: 1px solid #9ca3af; /* Equivalent to border-gray-400 */
+  border-left: 1px solid #9ca3af;
+  text-align: start;           /* Sets the text color using the variable */
+}
+
+.tr1 th {
+  padding: 0.75rem;                  /* Matches Tailwind's p-3 for padding */
+  text-align: start; 
+  background-color: #a9bce8                /* Aligns text to the start (left by default) */
+}
+
+.tr1 th.text-center {
+  text-align: center;                /* Aligns text to the center for specific columns */
+}
+
+
+
+.tr2 {
+  background-color: var(--bg-table); /* Base background color */
+  color: var(--text-color2);         /* Base text color */
+  transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.tr2:hover {
+  background-color: #a9bce8; /* Hover background color (gray-200) */
+}
+
+td {
+  border: 1px solid #9ca3af;        /* Use the defined border variable */
+  padding: 0.75rem;              /* Equivalent to Tailwind's p-3 */
+  border-right: 1px solid #9ca3af; /* Equivalent to border-gray-400 */
+  border-left: 1px solid #9ca3af;
+  text-align: start;            /* Align text to the center */
+}
+
+
+/* buttons */
+
+button {
+  font-family: inherit; /* Inherit font family */
+  border: none; /* Remove default borders */
+  cursor: pointer; /* Add pointer cursor for buttons */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transitions */
+  padding: 0.5rem 1rem; /* Default padding */
+  border-radius: 0.5rem; /* Rounded corners */
+  font-weight: bold; /* Bold text */
+  text-align: center;
+}
+
+/* Submit button styles */
+.submit {
+  background-color: var(--bg-color-submit, #05a0db); /* Default blue color */
+  color: white;
+  padding: 0.5rem 1rem
+}
+
+.submit:hover {
+  background-color: var(--bg-color-submit-hover, #007ab8); /* Darker blue on hover */
+}
+
+/* Cancel button styles */
+.cancel {
+  background-color: var(--bg-color-cancel, #e53e3e); /* Default red color */
+  color: white;
+  padding: 0.5rem 1rem
+}
+
+.cancel:hover {
+  background-color: var(--bg-color-cancel-hover, #c53030); /* Darker red on hover */
+}
+
+/* Close button styles */
+.close {
+  background-color: var(--bg-color-close, #e53e3e); /* Default red color */
+  color: white;
+  padding: 0.5rem 1rem
+}
+
+.close:hover {
+  background-color: var(--bg-color-close-hover, #c53030); /* Darker red on hover */
+}
+
+/* Update button styles */
+.update {
+  background-color: var(--bg-color-update, #05a0db); /* Default blue color */
+  color: white;
+  padding: 0.50rem 1rem
+}
+
+.update:hover {
+  background-color: var(--bg-color-update-hover, #007ab8); /* Darker blue on hover */
+}
+
+/* Add Client button styles */
+.add {
+  background-color: var(--bg-color-add-client, #05a0db); /* Default blue color */
+  color: white;
+  padding: 0.50rem 1rem; /* Larger padding for Add Client */
+  font-size: 1rem; /* Font size */
+  font-weight: 600;
+}
+
+.add:hover {
+  background-color: var(--bg-color-add-client-hover, #007ab8); /* Darker blue on hover */
+}
+
+.delete {
+  @apply hover:bg-blue-700 text-[#f86c6b] text-xl px-2 py-1 rounded;
+}
+.edit {
+  @apply   rounded;
+}
+
+
+
+/* ///////////////////////////footer////////////////////////////////////// */
+/* Container for all cards */
+.payment-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: start;
+  align-items: center;
+  gap: 0.5rem; /* Space between items */
+  margin-top: 1rem; /* Top margin */
+  padding-bottom: 2.5rem; /* Bottom padding */
+}
+
+/* Individual card */
+.payment-card {
+  background-color: white;
+  width: 5rem; /* Fixed width for each card */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0.5rem; /* Rounded corners */
+  padding: 1rem; /* Padding around the image */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+/* Image inside the card */
+.payment-card img {
+  height: 1rem; /* Fixed height for all images */
+  max-width: 100%; /* Prevent images from exceeding card width */
+}
+
+/* /////footer links///// */
+
+

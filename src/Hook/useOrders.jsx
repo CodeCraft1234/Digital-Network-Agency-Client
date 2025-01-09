@@ -10,7 +10,6 @@ const useOrders= () => {
             return res.data
         }
     })
-        console.log(orders)
         return [orders,refetch]
 }
 

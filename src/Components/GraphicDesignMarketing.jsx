@@ -13,7 +13,7 @@ const GraphicDesignMarketing = () => {
   }, []);
 
   return (
-    <div className="flex px-18 mx-24 flex-col md:flex-row items-center md:justify-between bg-white">
+    <div className="flex px-5 flex-col md:flex-row items-center md:justify-between bg-white">
       {/* Image section with animation */}
       <div
         className="w-full md:w-1/2 order-2 md:order-1 flex justify-center"

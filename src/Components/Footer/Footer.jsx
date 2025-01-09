@@ -1,18 +1,36 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { BiSolidPhoneCall } from "react-icons/bi";
 import {
-  FaArrowUp,
-  FaArrowDown,
   FaFacebookF,
   FaTwitter,
   FaInstagram,
-  FaPinterestP,
+  FaPinterest,
   FaYoutube,
   FaMapMarkerAlt,
   FaPhone,
+  FaLinkedinIn,
+  FaTiktok,
+  FaTelegram,
+  FaSnapchat,
+  FaArrowDown,
+  FaArrowUp,
+  FaFacebookMessenger,
+  FaWhatsapp,
+  FaAccusoft,
+  FaPhoneSquareAlt,
+  FaDoorOpen,
+  FaWatchmanMonitoring,
+  FaFacebook,
 } from "react-icons/fa";
+import { HiOutlineMail, HiOutlineMailOpen } from "react-icons/hi";
 import useLogo from "../../Hook/useLogo";
-import { FaWebAwesome } from "react-icons/fa6";
+import { FaThreads, FaWebAwesome } from "react-icons/fa6";
+import useNumbers from "../../Hook/useNumbers";
+import useSocialLinks from "../../Hook/useSocialLinks";
+import { MdOutlineMailOutline } from "react-icons/md";
+import { FiClock, FiPhoneCall } from "react-icons/fi";
+import usePaymentLogo from "../../Hook/usePaymentLogo";
 
 const Footer = () => {
   const [logo, setLogo] = useLogo();
@@ -30,186 +48,283 @@ const Footer = () => {
     }
   }, [logo, setLogo]);
 
-  const scrollToTopOrBottom = () => {
-    if (isAtTop) {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    } else {
-      window.scrollTo({ top: document.body.scrollHeight, behavior: "smooth" });
+ 
+  const [links, setLinks] = useNumbers();
+  const [latestLinks, setLatestLinks] = useState(null);
+
+  useEffect(() => {
+    if (links && links.length > 0) {
+      const sortedLinks = [...links].sort((a, b) => new Date(b.date) - new Date(a.date));
+      const latest = sortedLinks[0];
+      setLinks(sortedLinks);
+      setLatestLinks(latest);
     }
-    setIsAtTop(!isAtTop); // Toggle between top and bottom
+  }, [links, setLinks]);
+
+  const [socialLinks]=useSocialLinks()
+
+
+  const [showScrollButton, setShowScrollButton] = useState(false);
+  const [scrollDirection, setScrollDirection] = useState("up");
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 100) {
+        setShowScrollButton(true);
+        setScrollDirection("up");
+      } else {
+        setShowScrollButton(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const scrollTo = (direction) => {
+    const target = direction === "up" ? 0 : document.body.scrollHeight;
+    window.scrollTo({ top: target, behavior: "smooth" });
   };
 
+
+  const [paymentLogo] = usePaymentLogo();
+
   return (
-    <footer className="bg-gray-900 px-4 md:px-16 text-white py-16 relative">
+    <div className="bg-gradient-to-r from-[#092d77] via-[#0d4691] to-[#0c236b] lg:px-28 w-full px-4 md:px-16 text-white pt-16"
+>
+      <footer className=" container mx-auto w-full  relative">
       <div className="">
-        <div className="flex flex-wrap justify-between">
-          <div className="w-full lg:w-1/5 md:w-1/2 mb-8">
-            <div className="text-lg font-bold mb-2 -mt-10">
-              {latestLogo && (
-                <img
-                  className="h-10 w-10 mt-2 sm:h-16 sm:w-16 md:h-14 md:w-14 lg:h-16 lg:w-16 transition-transform transform hover:scale-110"
-                  src={latestLogo.photo}
-                  alt="Logo"
-                />
-              )}
-            </div>
-            <p className="text-white">
-              Grursus mal suada faci Lorem to the ipsum dolarorit more ametion
-              more consectetur elit.
-            </p>
-            <div className="flex space-x-4 mt-4">
-              <a href="#" className="text-white hover:text-[#1877F2]">
-                <FaFacebookF className="rounded-lg" size={20} />
-              </a>
-              <a href="#" className="text-white hover:text-[#1DA1F2]">
-                <FaTwitter className="rounded-lg" size={20} />
-              </a>
-              <a href="#" className="text-white hover:text-[#C13584]">
-                <FaInstagram className="rounded-lg" size={20} />
-              </a>
-              <a href="#" className="text-white hover:text-[#E60023]">
-                <FaPinterestP className="rounded-lg" size={20} />
-              </a>
-              <a href="#" className="text-white hover:text-red-600">
-                <FaYoutube className="rounded-lg" size={20} />
-              </a>
-            </div>
-          </div>
-          <div className="w-full lg:w-1/5 md:w-1/2 mb-8 -mt-8">
-            <h4 className="text-lg font-bold mb-4">Important Links</h4>
-            <ul className="space-y-2 -mt-2">
-              <li>
-                <Link to="/about" className="text-white hover:text-blue-500">
-                  About Us
-                </Link>
-              </li>
-              <li>
-                <Link to="/contact" className="text-white hover:text-blue-500">
-                  Contact Us
-                </Link>
-              </li>
-              <li>
-                <Link to="/faq" className="text-white hover:text-blue-500">
-                  FAQ & Policies
-                </Link>
-              </li>
-            </ul>
-          </div>
-          <div className="w-full lg:w-1/5 md:w-1/2 mb-8 -mt-8">
-            <h4 className="text-lg font-bold mb-4">Our Services</h4>
-            <ul className="space-y-2 -mt-2">
-              <li>
-                <a href="#" className="text-white hover:text-blue-500">
-                  Web Design
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-white hover:text-blue-500">
-                  Graphic Design
-                </a>
-              </li>
-              <li>
-                <a href="#" className="text-white hover:text-blue-500">
-                  Digital Marketing
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div className="w-full lg:w-1/5 md:w-1/2 mb-8 -mt-8">
-            <h4 className="text-lg font-bold mb-4">Contact Info</h4>
-            <ul className="space-y-2 -mt-2">
-              <li className="flex items-center text-white">
-                <FaMapMarkerAlt className="mr-2" size={18} />
-                Samnagar, Satkhira, Khulna, Bangladesh
-              </li>
-              <li className="flex items-center text-white hover:text-blue-500">
-                <FaWebAwesome className="mr-2" size={18} />
-                <Link
-                  to="https://hellodigitalnetwork.com/"
-                  className="text-white hover:text-blue-500 ml-2"
-                >
-                  Portfolio Website
-                </Link>
-              </li>
-              <li className="flex items-center text-white">
-                <FaPhone className="mr-2" size={18} />
-                +880 1718 767 738
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div className="absolute bottom-0 left-0 w-full bg-gray-800 text-white py-1">
-  <div className="container mx-auto flex flex-col md:flex-row justify-between items-center px-1">
-    {/* Left Side Text */}
-    <div className="text-center md:text-left mb-4 md:mb-0">
-      © 2024{" "}
-      <a
-        href="https://hellodigitalnetwork.com/"
-        className="text-blue-500"
-      >
-        Digital Network
-      </a>
-      . All Rights Reserved
-    </div>
+      <div className="flex flex-wrap  justify-between">
 
-    {/* Right Side Images */}
-    <div className="relative flex items-center justify-end space-x-4">
-      <img
-        src="https://i.ibb.co/k12Cncn/bkash-logo-FBB258-B90-F-seeklogo-com.png"
-        alt="bKash"
-        className="h-6 w-auto md:h-8"
-      />
-      <img
-        src="https://i.ibb.co/2tDjxP3/DBBL-24-removebg-preview.png"
-        alt="rocket"
-        className="h-6 w-auto md:h-8"
-      />
-      <img
-        src="https://i.ibb.co/bPwqykY/Nagad-Logo-wine-removebg-preview.png"
-        alt="nagad"
-        className="h-6 w-auto md:h-8"
-      />
-      <img
-        src="https://i.ibb.co/Pw4N9GM/Mastercard-logo-svg.png"
-        alt="mastercard"
-        className="h-6 w-auto md:h-8"
-      />
-      <img
-        src="https://i.ibb.co/t8rkgWG/Pay-Pal-Card-removebg-preview.png"
-        alt="paypal"
-        className="h-6 w-auto md:h-8"
-      />
-      <img
-        src="https://i.ibb.co/cTkzss5/png-transparent-card-credit-logo-visa-logos-and-brands-icon-thumbnail-removebg-preview.png"
-        alt="visa"
-        className="h-6 w-auto md:h-8"
-      />
-      <img
-        src="https://i.ibb.co/j6wrjLN/png-transparent-american-express-amex-charge-credit-card-payment-credit-cards-icon-thumbnail-removeb.png"
-        alt="amex"
-        className="h-6 w-auto md:h-8"
-      />
-      <img
-        src="https://i.ibb.co/xmx2Z1H/iPay.jpg"
-        alt="ipay"
-        className="h-6 w-auto md:h-8"
-      />
-    </div>
-  </div>
+        
+        {/* Logo Section */}
+        <div className="w-full lg:w-1/5 md:w-1/2 mb-8">
+          <div className="text-lg font-bold mb-2">
+            {socialLinks?.logo1 && (
+              <img
+                className="h-20 w-20 mt-2 sm:h-16 sm:w-20 mx-auto lg:mx-0 md:h-14 md:w-14 lg:h-24 lg:w-24  transition-transform transform hover:scale-110"
+                src='https://i.ibb.co.com/Y8wZB4B/Logo-White.png'
+                alt="Digital Network"
+              />
+            )}
+          </div>
+
+
+         
+
+          <div className=" py-2 ">
+
+            <p  dangerouslySetInnerHTML={{ __html: socialLinks?.footerDescription }}></p>
+      
 </div>
-
-
+<div className="hidden  text-white   md:flex justify-start gap-3">
+   {socialLinks?.facebook && (
+          <a
+            href={`https://www.facebook.com/${socialLinks?.facebook}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="icon"
+          >
+            <FaFacebookF className="" />
+          </a>
+        )}
+        {socialLinks?.twitter && (
+          <a
+            href={`https://twitter.com/${socialLinks?.twitter}`}
+            target="_blank"
+            rel="noopener noreferrer"
+             className="icon"
+          >
+            <FaTwitter className="" />
+          </a>
+        )}
+        {socialLinks?.instagram && (
+          <a
+    href={`https://www.instagram.com/${socialLinks?.instagram}`}
+    target="_blank"
+    rel="noopener noreferrer"
+    className="icon"
+  >
+    <FaInstagram />
+  </a>
   
+        )}
+        {socialLinks?.linkedin && (
+          <a
+            href={`https://linkedin.com/in/${socialLinks?.linkedin}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="icon"
+          >
+            <FaLinkedinIn className="text-blue-400" />
+          </a>
+        )}
+
+
+{socialLinks?.pinterest && (
+  <a
+    href={`https://pinterest.com/${socialLinks?.pinterest}`}
+    target="_blank"
+    rel="noopener noreferrer"
+     className="icon"
+  >
+    <FaPinterest className="text-red-500" />
+  </a>
+)}
+
+        </div>
+        </div>
+
+         {/* Our Services */}
+         <div className="w-full lg:w-1/4 mb-8">
+            <h4 className="font-bold text-lg mb-4">Our Services</h4>
+            <ul className="space-y-2 text-sm">
+              <li>Digital Marketing</li>
+              <li>SEO Services</li>
+              <li>Graphic Design</li>
+              <li>Web Design & Development</li>
+              <li>Web and UI/UX Design</li>
+              <li>Motion Graphics & Animation</li>
+              <li>Video Editing</li>
+            </ul>
+          </div>
+
+          {/* About Us */}
+          <div className="w-full lg:w-1/4 mb-8">
+            <h4 className="font-bold text-lg mb-4">Quick Links</h4>
+            <ul className="space-y-2  text-sm">
+              <li>
+                <Link className="hover:text-yellow-300 hover:font-bold" to="/about-us">About Us</Link>
+              </li>
+              <li>
+                <Link className="hover:text-yellow-300 hover:font-bold" to="/contact-us">Contact Us</Link>
+              </li>
+              <li>
+                <Link className="hover:text-yellow-300 hover:font-bold" to="/refund-policy">Refund Policy
+                </Link>
+              </li>
+              <li>
+                <Link className="hover:text-yellow-300 hover:font-bold" to="/privacy-policy">Privacy Policy
+                </Link>
+              </li>
+              <li>
+                <Link className="hover:text-yellow-300 hover:font-bold" to="Terms & Conditions">Terms & Condition</Link>
+              </li>
+              <li>
+                <Link className="hover:text-yellow-300 hover:font-bold" to="/Sitemap">Sitemap</Link>
+              </li>
+              <li>
+                <Link className="hover:text-yellow-300 hover:font-bold" to="/FAQ">FAQ</Link>
+              </li>
+            </ul>
+          </div>
+
+        {/* Contact Info */}
+        <div className="w-full lg:w-1/5 md:w-1/2 mb-8">
+          <h4 className="text-lg font-bold text-white mb-4">Contact Info</h4>
+          <ul className="space-y-3">
+
+          <li className="flex items-center text-white text-sm sm:text-base">
+              <div className="bg-white mr-2 text-[#0c236b] p-1.5 rounded-full">
+              <BiSolidPhoneCall className=""  />
+              </div>
+              {socialLinks?.whatsapp}
+            </li>
+          
+          <li className="flex items-center text-white text-sm sm:text-base">
+              <div className="bg-white mr-2 text-[#0c236b] p-1.5 rounded-full">
+              <HiOutlineMail className=""  />
+              </div>
+              {socialLinks?.email}
+            </li>
+          <li className="flex items-center text-white text-sm sm:text-base">
+              <div className="bg-white mr-2 text-[#0c236b] p-1.5 rounded-full">
+              <FiClock className=""  />
+              </div>
+              Sat-Th 09.00AM - 06.00PM 
+            </li>
+          <li className="flex items-center text-white text-sm sm:text-base">
+              <div className="bg-white mr-2 text-[#0c236b] p-1.5 rounded-full">
+              <FaMapMarkerAlt className=""  />
+              </div>
+              {socialLinks?.location}
+            </li>
+          </ul>
+         
+          
+        </div>
+
+      
+      </div>
+     
+     <hr />
+    
+     <div className="payment-container ">
+     <h1 className="text-center  border-r pr-4 border-gray-100 font-bold ">We Are Accepted Payments:</h1>
+     {
+      paymentLogo?.map(f=>   <div key={f._id} className="payment-card">
+        <img src={f.image} alt="bKash" />
+      </div>)
+     }
+
+     </div>
 
       </div>
-      {/* Scroll to Top/Bottom Button */}
-      <button
-        onClick={scrollToTopOrBottom}
-        className="fixed bottom-4 right-4 bg-gradient-to-r from-[#05a0db] to-[#05a0db] text-white p-3 rounded-full shadow-lg hover:bg-[#05a0db] focus:outline-none focus:ring-2 focus:ring-[#05a0db] transition-transform transform hover:scale-110"
-      >
-        {isAtTop ? <FaArrowUp size={20} /> : <FaArrowDown size={20} />}
-      </button>
+
+      <div className=" flex flex-col  items-center space-y-4 ">
+        {/* WhatsApp Button */}
+      <div>
+          <a
+          href={`https://wa.me/${socialLinks?.whatsapp}`} // Replace with your WhatsApp link
+          target="_blank"
+          rel="noopener noreferrer"
+          className="fixed bottom-[400px] right-8 z-50 bg-green-500 p-3  rounded-full shadow-lg hover:bg-blue-700 transition duration-300"
+          title="Chat on WhatsApp"
+        >
+          <FaWhatsapp className="text-white text-xl" />
+        </a>
+
+             {/* Messenger Button */}
+             <a
+          href={`https://m.me/${socialLinks?.facebook}`} // Replace with your Messenger link
+          target="_blank"
+          rel="noopener noreferrer"
+          className="fixed bottom-[340px] right-8 z-50 bg-blue-600 p-3  rounded-full shadow-lg hover:bg-blue-700 transition duration-300"
+          title="Chat on Messenger"
+        >
+          <FaFacebook className="text-white text-xl" />
+        </a>
+
+             {/* Messenger Button */}
+             <a
+          href={`https://m.me/${socialLinks?.facebook}`} // Replace with your Messenger link
+          target="_blank"
+          rel="noopener noreferrer"
+          className="fixed bottom-[280px] right-8 z-50 bg-[#0078FF] p-3  rounded-full shadow-lg hover:bg-blue-700 transition duration-300"
+          title="Chat on Messenger"
+        >
+          <FaFacebookMessenger className="text-white text-xl" />
+        </a>
+      </div>
+
+        {/* Scroll Button */}
+        {showScrollButton && (
+          <button
+            onClick={() => scrollTo(scrollDirection)}
+            className="fixed bottom-32 right-8 z-50 bg-gray-700 p-3 rounded-full shadow-lg hover:bg-gray-800 transition duration-300"
+            title={`Scroll to ${scrollDirection === "up" ? "Top" : "Bottom"}`}
+          >
+            {scrollDirection === "up" ? (
+              <FaArrowUp className="text-white text-xl" />
+            ) : (
+              <FaArrowDown className="text-white text-xl" />
+            )}
+          </button>
+        )}
+      </div>
+     
     </footer>
+    </div>
   );
 };
 

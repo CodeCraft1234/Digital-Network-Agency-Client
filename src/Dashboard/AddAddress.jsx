@@ -54,7 +54,7 @@ const AddAddress = () => {
                 type="text"
                 id="facebookIDD"
                 name="facebookIDD"
-                className="flex-1 text-black p-2 border rounded"
+                className="flex-1 bg-white text-black p-2 border rounded"
                 placeholder="Enter Your Address"
                 value={facebookIDD}
                 onChange={(e) => setFacebookID(e.target.value)}
@@ -66,7 +66,7 @@ const AddAddress = () => {
                 type="text"
                 id="webID"
                 name="webID"
-                className="flex-1 text-black p-2 border rounded"
+                className="flex-1 bg-white text-black p-2 border rounded"
                 placeholder="Enter Website Name"
                 value={webID}
                 onChange={(e) => setWebID(e.target.value)}

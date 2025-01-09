@@ -10,14 +10,11 @@ import {
 
 const Choose = () => {
   return (
-    <div className=" mt-10 mx-24 px-12 to-white">
+    <div className=" mt-10  px-5  to-white">
       <div className="max-w-8xl text-center">
-        <h2 className="text-lg font-semibold text-pink-600">
-          OUR COMMITMENT TO EXCELLENCE
+        <h2 className="text-3xl text-center text-gray-700 font-bold my-10">
+        Why Choose Us
         </h2>
-        <h3 className="mt-2 text-3xl font-bold text-gray-900 sm:text-4xl">
-          Why Choose Us
-        </h3>
         <p className="mt-4 text-gray-500">
           We combine creativity with technical expertise to deliver outstanding digital solutions. Here's why you should partner with us:
         </p>

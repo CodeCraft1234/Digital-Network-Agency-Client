@@ -78,7 +78,7 @@ const TodayOrders = () => {
                                                     <img src={item.image} alt={item.title} className="w-12 h-12 md:w-16 md:h-16 lg:w-20 lg:h-20 mr-4 rounded-md" />
                                                     <div className="text-base md:text-base lg:text-base text-black">
                                                         <p className="font-base">{item.title}</p>
-                                                        <p>Price: {item.price} Tk</p>
+                                                        <p>Price: ${item.price} </p>
                                                         <p>Quantity: {item.quantity}</p>
                                                     </div>
                                                 </div>

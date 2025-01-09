@@ -15,93 +15,117 @@ const Faq = () => {
     setOpenIndex(openIndex === index ? null : index);
   };
 
+  const faqItems = [
+    {
+      question: "What services does Digital Network provide?",
+      answer:
+        "We offer three key services: Digital Marketing, Graphic Design, and Web Design to help your business succeed online.",
+    },
+    {
+      question: "Who are these services for?",
+      answer:
+        "Our services are ideal for businesses of all sizes, especially those looking to build or enhance their brand's presence online.",
+    },
+    {
+      question: "What does your Digital Marketing service include?",
+      answer:
+        "Our Digital Marketing services cover Social Media Marketing, Search Engine Optimization (SEO), Content Marketing, Email Marketing, and Paid Ad Campaigns.",
+    },
+    {
+      question: "What types of work do you offer under Graphic Design?",
+      answer:
+        "We provide a wide range of graphic design services, including Logo Design, Social Media Content Design, Banner and Flyer Design, and Presentation and Infographic Design.",
+    },
+    {
+      question: "What do you offer in Web Design?",
+      answer:
+        "We specialize in creating modern, mobile-responsive, and SEO-optimized websites. Whether you need a custom design, e-commerce site, or dynamic website, we deliver tailored solutions based on your requirements.",
+    },
+    {
+      question: "How can I get started with your services?",
+      answer:
+        "You can get started by contacting us via email or phone. Alternatively, you can fill out the inquiry form on our website, and our team will reach out to you.",
+    },
+    {
+      question: "How does Digital Network handle payments?",
+      answer:
+        "We accept payments through various methods, including bank transfers, mobile banking, and more. Payment policies will be discussed in detail before the project begins.",
+    },
+    {
+      question: "Why should I choose Digital Network?",
+      answer:
+        "Here’s why: A team of experienced professionals, customized strategies, timely delivery, and a commitment to maximizing ROI for our clients.",
+    },
+    {
+      question: "How can I contact Digital Network?",
+      answer:
+        "You can reach us at: Email: info@digitalnetwork.com, Phone: +8801753-531417.",
+    },
+    {
+      question: "What if I have more questions?",
+      answer:
+        "If you have additional questions, feel free to contact us directly. We’re happy to provide any information you need to get started with our services.",
+    },
+  ];
+
   return (
-    <div className="mt-16 ">
+    <div className="pt-44 mx-auto container">
       <Helmet>
         <title>Digital Network | FAQ</title>
-        <link rel="canonical" href="https://www.tacobell.com/" />
+        <link rel="canonical" href="https://www.digitalnetwork.com/faq" />
       </Helmet>
-      <section className="bg-[#05a0db] text-white py-28">
-        <div className="px-4">
-          <div className="text-center">
-            <h1 className="text-4xl font-bold">FAQ</h1>
-            <p className="mt-2">Home / FAQ</p>
-          </div>
-        </div>
-      </section>
-      <div className=" px-20 py-10 mx-10 flex flex-col md:flex-row gap-10">
+
+      <div className="py-10 flex flex-col md:flex-row gap-10">
+        {/* Sidebar */}
         <div
-          className="md:w-1/3 bg-white p-6"
+          className="md:w-1/3 bg-gradient-to-b from-blue-50 to-white p-6 rounded-lg shadow-lg"
           data-aos="fade-up"
-          data-aos-anchor-placement="bottom-bottom"
         >
-          <h2 className="text-2xl font-bold mb-4 text-black">
+          <h2 className="text-2xl font-bold mb-4 text-gray-800">
             Popular Articles
           </h2>
           <ul className="space-y-4">
-            {[
-              "How to Get Started with Digital Marketing",
-              "Understanding Our Web Development Process",
-              "Tips for Effective Graphics Design",
-              "How to Choose the Right Service for Your Business",
-              "Frequently Asked Questions about Our Services",
-            ].map((article, index) => (
+            {faqItems.slice(0, 5).map((item, index) => (
               <li key={index} className="flex items-center">
                 <FaQuestionCircle className="mr-2 text-blue-600" />
-                <a href="#" className="text-blue-600 hover:underline">
-                  {article}
+                <a
+                  href="#"
+                  className="text-blue-600 hover:underline hover:text-blue-800"
+                >
+                  {item.question}
                 </a>
               </li>
             ))}
           </ul>
         </div>
+
+        {/* FAQ Section */}
         <div
-          className="md:w-2/3 bg-white p-6"
+          className="md:w-2/3 bg-white p-6 rounded-lg shadow-lg"
           data-aos="fade-left"
-          data-aos-anchor-placement="left-bottom"
         >
-          <h2 className="text-2xl font-bold mb-4 text-black">
-            How Our Services Work
-          </h2>
+          <h2 className="text-2xl font-bold mb-4 text-gray-800">FAQs</h2>
           <div className="space-y-4">
-            {[
-              "What services do you offer in digital marketing?",
-              "Can you explain your web development process?",
-              "What should I consider when designing graphics?",
-              "How do I choose the best service for my needs?",
-              "Do you offer custom solutions?",
-            ].map((question, index) => (
-              <div key={index}>
+            {faqItems.map((item, index) => (
+              <div
+                key={index}
+                className="p-4 border rounded-lg bg-gray-50 hover:bg-gray-100 shadow-sm transition-all"
+              >
                 <div
                   className="flex justify-between items-center text-xl font-bold cursor-pointer hover:text-purple-600"
                   onClick={() => handleToggle(index)}
                 >
-                  <span className="text-black">{question}</span>
+                  <span className="text-gray-800">{item.question}</span>
                   <span>
                     {openIndex === index ? (
-                      <FaAngleUp className="text-base text-black" />
+                      <FaAngleUp className="text-base text-gray-800" />
                     ) : (
-                      <FaAngleDown className="text-base text-black" />
+                      <FaAngleDown className="text-base text-gray-800" />
                     )}
                   </span>
                 </div>
                 {openIndex === index && (
-                  <p className="mt-2 text-black">
-                    {question ===
-                      "What services do you offer in digital marketing?" &&
-                      "We provide a comprehensive range of digital marketing services including SEO, social media management, pay-per-click advertising, content marketing, and email marketing to help you reach your target audience effectively."}
-                    {question ===
-                      "Can you explain your web development process?" &&
-                      "Our web development process involves understanding your business requirements, planning and designing a user-friendly interface, developing the website with the latest technologies, testing for quality assurance, and deploying the website. We also offer ongoing maintenance and support."}
-                    {question ===
-                      "What should I consider when designing graphics?" &&
-                      "When designing graphics, it's important to focus on clarity, consistency, and aesthetics. Ensure that your designs align with your brand identity, are visually appealing, and communicate your message effectively. Use high-quality images and maintain a balance between text and visuals."}
-                    {question ===
-                      "How do I choose the best service for my needs?" &&
-                      "Choosing the best service depends on your specific business goals and needs. Consider factors like your target audience, budget, and the outcomes you want to achieve. Our team can help you assess your needs and recommend the most suitable services."}
-                    {question === "Do you offer custom solutions?" &&
-                      "Yes, we offer custom solutions tailored to your unique business needs. Whether you need a customized digital marketing strategy, a bespoke website, or unique graphics design services, our team is ready to work with you to create a solution that fits your requirements."}
-                  </p>
+                  <p className="mt-2 text-gray-600">{item.answer}</p>
                 )}
               </div>
             ))}

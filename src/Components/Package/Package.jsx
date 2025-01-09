@@ -59,8 +59,8 @@ const Package = () => {
   };
 
   return (
-    <div className="bg-gradient-to-b  from-black via-gray-900 to-black py-16">
-      <div className=" px-44  text-center">
+    <div className="bg-gradient-to-b  from-black via-gray-900 rounded-lg mx-5 py-16">
+      <div className="px-5 lg:px-44  text-center">
         <h2 className="text-3xl font-bold text-white mb-4">TESTIMONIALS</h2>
         <p className="text-gray-400 mb-8">
         Hear what our clients have to say about our web development, graphic design, and digital marketing services.
